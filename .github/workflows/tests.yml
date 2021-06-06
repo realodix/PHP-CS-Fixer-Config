@@ -12,7 +12,7 @@ jobs:
           - php-version: '8.1'
             flags: "--ignore-platform-req=php"
 
-    name: PHP ${{ matrix.php-version }} - ${{ matrix.stability }}
+    name: PHP ${{ matrix.php-version }} - Integrate PHP CS Fixer
 
     steps:
       - name: Checkout
