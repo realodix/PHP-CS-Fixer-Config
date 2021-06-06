@@ -11,6 +11,6 @@ namespace Realodix\PhpCsFixerConfig\RuleSet;
  * - configures a rule that can be configured with an explicit configuration when the rule is enabled
  * - configures every rule that is not deprecated
  */
-interface ExplicitRuleSetInterface
+interface RuleSetExplicitInterface
 {
 }
