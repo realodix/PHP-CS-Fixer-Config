@@ -10,7 +10,7 @@ final class Realodix extends AbstractRuleSet implements RuleSetExplicitInterface
 
     public function myRules(): array
     {
-        $rules = (new StyleciLaravel())->myRules();
+        $rules = (new LaravelByStyleCI())->myRules();
 
         $PhpCsFixerCustomFixers = [
             Fixer\CommentedOutFunctionFixer::name()                => true,

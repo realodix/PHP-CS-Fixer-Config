@@ -2,7 +2,7 @@
 
 namespace Realodix\PhpCsFixerConfig\RuleSet;
 
-final class StyleciLaravel extends AbstractRuleSet implements RuleSetExplicitInterface
+final class LaravelByStyleCI extends AbstractRuleSet implements RuleSetExplicitInterface
 {
     protected $name = 'Styleci (Laravel)';
 
