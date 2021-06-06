@@ -8,11 +8,9 @@ jobs:
     strategy:
       matrix:
         php-version: ['8.0']
-        stability: [prefer-lowest, prefer-stable]
         include:
           - php-version: '8.1'
             flags: "--ignore-platform-req=php"
-            stability: prefer-stable
 
     name: PHP ${{ matrix.php-version }} - ${{ matrix.stability }}
 
@@ -44,7 +42,7 @@ jobs:
           max_attempts: 5
           command: |
               composer -V
-              composer install --${{ matrix.stability }} --prefer-dist --no-interaction --no-progress ${{ matrix.flags }}
+              composer install --prefer-dist --no-interaction --no-progress ${{ matrix.flags }}
 
       - name: Run friendsofphp/php-cs-fixer
         run: vendor/bin/php-cs-fixer fix --diff --dry-run --verbose
