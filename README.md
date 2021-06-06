@@ -1,5 +1,8 @@
 # php-cs-fixer-config
 
+![PHPVersion](https://img.shields.io/badge/PHP-^7.3|^8-777BB4.svg?style=flat-square)
+[![GitHub license](https://img.shields.io/github/license/realodix/PHP-CS-Fixer-Config)](/LICENSE)
+
 Provides a configuration factory and multiple rule sets for [`friendsofphp/php-cs-fixer`](http://github.com/FriendsOfPHP/PHP-CS-Fixer).
 
 ## Installation
