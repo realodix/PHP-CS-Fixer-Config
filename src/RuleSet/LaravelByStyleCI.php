@@ -2,7 +2,7 @@
 
 namespace Realodix\PhpCsFixerConfig\RuleSet;
 
-final class StyleciLaravel extends AbstractRuleSet implements RuleSetExplicitInterface
+final class LaravelByStyleCI extends AbstractRuleSet implements RuleSetExplicitInterface
 {
     protected $name = 'Styleci (Laravel)';
 
@@ -33,6 +33,7 @@ final class StyleciLaravel extends AbstractRuleSet implements RuleSetExplicitInt
             'psr_autoloading'                       => true, // @Symfony:risky, @PhpCsFixer:risky
             'self_accessor'                         => true, // @Symfony:risky, @PhpCsFixer:risky
             'simplified_null_return'                => true,
+            'visibility_required'                   => ['elements' => ['property', 'method']],
 
             'new_with_braces'                               => false,
             'no_break_comment'                              => false,
@@ -49,29 +50,6 @@ final class StyleciLaravel extends AbstractRuleSet implements RuleSetExplicitInt
             'single_trait_insert_per_statement'             => false,
             'standardize_increment'                         => false,
             'yoda_style'                                    => false,
-
-            // Custom rules
-            'binary_operator_spaces'  => ['operators' => ['=>' => 'align']], // unalign_equals (default)
-            'no_empty_phpdoc'         => false,
-            'phpdoc_summary'          => false,
-            'ternary_operator_spaces' => false,
-            'unary_operator_spaces'   => false,
-            'visibility_required'     => ['elements' => ['property', 'method']],
-
-            // Additional rules
-            'align_multiline_comment'      => ['comment_type' => 'all_multiline'],
-            'fully_qualified_strict_types' => true,
-            'no_useless_else'              => true,
-            'php_unit_method_casing'       => true,
-            'phpdoc_align'                 => [ // align_phpdoc
-                'tags' => [
-                    'param',
-                    // 'return',
-                    'throws', 'type', 'var',
-                ],
-            ],
-            'phpdoc_to_comment'                   => true,
-            'phpdoc_var_annotation_correct_order' => true,
         ];
     }
 }

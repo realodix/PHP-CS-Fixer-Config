@@ -17,7 +17,7 @@ $ composer require --dev realodix/php-cs-fixer-config
 Pick one of the rule sets:
 
 * [`Realodix`](src/RuleSet/Realodix.php)
-* [`StyleciLaravel`](src/RuleSet/StyleciLaravel.php).
+* [`LaravelByStyleCI`](src/RuleSet/LaravelByStyleCI.php) - StyleCI ([Laravel Preset](https://docs.styleci.io/presets#laravel))
 
 Create a configuration file `.php-cs-fixer.php` in the root of your project:
 
@@ -38,19 +38,19 @@ return $config;
 :bulb: Optionally override rules from a rule set by passing in an array of rules to be merged in:
 
 ```diff
- <?php
+<?php
 
- use Realodix\PhpCsFixerConfig\Factory;
- use Realodix\PhpCsFixerConfig\RuleSet;
+use Realodix\PhpCsFixerConfig\Factory;
+use Realodix\PhpCsFixerConfig\RuleSet;
 
--$config = Factory::fromRuleSet(new RuleSet\Realodix());
-+$config = Factory::fromRuleSet(new RuleSet\Realodix(), [
-+    'no_extra_blank_lines' => false,
-+]);
+- $config = Factory::fromRuleSet(new RuleSet\Realodix());
++ $config = Factory::fromRuleSet(new RuleSet\Realodix(), [
++     'no_extra_blank_lines' => false,
++ ]);
 
- $config->getFinder()->in(__DIR__);
+$config->getFinder()->in(__DIR__);
 
- return $config;
+return $config;
 ```
 
 ### Configuration with header
@@ -58,25 +58,25 @@ return $config;
 :bulb: Optionally specify a header:
 
 ```diff
- <?php
+<?php
 
- use Realodix\PhpCsFixerConfig\Factory;
- use Realodix\PhpCsFixerConfig\RuleSet;
+use Realodix\PhpCsFixerConfig\Factory;
+use Realodix\PhpCsFixerConfig\RuleSet;
 
-+$header = <<<EOF
-+Copyright (c) 2021 Realodix
-+
-+For the full copyright and license information, please view
-+the LICENSE file that was distributed with this source code.
-+
-+@see https://github.com/realodix/php-cs-fixer-config
-+EOF;
++ $header = <<<EOF
++ Copyright (c) 2021 Realodix
++ 
++ For the full copyright and license information, please view
++ the LICENSE file that was distributed with this source code.
++ 
++ @see https://github.com/realodix/php-cs-fixer-config
++ EOF;
 
--$config = Factory::fromRuleSet(new RuleSet\Realodix());
-+$config = Factory::fromRuleSet(new RuleSet\Realodix($header));
- $config->getFinder()->in(__DIR__);
+- $config = Factory::fromRuleSet(new RuleSet\Realodix());
++ $config = Factory::fromRuleSet(new RuleSet\Realodix($header));
+$config->getFinder()->in(__DIR__);
 
- return $config;
+return $config;
 ```
 
 This will enable and configure the [`HeaderCommentFixer`](https://github.com/FriendsOfPHP/PHP-CS-Fixer/blob/3.0/src/Fixer/Comment/HeaderCommentFixer.php), so that
