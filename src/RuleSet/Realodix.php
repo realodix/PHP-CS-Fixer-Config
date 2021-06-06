@@ -3,9 +3,8 @@
 namespace Realodix\PhpCsFixerConfig\RuleSet;
 
 use PhpCsFixerCustomFixers\Fixer;
-use Realodix\PhpCsFixerConfig\Interface\ExplicitRuleSetInterface;
 
-final class Realodix extends AbstractRuleSet implements ExplicitRuleSetInterface
+final class Realodix extends AbstractRuleSet implements RuleSetExplicitInterface
 {
     protected $name = 'Realodix PHP Coding Standards';
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Realodix\PhpCsFixerConfig\Interface;
+namespace Realodix\PhpCsFixerConfig\RuleSet;
 
 /**
  * Marker interface for explicit rule sets.
@@ -11,6 +11,6 @@ namespace Realodix\PhpCsFixerConfig\Interface;
  * - configures a rule that can be configured with an explicit configuration when the rule is enabled
  * - configures every rule that is not deprecated
  */
-interface ExplicitRuleSetInterface
+interface RuleSetExplicitInterface
 {
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Realodix\PhpCsFixerConfig\Interface;
+namespace Realodix\PhpCsFixerConfig\RuleSet;
 
 interface RuleSetInterface
 {

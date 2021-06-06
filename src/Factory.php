@@ -4,7 +4,7 @@ namespace Realodix\PhpCsFixerConfig;
 
 use PhpCsFixer\Config;
 use PhpCsFixerCustomFixers\Fixers as CustomFixers;
-use Realodix\PhpCsFixerConfig\Interface\RuleSetInterface;
+use Realodix\PhpCsFixerConfig\RuleSet\RuleSetInterface;
 
 final class Factory
 {
