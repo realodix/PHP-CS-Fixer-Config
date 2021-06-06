@@ -10,9 +10,26 @@ final class Realodix extends AbstractRuleSet implements RuleSetExplicitInterface
 
     public function myRules(): array
     {
-        $rules = (new LaravelByStyleCI())->myRules();
+        $rules = [
+            'align_multiline_comment'      => ['comment_type' => 'all_multiline'],
+            'binary_operator_spaces'       => ['operators' => ['=>' => 'align']], // unalign_equals (default)
+            'fully_qualified_strict_types' => true,
+            'no_empty_phpdoc'              => false,
+            'no_useless_else'              => true,
+            'php_unit_method_casing'       => true,
+            'phpdoc_summary'               => false,
+            'phpdoc_to_comment'            => true,
+            'ternary_operator_spaces'      => false,
+            'unary_operator_spaces'        => false,
 
-        $PhpCsFixerCustomFixers = [
+            'phpdoc_align' => [ // align_phpdoc
+                'tags' => [
+                    'param',
+                    // 'return',
+                    'throws', 'type', 'var',
+                ],
+            ],
+            'phpdoc_var_annotation_correct_order'                  => true,
             Fixer\CommentedOutFunctionFixer::name()                => true,
             Fixer\CommentSurroundedBySpacesFixer::name()           => true,
             Fixer\DataProviderNameFixer::name()                    => ['prefix' => '', 'suffix' => 'Provider'],
@@ -35,9 +52,11 @@ final class Realodix extends AbstractRuleSet implements RuleSetExplicitInterface
             Fixer\PhpUnitNoUselessReturnFixer::name()              => true,
             Fixer\SingleSpaceAfterStatementFixer::name()           => true,
             Fixer\SingleSpaceBeforeStatementFixer::name()          => true,
-            // Fixer\OperatorLinebreakFixer::name() => true,
+            // Fixer\OperatorLinebreakFixer::name()                   => true,
         ];
 
-        return array_merge($rules, $PhpCsFixerCustomFixers);
+        $laravelByStyleCi = (new LaravelByStyleCI())->myRules();
+
+        return array_merge($laravelByStyleCi, $rules);
     }
 }
