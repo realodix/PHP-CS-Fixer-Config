@@ -1,0 +1,48 @@
+{
+    "name": "realodix/php-cs-fixer-config",
+    "description": "Provides a configuration factory and multiple rule sets for friendsofphp/php-cs-fixer.",
+    "license": "MIT",
+    "homepage": "https://github.com/realodix/php-cs-fixer-config",
+    "support": {
+        "source": "https://github.com/realodix/php-cs-fixer-config",
+        "issues": "https://github.com/realodix/php-cs-fixer-config/issues"
+    },
+    "authors": [
+        {
+            "name": "Budi Hermawan",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.3|^8.0",
+        "friendsofphp/php-cs-fixer": "^3.0"
+    },
+    "require-dev": {
+        "kubawerlos/php-cs-fixer-custom-fixers": "^2.5"
+    },
+    "scripts": {
+        "php-cs-fixer": [
+            "php-cs-fixer fix --verbose"
+        ]
+    },
+    "autoload": {
+        "psr-4": {
+            "Realodix\\PhpCsFixerConfig\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Realodix\\PhpCsFixer\\Test\\": "tests"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-main": "1.x-dev"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
