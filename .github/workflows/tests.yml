@@ -4,9 +4,12 @@ on: [push]
 
 jobs:
   build:
-    name: Integrate PHP CS Fixer
-
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php-version: ['7.4','8.0']
+
+    name: PHP ${{ matrix.php-version }} - Integrate PHP CS Fixer
 
     steps:
       - name: Checkout
@@ -15,7 +18,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: 8.0
+          php-version: ${{ matrix.php-version }}
           coverage: xdebug
 
       # https://github.com/marketplace/actions/setup-php-action#cache-composer-dependencies

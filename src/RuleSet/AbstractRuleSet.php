@@ -2,8 +2,6 @@
 
 namespace Realodix\PhpCsFixerConfig\RuleSet;
 
-use Realodix\PhpCsFixerConfig\Interface\RuleSetInterface;
-
 /**
  * @internal
  */
