@@ -23,6 +23,8 @@ Pick one of the rule sets:
 * [`RealodixStrict`](src/RuleSet/RealodixStrict.php)
 * [`Laravel`](src/RuleSet/Laravel.php)
 * [`LaravelRisky`](src/RuleSet/LaravelRisky.php) - Contains risky fixers
+* [`Symfony`](src/RuleSet/Symfony.php) -
+* [`SymfonyRisky`](src/RuleSet/Symfony.php) - Contains risky fixers
 
 
 Create a configuration file `.php-cs-fixer.php` in the root of your project:
