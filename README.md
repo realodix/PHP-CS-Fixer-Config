@@ -26,8 +26,8 @@ Pick one of the rule sets:
 * [`Symfony`](src/RuleSet/Symfony.php)
 * [`SymfonyRisky`](src/RuleSet/SymfonyRisky.php) - Symfony + rules that are risky
 * [`Composer`](src/RuleSet/Composer.php)
-* [`Joomla`](src/RuleSet/Joomla.php)
 * [`PhpStorm`](src/RuleSet/PhpStorm.php)
+* [`Joomla`](src/RuleSet/Joomla.php)
 * [`Typo3`](src/RuleSet/Typo3.php)
 * [`FusionsPim`](src/RuleSet/FusionsPim.php)
 
