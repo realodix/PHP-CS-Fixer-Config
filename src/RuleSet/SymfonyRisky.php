@@ -9,7 +9,7 @@ final class SymfonyRisky extends AbstractRuleSet implements RuleSetExplicitInter
     /**
      * Based on symfony/symfony
      *
-     * See https://github.com/symfony/symfony/blob/5.4/.php-cs-fixer.dist.php.
+     * See https://github.com/symfony/symfony/blob/5.4/.php-cs-fixer.dist.php
      */
     public function myRules(): array
     {
