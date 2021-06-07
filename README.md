@@ -27,7 +27,6 @@ Pick one of the rule sets:
 * [`Symfony`](src/RuleSet/Symfony.php)
 * [`SymfonyRisky`](src/RuleSet/SymfonyRisky.php) - Symfony + rules that are risky
 
-
 Create a configuration file `.php-cs-fixer.php` in the root of your project:
 
 ```php
