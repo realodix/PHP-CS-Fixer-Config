@@ -7,8 +7,9 @@ final class SymfonyRisky extends AbstractRuleSet implements RuleSetExplicitInter
     protected $name = 'Symfony:risky';
 
     /**
-     * Based on
-     * - https://github.com/symfony/symfony/blob/5.4/.php-cs-fixer.dist.php.
+     * Based on symfony/symfony
+     *
+     * See https://github.com/symfony/symfony/blob/5.4/.php-cs-fixer.dist.php.
      */
     public function myRules(): array
     {

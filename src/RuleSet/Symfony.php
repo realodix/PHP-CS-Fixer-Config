@@ -7,8 +7,9 @@ final class Symfony extends AbstractRuleSet implements RuleSetExplicitInterface
     protected $name = 'Symfony';
 
     /**
-     * Based on
-     * - https://github.com/symfony/symfony/blob/5.4/.php-cs-fixer.dist.php.
+     * Based on symfony/symfony
+     *
+     * See https://github.com/symfony/symfony/blob/5.4/.php-cs-fixer.dist.php.
      */
     public function myRules(): array
     {
