@@ -30,11 +30,6 @@
             "Realodix\\PhpCsFixerConfig\\": "src"
         }
     },
-    "autoload-dev": {
-        "psr-4": {
-            "Realodix\\PhpCsFixer\\Test\\": "tests"
-        }
-    },
     "extra": {
         "branch-alias": {
             "dev-main": "3.x-dev"
