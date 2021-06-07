@@ -23,7 +23,7 @@ Pick one of the rule sets:
 * [`RealodixStrict`](src/RuleSet/RealodixStrict.php)
 * [`Laravel`](src/RuleSet/Laravel.php)
 * [`LaravelRisky`](src/RuleSet/LaravelRisky.php) - Contains risky fixers
-
+* [`ThePhpLeague`](src/RuleSet/ThePhpLeague.php)
 
 Create a configuration file `.php-cs-fixer.php` in the root of your project:
 
