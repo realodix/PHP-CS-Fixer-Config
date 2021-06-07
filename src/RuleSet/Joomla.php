@@ -12,10 +12,10 @@ final class Joomla extends AbstractRuleSet implements RuleSetExplicitInterface
      * See https://github.com/joomla/joomla-cms/blob/4.0-dev/.php_cs.dist
      *
      * Diff
-     * - [M] blank_line_before_return - Rename to blank_line_before_statement
-     * - [M] lowercase_constants - Rename to constant_case
-     * - [M] no_extra_consecutive_blank_lines - Rename to no_extra_blank_lines
-     * - [M] trailing_comma_in_multiline_array - Rename to trailing_comma_in_multiline
+     * - [M] blank_line_before_return           Rename to blank_line_before_statement
+     * - [M] lowercase_constants                Rename to constant_case
+     * - [M] no_extra_consecutive_blank_lines   Rename to no_extra_blank_lines
+     * - [M] trailing_comma_in_multiline_array  Rename to trailing_comma_in_multiline
      */
     public function myRules(): array
     {
