@@ -11,7 +11,7 @@ final class PhpStorm extends AbstractRuleSet implements RuleSetExplicitInterface
      *
      * See https://github.com/JetBrains/phpstorm-stubs/blob/master/.php-cs-fixer.php
      *
-     * There are 4 rules found to have been disabled (commented)
+     * There are 4 rules found commented:
      * - phpdoc_align
      * - phpdoc_trim_consecutive_blank_line_separation
      * - phpdoc_types_order
