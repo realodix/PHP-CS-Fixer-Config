@@ -7,41 +7,50 @@ final class ThePhpLeague extends AbstractRuleSet implements RuleSetExplicitInter
     protected $name = 'Realodix Coding Standards';
 
     /**
-     * Based on thephpleague/flysystem, the package with the most stars.
+     * Based on thephpleague/uri
      *
-     * See https://github.com/thephpleague/flysystem/blob/2.x/.php_cs.dist
+     * See https://github.com/thephpleague/uri/blob/master/.php-cs-fixer.php
+     *
+     * Removed
+     * - header_comment
      */
     public function myRules(): array
     {
         $rules = [
-            '@PSR2'                                      => true,
-            'array_syntax'                               => ['syntax' => 'short'],
-            'binary_operator_spaces'                     => true,
-            'single_line_after_imports'                  => true,
-            'blank_line_before_return'                   => true,
-            'cast_spaces'                                => true,
-            'concat_space'                               => ['spacing' => 'one'],
-            'no_singleline_whitespace_before_semicolons' => true,
-            'not_operator_with_space'                    => true,
-            'no_unused_imports'                          => true,
-            'phpdoc_align'                               => false,
-            'phpdoc_indent'                              => true,
-            'phpdoc_no_access'                           => true,
-            'phpdoc_no_alias_tag'                        => true,
-            'phpdoc_no_package'                          => true,
-            'phpdoc_scalar'                              => true,
-            'phpdoc_separation'                          => true,
-            'phpdoc_summary'                             => true,
-            'phpdoc_to_comment'                          => true,
-            'phpdoc_trim'                                => true,
-            'single_blank_line_at_eof'                   => true,
-            'ternary_operator_spaces'                    => true,
-            'ordered_imports'                            => [
-                'sort_algorithm' => 'alpha',
-                'imports_order'  => ['const', 'class', 'function'],
-            ],
-            'no_extra_blank_lines'        => true,
-            'no_whitespace_in_blank_line' => true,
+            '@PSR2'                                 => true,
+            'array_syntax'                          => ['syntax' => 'short'],
+            'concat_space'                          => ['spacing' => 'none'],
+            'new_with_braces'                       => true,
+            'no_blank_lines_after_phpdoc'           => true,
+            'no_empty_phpdoc'                       => true,
+            'no_empty_comment'                      => true,
+            'no_leading_import_slash'               => true,
+            'no_superfluous_phpdoc_tags'            => true,
+            'no_trailing_comma_in_singleline_array' => true,
+            'no_unused_imports'                     => true,
+            'ordered_imports'                       => [
+                    'imports_order' => [
+                        'class', 'function', 'const',
+                    ],
+                    'sort_algorithm' => 'alpha',
+                ],
+            'phpdoc_add_missing_param_annotation'   => ['only_untyped' => false],
+            'phpdoc_align'                          => true,
+            'phpdoc_no_empty_return'                => true,
+            'phpdoc_order'                          => true,
+            'phpdoc_scalar'                         => true,
+            'phpdoc_to_comment'                     => true,
+            'phpdoc_summary'                        => true,
+            'psr_autoloading'                       => true,
+            'return_type_declaration'               => ['space_before' => 'none'],
+            'single_blank_line_before_namespace'    => true,
+            'single_quote'                          => true,
+            'space_after_semicolon'                 => true,
+            'ternary_operator_spaces'               => true,
+            'trailing_comma_in_multiline'           => true,
+            'trim_array_spaces'                     => true,
+            'whitespace_after_comma_in_array'       => true,
+            'yoda_style'                            => true,
         ];
 
         return $rules;
