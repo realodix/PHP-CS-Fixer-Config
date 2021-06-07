@@ -11,15 +11,17 @@ final class ThePhpLeague extends AbstractRuleSet implements RuleSetExplicitInter
      *
      * See https://github.com/thephpleague/uri/blob/master/.php-cs-fixer.php
      *
-     * Removed
-     * - header_comment
+     * Diff
+     * - [R] header_comment - Must be set manually
+     * - [R] array_syntax - Same as the default value
+     * - [R] concat_space - Same as the default value
+     * - [R] phpdoc_add_missing_param_annotation - Same as the default value
+     * - [R] return_type_declaration - Same as the default value
      */
     public function myRules(): array
     {
         $rules = [
             '@PSR2'                                 => true,
-            'array_syntax'                          => ['syntax' => 'short'],
-            'concat_space'                          => ['spacing' => 'none'],
             'new_with_braces'                       => true,
             'no_blank_lines_after_phpdoc'           => true,
             'no_empty_phpdoc'                       => true,
@@ -34,7 +36,6 @@ final class ThePhpLeague extends AbstractRuleSet implements RuleSetExplicitInter
                     ],
                     'sort_algorithm' => 'alpha',
                 ],
-            'phpdoc_add_missing_param_annotation'   => ['only_untyped' => false],
             'phpdoc_align'                          => true,
             'phpdoc_no_empty_return'                => true,
             'phpdoc_order'                          => true,
@@ -42,7 +43,6 @@ final class ThePhpLeague extends AbstractRuleSet implements RuleSetExplicitInter
             'phpdoc_to_comment'                     => true,
             'phpdoc_summary'                        => true,
             'psr_autoloading'                       => true,
-            'return_type_declaration'               => ['space_before' => 'none'],
             'single_blank_line_before_namespace'    => true,
             'single_quote'                          => true,
             'space_after_semicolon'                 => true,
