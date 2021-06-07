@@ -18,6 +18,7 @@ final class JetBrains extends AbstractRuleSet implements RuleSetExplicitInterfac
      * - single_quote
      *
      * Diff
+     * - [D] PhpStorm/braces_one_line
      * - [D] array_syntax - Same as the default value
      * - [D] function_declaration - Same as the default value
      * - [D] general_phpdoc_tag_rename - Same as the default value
