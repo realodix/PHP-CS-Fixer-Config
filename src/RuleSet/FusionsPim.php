@@ -13,7 +13,7 @@ final class FusionsPim extends AbstractRuleSet implements RuleSetExplicitInterfa
      *
      * See https://github.com/fusionspim/php-cs-fixer-config/blob/master/src/Factory.php
      *
-     * There are 1 rules found commented:
+     * There are one rules found commented:
      * - NoUselessParenthesisFixer::name()
      */
     public function myRules(): array
@@ -35,9 +35,9 @@ final class FusionsPim extends AbstractRuleSet implements RuleSetExplicitInterfa
             Fixer\NoUselessCommentFixer::name()                     => true,
             Fixer\NoUselessDoctrineRepositoryCommentFixer::name()   => true,
             Fixer\NoUselessStrlenFixer::name()                      => true,
-            Fixer\PhpUnitNoUselessReturnFixer::name()               => true,
             Fixer\PhpdocNoIncorrectVarAnnotationFixer::name()       => true,
             Fixer\PhpdocSingleLineVarFixer::name()                  => true,
+            Fixer\PhpUnitNoUselessReturnFixer::name()               => true,
             Fixer\SingleSpaceAfterStatementFixer::name()            => true,
             Fixer\SingleSpaceBeforeStatementFixer::name()           => true,
         ];
