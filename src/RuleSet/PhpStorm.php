@@ -27,7 +27,6 @@ final class PhpStorm extends AbstractRuleSet implements RuleSetExplicitInterface
     public function myRules(): array
     {
         $rules = [
-            // 'PhpStorm/braces_one_line'        => true,
             'binary_operator_spaces'          => ['operators' => ['|' => 'no_space']],
             'blank_line_after_namespace'      => true,
             'blank_line_after_opening_tag'    => false,
