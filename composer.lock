@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2477f1bb9811bcefd23798ffd33857fe",
+    "content-hash": "142c252f920d0ccc594334857ec412bd",
     "packages": [
         {
             "name": "composer/semver",
@@ -485,6 +485,48 @@
                 }
             ],
             "time": "2021-05-03T21:51:58+00:00"
+        },
+        {
+            "name": "fusionspim/php-cs-fixer-config",
+            "version": "8.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fusionspim/php-cs-fixer-config.git",
+                "reference": "8510333ea99c41481c060a8404dc179d447a6ae7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fusionspim/php-cs-fixer-config/zipball/8510333ea99c41481c060a8404dc179d447a6ae7",
+                "reference": "8510333ea99c41481c060a8404dc179d447a6ae7",
+                "shasum": ""
+            },
+            "require": {
+                "kubawerlos/php-cs-fixer-custom-fixers": "^2.5",
+                "php": ">=7.4"
+            },
+            "require-dev": {
+                "ergebnis/composer-normalize": "^2.13"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "FusionsPim\\PhpCsFixer\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Default configuration for friendsofphp/php-cs-fixer, as used by the Fusions PIM dev team",
+            "keywords": [
+                "configuration",
+                "php-cs-fixer"
+            ],
+            "support": {
+                "issues": "https://github.com/fusionspim/php-cs-fixer-config/issues",
+                "source": "https://github.com/fusionspim/php-cs-fixer-config/tree/8.0"
+            },
+            "time": "2021-05-17T13:30:36+00:00"
         },
         {
             "name": "illuminate/collections",
