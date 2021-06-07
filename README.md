@@ -24,7 +24,7 @@ Pick one of the rule sets:
 * [`Laravel`](src/RuleSet/Laravel.php)
 * [`LaravelRisky`](src/RuleSet/LaravelRisky.php) - Contains risky fixers
 * [`Symfony`](src/RuleSet/Symfony.php)
-* [`SymfonyRisky`](src/RuleSet/Symfony.php) - Contains risky fixers
+* [`SymfonyRisky`](src/RuleSet/SymfonyRisky.php) - Contains risky fixers
 
 
 Create a configuration file `.php-cs-fixer.php` in the root of your project:
