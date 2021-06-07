@@ -21,11 +21,11 @@ Pick one of the rule sets:
 
 * [`Realodix`](src/RuleSet/Realodix.php)
 * [`RealodixStrict`](src/RuleSet/RealodixStrict.php) - Realodix + some additional rules
+* [`Composer`](src/RuleSet/Composer.php)
 * [`Laravel`](src/RuleSet/Laravel.php)
 * [`LaravelRisky`](src/RuleSet/LaravelRisky.php) - Laravel + rules that are risky
 * [`Symfony`](src/RuleSet/Symfony.php)
 * [`SymfonyRisky`](src/RuleSet/SymfonyRisky.php) - Symfony + rules that are risky
-
 
 Create a configuration file `.php-cs-fixer.php` in the root of your project:
 
