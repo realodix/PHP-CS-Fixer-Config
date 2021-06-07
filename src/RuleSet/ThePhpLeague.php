@@ -12,9 +12,10 @@ final class ThePhpLeague extends AbstractRuleSet implements RuleSetExplicitInter
      * See https://github.com/thephpleague/uri/blob/master/.php-cs-fixer.php
      *
      * Diff
-     * - [R] header_comment - Must be set manually
      * - [R] array_syntax - Same as the default value
      * - [R] concat_space - Same as the default value
+     * - [R] header_comment - Must be set manually
+     * - [R] ordered_imports.sort_algorithm - Same as the default value
      * - [R] phpdoc_add_missing_param_annotation - Same as the default value
      * - [R] return_type_declaration - Same as the default value
      */
@@ -31,11 +32,10 @@ final class ThePhpLeague extends AbstractRuleSet implements RuleSetExplicitInter
             'no_trailing_comma_in_singleline_array' => true,
             'no_unused_imports'                     => true,
             'ordered_imports'                       => [
-                    'imports_order' => [
-                        'class', 'function', 'const',
-                    ],
-                    'sort_algorithm' => 'alpha',
+                'imports_order' => [
+                    'class', 'function', 'const',
                 ],
+            ],
             'phpdoc_align'                          => true,
             'phpdoc_no_empty_return'                => true,
             'phpdoc_order'                          => true,
