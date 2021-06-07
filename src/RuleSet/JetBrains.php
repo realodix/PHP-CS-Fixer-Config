@@ -102,7 +102,7 @@ final class JetBrains extends AbstractRuleSet implements RuleSetExplicitInterfac
             'return_type_declaration'         => true,
             'short_scalar_cast'               => true,
             'ternary_operator_spaces'         => true,
-            'PhpStorm/braces_one_line'        => true,
+            // 'PhpStorm/braces_one_line'        => true,
             'no_trailing_whitespace'          => true,
             'no_whitespace_in_blank_line'     => true,
             'single_blank_line_at_eof'        => true,
