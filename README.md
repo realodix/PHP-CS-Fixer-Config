@@ -20,7 +20,7 @@ $ composer require --dev realodix/php-cs-fixer-config
 Pick one of the rule sets:
 
 * [`Realodix`](src/RuleSet/Realodix.php)
-* [`RealodixStrict`](src/RuleSet/RealodixStrict.php)
+* [`RealodixStrict`](src/RuleSet/RealodixStrict.php) - Realodix + some additional rules
 * [`Laravel`](src/RuleSet/Laravel.php)
 * [`LaravelRisky`](src/RuleSet/LaravelRisky.php) - Laravel + rules that are risky
 * [`Symfony`](src/RuleSet/Symfony.php)
