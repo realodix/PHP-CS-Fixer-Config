@@ -17,7 +17,7 @@ $ composer require --dev realodix/php-cs-fixer-config
 Pick one of the rule sets:
 
 * [`Realodix`](src/RuleSet/Realodix.php)
-* [`RealodixStrict`](src/RuleSet/RealodixStrict.php)
+* [`RealodixStrict`](src/RuleSet/RealodixStrict.php) - Realodix rules plus some custom rules.
 * [`LaravelByStyleCI`](src/RuleSet/LaravelByStyleCI.php) - StyleCI ([Laravel Preset](https://docs.styleci.io/presets#laravel)).
 
 Create a configuration file `.php-cs-fixer.php` in the root of your project:
