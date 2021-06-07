@@ -15,9 +15,9 @@ final class LaravelRisky extends AbstractRuleSet implements RuleSetExplicitInter
      */
     public function myRules(): array
     {
-        $laravel = Config::RULE_DEFINITIONS['@Laravel'];
+        $basicRules = Config::RULE_DEFINITIONS['@Laravel'];
         $laravelRisky = Config::RULE_DEFINITIONS['@Laravel:risky'];
 
-        return array_merge($laravel, $laravelRisky);
+        return array_merge($basicRules, $laravelRisky);
     }
 }

@@ -8,6 +8,8 @@ final class Realodix extends AbstractRuleSet implements RuleSetExplicitInterface
 
     public function myRules(): array
     {
+        $basicRules = (new Laravel())->myRules();
+
         $rules = [
             'align_multiline_comment'      => true,
             'binary_operator_spaces'       => ['operators' => ['=>' => 'align']], // unalign_equals (default)
@@ -30,8 +32,6 @@ final class Realodix extends AbstractRuleSet implements RuleSetExplicitInterface
             'unary_operator_spaces'               => false,
         ];
 
-        $laravelByStyleCi = (new LaravelByStyleCI())->myRules();
-
-        return array_merge($laravelByStyleCi, $rules);
+        return array_merge($basicRules, $rules);
     }
 }
