@@ -52,7 +52,6 @@ final class Typo3 extends AbstractRuleSet implements RuleSetExplicitInterface
             'phpdoc_scalar'                     => true,
             'phpdoc_trim'                       => true,
             'phpdoc_types'                      => true,
-
             'return_type_declaration'           => ['space_before' => 'none'],
             'single_quote'                      => true,
             'single_line_comment_style'         => ['comment_types' => ['hash']],
