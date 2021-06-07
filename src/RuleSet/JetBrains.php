@@ -18,12 +18,14 @@ final class JetBrains extends AbstractRuleSet implements RuleSetExplicitInterfac
      * - single_quote
      *
      * Diff
-     * -
+     * - [D] array_syntax - Same as the default value
+     * - [D] function_declaration - Same as the default value
+     * - [D] general_phpdoc_tag_rename - Same as the default value
+     * - [D] visibility_required - Same as the default value
      */
     public function myRules(): array
     {
         $rules = [
-            'array_syntax'                    => ['syntax' => 'short'],
             'binary_operator_spaces'          => ['operators' => ['|' => 'no_space']],
             'cast_spaces'                     => ['space' => 'none'],
             'class_definition'                => ['single_line' => true],
@@ -32,7 +34,6 @@ final class JetBrains extends AbstractRuleSet implements RuleSetExplicitInterfac
             'echo_tag_syntax'                 => true,
             'fully_qualified_strict_types'    => true,
             'function_typehint_space'         => true,
-            'general_phpdoc_tag_rename'       => ['replacements' => ['inheritDocs' => 'inheritDoc']],
             'include'                         => true,
             'lambda_not_used_import'          => true,
             'linebreak_after_opening_tag'     => true,
@@ -70,13 +71,11 @@ final class JetBrains extends AbstractRuleSet implements RuleSetExplicitInterfac
             'switch_continue_to_break'        => true,
             'trim_array_spaces'               => true,
             'unary_operator_spaces'           => true,
-            'visibility_required'             => ['elements' => ['const', 'method', 'property']],
             'whitespace_after_comma_in_array' => true,
             'encoding'                        => true,
             'full_opening_tag'                => true,
             'blank_line_after_namespace'      => true,
             'elseif'                          => true,
-            'function_declaration'            => ['closure_function_spacing' => 'one'],
             'indentation_type'                => true,
             'line_ending'                     => true,
             'lowercase_keywords'              => true,
