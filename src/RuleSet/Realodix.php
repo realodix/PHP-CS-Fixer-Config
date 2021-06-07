@@ -14,8 +14,7 @@ final class Realodix extends AbstractRuleSet implements RuleSetExplicitInterface
             'fully_qualified_strict_types' => true,
             'no_empty_phpdoc'              => false,
             'no_useless_else'              => true,
-            'phpdoc_summary'               => false,
-            'phpdoc_to_comment'            => true,
+            'no_useless_return'            => true,
             'phpdoc_align'                 => [ // align_phpdoc
                 'tags' => [
                     'param',
@@ -23,6 +22,8 @@ final class Realodix extends AbstractRuleSet implements RuleSetExplicitInterface
                     'throws', 'type', 'var',
                 ],
             ],
+            'phpdoc_summary'                      => false,
+            'phpdoc_to_comment'                   => true,
             'phpdoc_var_annotation_correct_order' => true,
         ];
 
