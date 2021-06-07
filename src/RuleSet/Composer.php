@@ -12,6 +12,7 @@ final class Composer extends AbstractRuleSet implements RuleSetExplicitInterface
      * See https://github.com/composer/composer/blob/master/.php_cs
      *
      * Diff
+     * - [D] cast_spaces - Same as the default value
      * - [D] header_comment - Must be set manually
      * - [M] class_attributes_separation - New option syntax
      * - [M] no_extra_consecutive_blank_lines - Rename to no_extra_blank_lines
@@ -25,7 +26,6 @@ final class Composer extends AbstractRuleSet implements RuleSetExplicitInterface
             'array_syntax'                          => ['syntax' => 'long'],
             'binary_operator_spaces'                => true,
             'blank_line_before_statement'           => ['statements' => ['declare', 'return']],
-            'cast_spaces'                           => ['space' => 'single'],
             'include'                               => true,
             'class_attributes_separation'           => ['elements' => ['method' => 'one']],
             'no_blank_lines_after_class_opening'    => true,
