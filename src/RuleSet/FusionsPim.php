@@ -1,5 +1,4 @@
 <?php
-
 namespace Realodix\PhpCsFixerConfig\RuleSet;
 
 use FusionsPim\PhpCsFixer\Factory;
@@ -19,7 +18,7 @@ final class FusionsPim extends AbstractRuleSet implements RuleSetExplicitInterfa
      */
     public function myRules(): array
     {
-        $rules = Factory::DEFAULT_RULES();
+        $rules = Factory::DEFAULT_RULES;
         // The extraRules() method cannot be imported because it is a private method
         $extraRules = [
             Fixer\CommentedOutFunctionFixer::name()                 => ['print_r', 'var_dump', 'var_export'],
