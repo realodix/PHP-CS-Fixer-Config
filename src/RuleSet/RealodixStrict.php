@@ -10,6 +10,8 @@ final class RealodixStrict extends AbstractRuleSet implements RuleSetExplicitInt
 
     public function myRules(): array
     {
+        $basicRules = (new Realodix())->myRules();
+
         $rules = [
             'align_multiline_comment'                              => ['comment_type' => 'all_multiline'],
             Fixer\CommentedOutFunctionFixer::name()                => true,
@@ -37,8 +39,6 @@ final class RealodixStrict extends AbstractRuleSet implements RuleSetExplicitInt
             // Fixer\OperatorLinebreakFixer::name()                   => true,
         ];
 
-        $realodix = (new Realodix())->myRules();
-
-        return array_merge($realodix, $rules);
+        return array_merge($basicRules, $rules);
     }
 }
