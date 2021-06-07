@@ -12,10 +12,10 @@ final class Spatie extends AbstractRuleSet implements RuleSetExplicitInterface
      * See https://github.com/spatie/laravel-permission/blob/master/.php_cs.dist.php
      *
      * Diff
-     * - [R] array_syntax - same as the default value
-     * - [R] ordered_imports - same as the default value
-     * - [R] blank_line_before_statement - same as the default value
-     * - [R] method_argument_space.on_multiline - same as the default value
+     * - [D] array_syntax - same as the default value
+     * - [D] ordered_imports - same as the default value
+     * - [D] blank_line_before_statement - same as the default value
+     * - [D] method_argument_space.on_multiline - same as the default value
      */
     public function myRules(): array
     {
