@@ -21,7 +21,9 @@ Pick one of the rule sets:
 
 * [`Realodix`](src/RuleSet/Realodix.php)
 * [`RealodixStrict`](src/RuleSet/RealodixStrict.php)
-* [`LaravelByStyleCI`](src/RuleSet/LaravelByStyleCI.php) - StyleCI ([Laravel Preset](https://docs.styleci.io/presets#laravel)).
+* [`Laravel`](src/RuleSet/Laravel.php)
+* [`LaravelRisky`](src/RuleSet/LaravelRisky.php) - Contains risky fixers
+
 
 Create a configuration file `.php-cs-fixer.php` in the root of your project:
 
