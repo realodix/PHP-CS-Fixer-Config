@@ -2,9 +2,9 @@
 
 namespace Realodix\PhpCsFixerConfig\RuleSet;
 
-final class JetBrains extends AbstractRuleSet implements RuleSetExplicitInterface
+final class PhpStorm extends AbstractRuleSet implements RuleSetExplicitInterface
 {
-    protected $name = 'JetBrains';
+    protected $name = 'PhpStorm';
 
     /**
      * Based on JetBrains/phpstorm-stubs

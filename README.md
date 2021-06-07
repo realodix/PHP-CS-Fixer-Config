@@ -22,10 +22,10 @@ Pick one of the rule sets:
 * [`Realodix`](src/RuleSet/Realodix.php)
 * [`RealodixStrict`](src/RuleSet/RealodixStrict.php) - Realodix + some additional rules
 * [`Composer`](src/RuleSet/Composer.php)
-* [`JetBrains`](src/RuleSet/JetBrains.php)
 * [`Joomla`](src/RuleSet/Joomla.php)
 * [`Laravel`](src/RuleSet/Laravel.php)
 * [`LaravelRisky`](src/RuleSet/LaravelRisky.php) - Laravel + rules that are risky
+* [`PhpStorm`](src/RuleSet/PhpStorm.php)
 * [`Symfony`](src/RuleSet/Symfony.php)
 * [`SymfonyRisky`](src/RuleSet/SymfonyRisky.php) - Symfony + rules that are risky
 * [`Typo3`](src/RuleSet/Typo3.php)
