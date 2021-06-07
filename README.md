@@ -1,5 +1,8 @@
 # php-cs-fixer-config
 
+![PHPVersion](https://img.shields.io/badge/PHP-^7.3|^8-777BB4.svg?style=flat-square)
+[![GitHub license](https://img.shields.io/github/license/realodix/PHP-CS-Fixer-Config.svg?style=flat-square)](/LICENSE)
+
 Provides a configuration factory and multiple rule sets for [`friendsofphp/php-cs-fixer`](http://github.com/FriendsOfPHP/PHP-CS-Fixer).
 
 ## Installation
@@ -17,9 +20,11 @@ $ composer require --dev realodix/php-cs-fixer-config
 Pick one of the rule sets:
 
 * [`Realodix`](src/RuleSet/Realodix.php)
+* [`RealodixStrict`](src/RuleSet/RealodixStrict.php)
 * [`Laravel`](src/RuleSet/Laravel.php)
 * [`LaravelRisky`](src/RuleSet/LaravelRisky.php) - Contains risky fixers
 * [`LaravelByStyleCI`](src/RuleSet/LaravelByStyleCI.php) - StyleCI ([Laravel Preset](https://docs.styleci.io/presets#laravel))
+
 
 Create a configuration file `.php-cs-fixer.php` in the root of your project:
 
