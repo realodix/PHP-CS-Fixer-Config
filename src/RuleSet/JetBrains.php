@@ -10,14 +10,19 @@ final class JetBrains extends AbstractRuleSet implements RuleSetExplicitInterfac
      * Based on JetBrains/phpstorm-stubs
      *
      * See https://github.com/JetBrains/phpstorm-stubs/blob/master/.php-cs-fixer.php
+     *
+     * There are 4 rules found to have been disabled (commented)
+     * - phpdoc_align
+     * - phpdoc_trim_consecutive_blank_line_separation
+     * - phpdoc_types_order
+     * - single_quote
+     *
+     * Diff
+     * -
      */
     public function myRules(): array
     {
         $rules = [
-            //'phpdoc_align' => ['align' => 'left'],
-            //'phpdoc_trim_consecutive_blank_line_separation' => true,
-            //'phpdoc_types_order' => ['null_adjustment' => 'always_last', 'sort_algorithm' => 'none'],
-            //'single_quote' => true,
             'array_syntax'                    => ['syntax' => 'short'],
             'binary_operator_spaces'          => ['operators' => ['|' => 'no_space']],
             'cast_spaces'                     => ['space' => 'none'],
