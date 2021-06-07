@@ -12,11 +12,10 @@ final class Joomla extends AbstractRuleSet implements RuleSetExplicitInterface
      * See https://github.com/joomla/joomla-cms/blob/4.0-dev/.php_cs.dist
      *
      * Diff
-     * - [D] cast_spaces - Same as the default value
-     * - [M] class_attributes_separation - New option syntax
-     *
+     * - [M] blank_line_before_return - Rename to blank_line_before_statement
      * - [M] lowercase_constants - Rename to constant_case
      * - [M] no_extra_consecutive_blank_lines - Rename to no_extra_blank_lines
+     * - [M] trailing_comma_in_multiline_array - Rename to trailing_comma_in_multiline
      */
     public function myRules(): array
     {
@@ -38,7 +37,7 @@ final class Joomla extends AbstractRuleSet implements RuleSetExplicitInterface
             'no_trailing_whitespace'        => true,
             'visibility_required'           => true,
             // symfony
-            'blank_line_before_return'              => true,
+            'blank_line_before_statement'           => ['statements' => ['return']],
             'cast_spaces'                           => true,
             'function_typehint_space'               => true,
             'include'                               => true,
@@ -55,7 +54,7 @@ final class Joomla extends AbstractRuleSet implements RuleSetExplicitInterface
             'phpdoc_trim'                           => true,
             'simplified_null_return'                => true,
             'single_blank_line_before_namespace'    => true,
-            'trailing_comma_in_multiline_array'     => true,
+            'trailing_comma_in_multiline'           => true,
             'whitespace_after_comma_in_array'       => true,
             // contrib
             'concat_space' => ['spacing' => 'one'],
