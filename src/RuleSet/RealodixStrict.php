@@ -12,7 +12,6 @@ final class RealodixStrict extends AbstractRuleSet implements RuleSetExplicitInt
     {
         $rules = [
             'align_multiline_comment'                              => ['comment_type' => 'all_multiline'],
-            'php_unit_method_casing'                               => true,
             'ternary_operator_spaces'                              => false,
             'unary_operator_spaces'                                => false,
             Fixer\CommentedOutFunctionFixer::name()                => true,

@@ -9,7 +9,7 @@ final class Realodix extends AbstractRuleSet implements RuleSetExplicitInterface
     public function myRules(): array
     {
         $rules = [
-
+            'align_multiline_comment'      => true,
             'binary_operator_spaces'       => ['operators' => ['=>' => 'align']], // unalign_equals (default)
             'fully_qualified_strict_types' => true,
             'no_empty_phpdoc'              => false,
@@ -23,8 +23,11 @@ final class Realodix extends AbstractRuleSet implements RuleSetExplicitInterface
                 ],
             ],
             'phpdoc_summary'                      => false,
+            'php_unit_method_casing'              => true,
             'phpdoc_to_comment'                   => true,
             'phpdoc_var_annotation_correct_order' => true,
+            'ternary_operator_spaces'             => false,
+            'unary_operator_spaces'               => false,
         ];
 
         $laravelByStyleCi = (new LaravelByStyleCI())->myRules();
