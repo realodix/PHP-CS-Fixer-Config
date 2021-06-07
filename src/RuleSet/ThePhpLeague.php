@@ -12,12 +12,12 @@ final class ThePhpLeague extends AbstractRuleSet implements RuleSetExplicitInter
      * See https://github.com/thephpleague/uri/blob/master/.php-cs-fixer.php
      *
      * Diff
-     * - [R] array_syntax - Same as the default value
-     * - [R] concat_space - Same as the default value
-     * - [R] header_comment - Must be set manually
-     * - [R] ordered_imports.sort_algorithm - Same as the default value
-     * - [R] phpdoc_add_missing_param_annotation - Same as the default value
-     * - [R] return_type_declaration - Same as the default value
+     * - [D] array_syntax - Same as the default value
+     * - [D] concat_space - Same as the default value
+     * - [D] header_comment - Must be set manually
+     * - [D] ordered_imports.sort_algorithm - Same as the default value
+     * - [D] phpdoc_add_missing_param_annotation - Same as the default value
+     * - [D] return_type_declaration - Same as the default value
      */
     public function myRules(): array
     {
