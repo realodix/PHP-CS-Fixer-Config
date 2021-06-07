@@ -14,7 +14,8 @@ final class Joomla extends AbstractRuleSet implements RuleSetExplicitInterface
      * Diff
      * - [D] cast_spaces - Same as the default value
      * - [M] class_attributes_separation - New option syntax
-     * - [M] no_extra_consecutive_blank_lines - Rename to no_extra_blank_lines
+     *
+     * - [M] lowercase_constants - Rename to constant_case
      */
     public function myRules(): array
     {
@@ -22,13 +23,13 @@ final class Joomla extends AbstractRuleSet implements RuleSetExplicitInterface
             // psr-1
             'encoding' => true,
             // psr-2
-            'elseif'                        => true,
-            'single_blank_line_at_eof'      => true,
-            'no_spaces_after_function_name' => true,
             'blank_line_after_namespace'    => true,
+            'constant_case'                 => true,
+            'elseif'                        => true,
             'line_ending'                   => true,
-            'lowercase_constants'           => true,
             'lowercase_keywords'            => true,
+            'no_spaces_after_function_name' => true,
+            'single_blank_line_at_eof'      => true,
             'method_argument_space'         => true,
             'single_import_per_statement'   => true,
             'no_spaces_inside_parenthesis'  => true,
