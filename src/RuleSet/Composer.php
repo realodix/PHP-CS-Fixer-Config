@@ -12,7 +12,7 @@ final class Composer extends AbstractRuleSet implements RuleSetExplicitInterface
      * See https://github.com/composer/composer/blob/master/.php_cs
      *
      * Diff
-     * - [R] header_comment - Must be set manually
+     * - [D] header_comment - Must be set manually
      * - [M] no_extra_consecutive_blank_lines - Rename to no_extra_blank_lines
      * - [M] psr0 - Rename to psr_autoloading
      * - [M] trailing_comma_in_multiline_array - Rename to trailing_comma_in_multiline
