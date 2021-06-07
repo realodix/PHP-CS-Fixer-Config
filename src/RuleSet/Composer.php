@@ -13,6 +13,7 @@ final class Composer extends AbstractRuleSet implements RuleSetExplicitInterface
      *
      * Diff
      * - [D] header_comment - Must be set manually
+     * - [M] class_attributes_separation - New option syntax
      * - [M] no_extra_consecutive_blank_lines - Rename to no_extra_blank_lines
      * - [M] psr0 - Rename to psr_autoloading
      * - [M] trailing_comma_in_multiline_array - Rename to trailing_comma_in_multiline
@@ -26,11 +27,11 @@ final class Composer extends AbstractRuleSet implements RuleSetExplicitInterface
             'blank_line_before_statement'           => ['statements' => ['declare', 'return']],
             'cast_spaces'                           => ['space' => 'single'],
             'include'                               => true,
-            'class_attributes_separation'           => ['elements' => ['method']],
+            'class_attributes_separation'           => ['elements' => ['method' => 'one']],
             'no_blank_lines_after_class_opening'    => true,
             'no_blank_lines_after_phpdoc'           => true,
             'no_empty_statement'                    => true,
-            'no_extra_blank_lines'      => true,
+            'no_extra_blank_lines'                  => true,
             'no_leading_import_slash'               => true,
             'no_leading_namespace_whitespace'       => true,
             'no_trailing_comma_in_singleline_array' => true,
@@ -45,11 +46,11 @@ final class Composer extends AbstractRuleSet implements RuleSetExplicitInterface
             'phpdoc_scalar'                         => true,
             'phpdoc_trim'                           => true,
             'phpdoc_types'                          => true,
-            'psr_autoloading'                                  => true,
+            'psr_autoloading'                       => true,
             'single_blank_line_before_namespace'    => true,
             'standardize_not_equals'                => true,
             'ternary_operator_spaces'               => true,
-            'trailing_comma_in_multiline'     => true,
+            'trailing_comma_in_multiline'           => true,
             'unary_operator_spaces'                 => true,
         ];
 
