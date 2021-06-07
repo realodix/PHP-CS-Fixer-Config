@@ -19,7 +19,7 @@ final class PhpStorm extends AbstractRuleSet implements RuleSetExplicitInterface
      *
      * Diff
      * - [D] PhpStorm/braces_one_line   Currently cannot be implemented, hope it can be
-     *                                  implemented in the future.
+     *                                  implemented in the future
      * - [D] array_syntax               Same as the default value
      * - [D] function_declaration       Same as the default value
      * - [D] general_phpdoc_tag_rename  Same as the default value
