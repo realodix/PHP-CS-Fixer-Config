@@ -27,6 +27,7 @@ Pick one of the rule sets:
 * [`SymfonyRisky`](src/RuleSet/SymfonyRisky.php) - Symfony + rules that are risky
 * [`CodeIgniter`](src/RuleSet/CodeIgniter.php)
 * [`Composer`](src/RuleSet/Composer.php)
+* [`Drupal`](src/RuleSet/Drupal.php)
 * [`Joomla`](src/RuleSet/Joomla.php)
 * [`PhpStorm`](src/RuleSet/PhpStorm.php)
 * [`PHPUnit`](src/RuleSet/PHPUnit.php)
