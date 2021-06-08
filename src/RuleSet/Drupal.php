@@ -15,10 +15,10 @@ final class Drupal extends AbstractRuleSet implements RuleSetExplicitInterface
     public function myRules(): array
     {
         $rules = [
-            // 'Drupal/blank_line_before_end_of_class' => true,
-            // 'Drupal/control_structure_braces_else'  => true,
-            // 'Drupal/inline_comment_spacer'          => true,
-            // 'Drupal/try_catch_block'                => true,
+            'Drupal/blank_line_before_end_of_class' => true,
+            'Drupal/control_structure_braces_else'  => true,
+            'Drupal/inline_comment_spacer'          => true,
+            'Drupal/try_catch_block'                => true,
 
             '@PSR2'                                 => false,
             'array_syntax'                          => true,
