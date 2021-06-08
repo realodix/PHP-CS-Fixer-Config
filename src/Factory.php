@@ -2,6 +2,7 @@
 
 namespace Realodix\PhpCsFixerConfig;
 
+use drupol\PhpCsFixerConfigsDrupal\Fixer as Drupol;
 use PhpCsFixer\Config;
 use PhpCsFixerCustomFixers\Fixers as CustomFixers;
 use Realodix\PhpCsFixerConfig\RuleSet\RuleSetInterface;
@@ -32,7 +33,14 @@ final class Factory
                 $ruleSet->rules(),
                 $overrideRules
             ))
-            ->registerCustomFixers(new CustomFixers());
+            ->registerCustomFixers(
+                new CustomFixers(),
+                // Drupal
+                new Drupol\BlankLineBeforeEndOfClass($config->getIndent(), $config->getLineEnding()),
+                new Drupol\ControlStructureCurlyBracketsElseFixer($config->getIndent(), $config->getLineEnding()),
+                new Drupol\InlineCommentSpacerFixer(),
+                new Drupol\TryCatchBlock($config->getIndent(), $config->getLineEnding()),
+            );
 
         return $config;
     }
