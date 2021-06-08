@@ -29,6 +29,7 @@ Pick one of the rule sets:
 * [`Symfony`](src/RuleSet/Symfony.php)
 * [`SymfonyRisky`](src/RuleSet/SymfonyRisky.php) - Symfony + rules that are risky
 * [`Typo3`](src/RuleSet/Typo3.php)
+* [`Yii`](src/RuleSet/Yii.php)
 
 Create a configuration file `.php-cs-fixer.php` in the root of your project:
 
