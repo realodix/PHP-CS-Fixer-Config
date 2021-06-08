@@ -8,8 +8,8 @@ final class Yii extends AbstractRuleSet implements RuleSetExplicitInterface
 
     /**
      * Based on yiisoft/yii2
-     *
-     * See https://github.com/yiisoft/yii2/blob/master/cs/src/YiiConfig.php
+     * - https://github.com/yiisoft/yii2/blob/master/cs/src/YiiConfig.php
+     * - https://github.com/yiisoft/yii2/blob/master/docs/internals/core-code-style.md
      *
      * There are 9 rules found commented:
      * - mb_str_functions
