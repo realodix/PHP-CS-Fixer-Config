@@ -28,7 +28,6 @@ Pick one of the rule sets:
 * [`PhpStorm`](src/RuleSet/PhpStorm.php)
 * [`Symfony`](src/RuleSet/Symfony.php)
 * [`SymfonyRisky`](src/RuleSet/SymfonyRisky.php) - Symfony + rules that are risky
-* [`Typo3`](src/RuleSet/Typo3.php)
 
 Create a configuration file `.php-cs-fixer.php` in the root of your project:
 
