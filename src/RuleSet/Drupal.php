@@ -13,9 +13,9 @@ final class Drupal extends AbstractRuleSet implements RuleSetExplicitInterface
      * - https://github.com/drupol/phpcsfixer-configs-drupal/blob/master/config/drupal8/phpcsfixer.rules.yml
      *
      * Diff
-     * - [D] yoda_style.always_move_variable
      * - [D] brace.position_after_anonymous_constructs
      * - [D] no_superfluous_phpdoc_tags.remove_inheritdoc
+     * - [D] yoda_style.always_move_variable
      */
     public function myRules(): array
     {
@@ -65,11 +65,7 @@ final class Drupal extends AbstractRuleSet implements RuleSetExplicitInterface
             'switch_case_semicolon_to_colon' => true,
             'switch_case_space'              => true,
             'visibility_required'            => true,
-            'yoda_style'                     => [
-                'equal'                => false,
-                'identical'            => false,
-                'less_and_greater'     => false,
-            ],
+            'yoda_style'                     => ['equal' => false, 'identical' => false, 'less_and_greater' => false],
 
         ];
 
