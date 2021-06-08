@@ -20,10 +20,18 @@ $ composer require --dev realodix/php-cs-fixer-config
 Pick one of the rule sets:
 
 * [`Realodix`](src/RuleSet/Realodix.php)
-* [`RealodixStrict`](src/RuleSet/RealodixStrict.php)
+* [`RealodixStrict`](src/RuleSet/RealodixStrict.php) - Realodix + some additional rules
 * [`Laravel`](src/RuleSet/Laravel.php)
-* [`LaravelRisky`](src/RuleSet/LaravelRisky.php) - Contains risky fixers
+* [`LaravelRisky`](src/RuleSet/LaravelRisky.php) - Laravel + rules that are risky
+* [`Symfony`](src/RuleSet/Symfony.php)
+* [`SymfonyRisky`](src/RuleSet/SymfonyRisky.php) - Symfony + rules that are risky
+* [`CodeIgniter`](src/RuleSet/CodeIgniter.php)
+* [`Composer`](src/RuleSet/Composer.php)
+* [`Joomla`](src/RuleSet/Joomla.php)
+* [`PhpStorm`](src/RuleSet/PhpStorm.php)
+* [`PHPUnit`](src/RuleSet/PHPUnit.php)
 * [`Spatie`](src/RuleSet/Spatie.php)
+* [`Yii`](src/RuleSet/Yii.php)
 
 Create a configuration file `.php-cs-fixer.php` in the root of your project:
 
