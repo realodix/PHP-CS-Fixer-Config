@@ -93,9 +93,7 @@ final class PHPUnit extends AbstractRuleSet implements RuleSetExplicitInterface
             'heredoc_to_nowdoc' => true,
             'implode_call'      => true,
             'include'           => true,
-            'increment_style'   => [
-                'style' => PhpCsFixer\Fixer\Operator\IncrementStyleFixer::STYLE_POST,
-            ],
+            'increment_style'   => ['style' => 'post',],
             'indentation_type'                => true,
             'is_null'                         => true,
             'lambda_not_used_import'          => true,
@@ -173,13 +171,7 @@ final class PHPUnit extends AbstractRuleSet implements RuleSetExplicitInterface
                     'method_private_static',
                 ],
             ],
-            'ordered_imports' => [
-                'imports_order' => [
-                    PhpCsFixer\Fixer\Import\OrderedImportsFixer::IMPORT_TYPE_CONST,
-                    PhpCsFixer\Fixer\Import\OrderedImportsFixer::IMPORT_TYPE_FUNCTION,
-                    PhpCsFixer\Fixer\Import\OrderedImportsFixer::IMPORT_TYPE_CLASS,
-                ],
-            ],
+            'ordered_imports' => ['imports_order' => ['const', 'class', 'function'],],
             'ordered_interfaces'            => ['direction' => 'ascend', 'order' => 'alpha'],
             'ordered_traits'                => true,
             'phpdoc_align'                  => true,
