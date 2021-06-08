@@ -4,7 +4,7 @@ namespace Realodix\PhpCsFixerConfig\RuleSet;
 
 final class Symfony extends AbstractRuleSet implements RuleSetExplicitInterface
 {
-    protected $name = 'Symfony';
+    protected $name = 'Symfony Coding Standards';
 
     /**
      * Based on symfony/symfony

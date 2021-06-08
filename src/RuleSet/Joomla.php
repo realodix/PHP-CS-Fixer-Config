@@ -4,7 +4,7 @@ namespace Realodix\PhpCsFixerConfig\RuleSet;
 
 final class Joomla extends AbstractRuleSet implements RuleSetExplicitInterface
 {
-    protected $name = 'Joomla';
+    protected $name = 'Joomla Coding Standards';
 
     /**
      * Based on joomla/joomla-cms

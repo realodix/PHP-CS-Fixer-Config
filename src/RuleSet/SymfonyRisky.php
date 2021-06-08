@@ -4,7 +4,7 @@ namespace Realodix\PhpCsFixerConfig\RuleSet;
 
 final class SymfonyRisky extends AbstractRuleSet implements RuleSetExplicitInterface
 {
-    protected $name = 'Symfony:risky';
+    protected $name = 'Symfony Coding Standards (risky)';
 
     /**
      * Based on symfony/symfony

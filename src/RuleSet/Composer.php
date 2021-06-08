@@ -4,7 +4,7 @@ namespace Realodix\PhpCsFixerConfig\RuleSet;
 
 final class Composer extends AbstractRuleSet implements RuleSetExplicitInterface
 {
-    protected $name = 'Composer';
+    protected $name = 'Composer Coding Standards';
 
     /**
      * Based on composer/composer

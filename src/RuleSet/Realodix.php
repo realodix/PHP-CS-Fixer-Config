@@ -2,6 +2,8 @@
 
 namespace Realodix\PhpCsFixerConfig\RuleSet;
 
+use PhpCsFixerCustomFixers\Fixer;
+
 final class Realodix extends AbstractRuleSet implements RuleSetExplicitInterface
 {
     protected $name = 'Realodix Coding Standards';
@@ -30,6 +32,11 @@ final class Realodix extends AbstractRuleSet implements RuleSetExplicitInterface
             'phpdoc_var_annotation_correct_order' => true,
             'ternary_operator_spaces'             => false,
             'unary_operator_spaces'               => false,
+
+            Fixer\NoDuplicatedArrayKeyFixer::name()     => true,
+            Fixer\NoDuplicatedImportsFixer::name()      => true,
+            Fixer\NoUselessParenthesisFixer::name()     => true,
+            Fixer\PhpdocNoSuperfluousParamFixer::name() => true,
         ];
 
         return array_merge($basicRules, $rules);

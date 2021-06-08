@@ -6,7 +6,7 @@ use MattAllan\LaravelCodeStyle\Config;
 
 final class Laravel extends AbstractRuleSet implements RuleSetExplicitInterface
 {
-    protected $name = 'Laravel';
+    protected $name = 'Laravel Coding Standards';
 
     /**
      * Based on

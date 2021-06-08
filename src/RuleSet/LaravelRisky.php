@@ -6,7 +6,7 @@ use MattAllan\LaravelCodeStyle\Config;
 
 final class LaravelRisky extends AbstractRuleSet implements RuleSetExplicitInterface
 {
-    protected $name = 'Laravel:risky';
+    protected $name = 'Laravel Coding Standards (risky)';
 
     /**
      * Based on

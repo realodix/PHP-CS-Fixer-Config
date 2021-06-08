@@ -4,7 +4,7 @@ namespace Realodix\PhpCsFixerConfig\RuleSet;
 
 final class PhpStorm extends AbstractRuleSet implements RuleSetExplicitInterface
 {
-    protected $name = 'PhpStorm';
+    protected $name = 'PhpStorm Coding Standards';
 
     /**
      * Based on JetBrains/phpstorm-stubs
