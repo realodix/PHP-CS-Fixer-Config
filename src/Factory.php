@@ -32,9 +32,7 @@ final class Factory
                 $ruleSet->rules(),
                 $overrideRules
             ))
-            ->registerCustomFixers(
-                new CustomFixers(),
-            );
+            ->registerCustomFixers(new CustomFixers());
 
         return $config;
     }
