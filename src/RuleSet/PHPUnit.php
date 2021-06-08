@@ -13,15 +13,15 @@ final class PHPUnit extends AbstractRuleSet implements RuleSetExplicitInterface
      * Diff
      * - [D] global_namespace_import.import_classes Same as the default value
      * - [D] header_comment                         Must be set manually
-     * - [M] array_syntax                           Same as the default value
-     * - [M] class_attributes_separation            Same as the default value
-     * - [M] declare_equal_normalize                Same as the default value
-     * - [M] list_syntax                            Same as the default value
-     * - [M] method_argument_space                  Same as the default value
-     * - [M] ordered_interfaces                     Same as the default value
-     * - [M] return_type_declaration                Same as the default value
-     * - [M] trailing_comma_in_multiline            Same as the default value
-     * - [M] visibility_required                    Same as the default value
+     * - [M] array_syntax
+     * - [M] class_attributes_separation
+     * - [M] declare_equal_normalize
+     * - [M] list_syntax
+     * - [M] method_argument_space
+     * - [M] ordered_interfaces
+     * - [M] return_type_declaration
+     * - [M] trailing_comma_in_multiline
+     * - [M] visibility_required
      */
     public function myRules(): array
     {
