@@ -15,6 +15,7 @@ final class Drupal extends AbstractRuleSet implements RuleSetExplicitInterface
      * Diff
      * - [D] yoda_style.always_move_variable
      * - [D] brace.position_after_anonymous_constructs
+     * - [D] no_superfluous_phpdoc_tags.remove_inheritdoc
      */
     public function myRules(): array
     {
@@ -32,12 +33,12 @@ final class Drupal extends AbstractRuleSet implements RuleSetExplicitInterface
                 'position_after_functions_and_oop_constructs' => 'same',
                 'position_after_control_structures'           => 'same',
             ],
-            'compact_nullable_typehint' => true,
-            'constant_case'             => ['case' => 'upper'],
-            'declare_equal_normalize'   => ['space' => 'single'],
-            'encoding'                  => true,
-            'full_opening_tag'          => true,
-            'function_declaration'      => true,
+            'compact_nullable_typehint'        => true,
+            'constant_case'                    => ['case' => 'upper'],
+            'declare_equal_normalize'          => ['space' => 'single'],
+            'encoding'                         => true,
+            'full_opening_tag'                 => true,
+            'function_declaration'             => true,
             'general_phpdoc_annotation_remove' => [
                 'annotations' => [
                     'package',
@@ -51,25 +52,16 @@ final class Drupal extends AbstractRuleSet implements RuleSetExplicitInterface
                 'import_constants' => false,
                 'import_functions' => false,
             ],
-            'line_ending'                        => true,
-            'lowercase_keywords'                 => true,
-            'no_extra_blank_lines'               => [
+            'line_ending'          => true,
+            'lowercase_keywords'   => true,
+            'no_extra_blank_lines' => [
                 'tokens' => ['break', 'case', 'continue', 'default', 'extra', 'parenthesis_brace_block', 'return', 'square_brace_block', 'switch', 'throw', 'use', 'use_trait'],
             ],
-            'no_mixed_echo_print' => [
-                'use' => 'print',
-            ],
-            'no_spaces_after_function_name' => true,
-            'no_spaces_inside_parenthesis'  => true,
-            'no_superfluous_phpdoc_tags'    => [
-                'allow_mixed'         => true,
-                'allow_unused_params' => true,
-                'remove_inheritdoc'   => false,
-            ],
-            'single_line_comment_style'           => true,
-            'single_quote'                        => [
-                'strings_containing_single_quote_chars' => false,
-            ],
+            'no_mixed_echo_print'            => ['use' => 'print'],
+            'no_spaces_after_function_name'  => true,
+            'no_spaces_inside_parenthesis'   => true,
+            'no_superfluous_phpdoc_tags'     => ['allow_mixed' => true, 'allow_unused_params' => true],
+            'single_line_comment_style'      => true,
             'switch_case_semicolon_to_colon' => true,
             'switch_case_space'              => true,
             'visibility_required'            => true,
