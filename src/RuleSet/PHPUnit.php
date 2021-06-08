@@ -11,7 +11,9 @@ final class PHPUnit extends AbstractRuleSet implements RuleSetExplicitInterface
      * https://github.com/sebastianbergmann/phpunit/blob/master/.php-cs-fixer.dist.php
      *
      * Diff
-     * - [D] header_comment Must be set manually
+     * - [D] array_syntax                Same as the default value
+     * - [D] header_comment              Must be set manually
+     * - [D] class_attributes_separation Same as the default value
      */
     public function myRules(): array
     {
@@ -19,7 +21,6 @@ final class PHPUnit extends AbstractRuleSet implements RuleSetExplicitInterface
             'align_multiline_comment' => true,
             'array_indentation'       => true,
             'array_push'              => true,
-            'array_syntax'            => ['syntax' => 'short'],
             'backtick_to_shell_exec'  => true,
             'binary_operator_spaces'  => [
                 'operators' => [
@@ -29,39 +30,8 @@ final class PHPUnit extends AbstractRuleSet implements RuleSetExplicitInterface
                 ],
             ],
             'blank_line_after_namespace'  => true,
-            'blank_line_before_statement' => [
-                'statements' => [
-                    'break',
-                    'continue',
-                    'declare',
-                    'default',
-                    'do',
-                    'exit',
-                    'for',
-                    'foreach',
-                    'goto',
-                    'if',
-                    'include',
-                    'include_once',
-                    'require',
-                    'require_once',
-                    'return',
-                    'switch',
-                    'throw',
-                    'try',
-                    'while',
-                    'yield',
-                ],
-            ],
             'braces'                      => true,
             'cast_spaces'                 => true,
-            'class_attributes_separation' => [
-                'elements' => [
-                    'const'    => 'one',
-                    'method'   => 'one',
-                    'property' => 'one',
-                ],
-            ],
             'class_definition'             => true,
             'clean_namespace'              => true,
             'combine_consecutive_issets'   => true,
@@ -268,6 +238,13 @@ final class PHPUnit extends AbstractRuleSet implements RuleSetExplicitInterface
             'no_multiline_whitespace_around_double_arrow'   => true,
             'no_singleline_whitespace_before_semicolons'    => true,
             'phpdoc_trim_consecutive_blank_line_separation' => true,
+            'blank_line_before_statement' => [
+                'statements' => [
+                    'break', 'continue', 'declare', 'default', 'do', 'exit', 'for',
+                    'foreach', 'goto', 'if', 'include', 'include_once', 'require',
+                    'require_once', 'return', 'switch', 'throw', 'try', 'while', 'yield',
+                ],
+            ],
         ];
 
         return $rules;
