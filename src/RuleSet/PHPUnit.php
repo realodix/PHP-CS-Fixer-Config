@@ -11,9 +11,10 @@ final class PHPUnit extends AbstractRuleSet implements RuleSetExplicitInterface
      * https://github.com/sebastianbergmann/phpunit/blob/master/.php-cs-fixer.dist.php
      *
      * Diff
-     * - [D] array_syntax                Same as the default value
-     * - [D] header_comment              Must be set manually
-     * - [D] class_attributes_separation Same as the default value
+     * - [D] array_syntax                           Same as the default value
+     * - [D] header_comment                         Must be set manually
+     * - [D] class_attributes_separation            Same as the default value
+     * - [D] global_namespace_import.import_classes Same as the default value
      */
     public function myRules(): array
     {
@@ -55,11 +56,7 @@ final class PHPUnit extends AbstractRuleSet implements RuleSetExplicitInterface
             'function_declaration'         => true,
             'function_to_constant'         => true,
             'function_typehint_space'      => true,
-            'global_namespace_import'      => [
-                'import_classes'   => true,
-                'import_constants' => true,
-                'import_functions' => true,
-            ],
+            'global_namespace_import'      => ['import_constants' => true, 'import_functions' => true,],
             'heredoc_to_nowdoc' => true,
             'implode_call'      => true,
             'include'           => true,
