@@ -4,7 +4,7 @@ namespace Realodix\PhpCsFixerConfig\RuleSet;
 
 final class PHPUnit extends AbstractRuleSet implements RuleSetExplicitInterface
 {
-    protected $name = 'PHPUnit';
+    protected $name = 'PHPUnit Coding Standards';
 
     /**
      * sebastianbergmann/phpunit
