@@ -9,17 +9,22 @@ final class CodeIgniter extends AbstractRuleSet implements RuleSetExplicitInterf
     /**
      * codeigniter4/CodeIgniter4
      * https://github.com/codeigniter4/CodeIgniter4/blob/develop/utils/PhpCsFixer/CodeIgniter4.php
+     *
+     * Diff
+     * - [D] binary_operator_spaces.default     Same as the default value
+     * - [D] yoda_style.always_move_variable    Same as the default value
+     * - [M] align_multiline_comment
+     * - [M] array_syntax
      */
     public function myRules(): array
     {
         $rules = [
-            'align_multiline_comment' => ['comment_type' => 'phpdocs_only'],
+            'align_multiline_comment' => true,
             'array_indentation'       => true,
             'array_push'              => true, // risky
-            'array_syntax'            => ['syntax' => 'short'],
+            'array_syntax'            => true,
             'backtick_to_shell_exec'  => true,
             'binary_operator_spaces'  => [
-                'default'   => 'single_space',
                 'operators' => [
                     '='  => 'align_single_space',
                     '=>' => 'align_single_space',
@@ -61,7 +66,6 @@ final class CodeIgniter extends AbstractRuleSet implements RuleSetExplicitInterf
                 'equal'                => false,
                 'identical'            => null,
                 'less_and_greater'     => false,
-                'always_move_variable' => false,
             ],
         ];
 
