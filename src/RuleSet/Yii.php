@@ -39,7 +39,6 @@ final class Yii extends AbstractRuleSet implements RuleSetExplicitInterface
             'dir_constant'                       => true,
             'ereg_to_preg'                       => true,
             'function_typehint_space'            => true,
-            'hash_to_slash_comment'              => true,
             'heredoc_to_nowdoc'                  => true,
             'include'                            => true,
             'is_null'                            => ['use_yoda_style' => false],
@@ -100,16 +99,17 @@ final class Yii extends AbstractRuleSet implements RuleSetExplicitInterface
             'self_accessor'                         => true,
             'short_scalar_cast'                     => true,
             'single_blank_line_before_namespace'    => true,
+            'single_line_comment_style'             => ['comment_types' => ['hash']],
             'single_quote'                          => true,
             'standardize_not_equals'                => true,
             'ternary_operator_spaces'               => true,
-            'trailing_comma_in_multiline_array'     => true,
+            'trailing_comma_in_multiline'           => true,
             'trim_array_spaces'                     => true,
             'unary_operator_spaces'                 => true,
             'whitespace_after_comma_in_array'       => true,
 
             'no_multiline_whitespace_around_double_arrow' => true,
-            'no_multiline_whitespace_before_semicolons'   => true,
+            'multiline_whitespace_before_semicolons'      => true,
             'no_singleline_whitespace_before_semicolons'  => true,
         ];
 
