@@ -7,9 +7,8 @@ final class PhpStorm extends AbstractRuleSet implements RuleSetExplicitInterface
     protected $name = 'PhpStorm Coding Standards';
 
     /**
-     * Based on JetBrains/phpstorm-stubs
-     *
-     * See https://github.com/JetBrains/phpstorm-stubs/blob/master/.php-cs-fixer.php
+     * JetBrains/phpstorm-stubs
+     * https://github.com/JetBrains/phpstorm-stubs/blob/master/.php-cs-fixer.php
      *
      * There are 4 rules found commented:
      * - phpdoc_align
@@ -20,14 +19,15 @@ final class PhpStorm extends AbstractRuleSet implements RuleSetExplicitInterface
      * Diff
      * - [D] PhpStorm/braces_one_line   Currently cannot be implemented, hope it can be
      *                                  implemented in the future
-     * - [D] array_syntax               Same as the default value
-     * - [D] function_declaration       Same as the default value
-     * - [D] general_phpdoc_tag_rename  Same as the default value
-     * - [D] visibility_required        Same as the default value
+     * - [M] array_syntax               Same as the default value
+     * - [M] function_declaration       Same as the default value
+     * - [M] general_phpdoc_tag_rename  Same as the default value
+     * - [M] visibility_required        Same as the default value
      */
     public function myRules(): array
     {
         $rules = [
+            'array_syntax'                    => true,
             'binary_operator_spaces'          => ['operators' => ['|' => 'no_space']],
             'blank_line_after_namespace'      => true,
             'blank_line_after_opening_tag'    => false,
@@ -43,7 +43,9 @@ final class PhpStorm extends AbstractRuleSet implements RuleSetExplicitInterface
             'encoding'                        => true,
             'full_opening_tag'                => true,
             'fully_qualified_strict_types'    => true,
+            'function_declaration'            => true,
             'function_typehint_space'         => true,
+            'general_phpdoc_tag_rename'       => true,
             'include'                         => true,
             'indentation_type'                => true,
             'lambda_not_used_import'          => true,
@@ -106,6 +108,7 @@ final class PhpStorm extends AbstractRuleSet implements RuleSetExplicitInterface
             'ternary_operator_spaces'         => true,
             'trim_array_spaces'               => true,
             'unary_operator_spaces'           => true,
+            'visibility_required'             => true,
             'whitespace_after_comma_in_array' => true,
 
             'native_function_type_declaration_casing'     => true,
