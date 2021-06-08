@@ -7,9 +7,8 @@ final class CodeIgniter extends AbstractRuleSet implements RuleSetExplicitInterf
     protected $name = 'CodeIgniter4 Coding Standards';
 
     /**
-     * Based on symfony/symfony
-     *
-     * See https://github.com/symfony/symfony/blob/5.4/.php-cs-fixer.dist.php
+     * codeigniter4/CodeIgniter4
+     * https://github.com/codeigniter4/CodeIgniter4/blob/develop/utils/PhpCsFixer/CodeIgniter4.php
      */
     public function myRules(): array
     {
