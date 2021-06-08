@@ -2,7 +2,10 @@
 
 namespace Realodix\PhpCsFixerConfig;
 
-use drupol\PhpCsFixerConfigsDrupal\Fixer as Drupol;
+use drupol\PhpCsFixerConfigsDrupal\Fixer\BlankLineBeforeEndOfClass;
+use drupol\PhpCsFixerConfigsDrupal\Fixer\ControlStructureCurlyBracketsElseFixer;
+use drupol\PhpCsFixerConfigsDrupal\Fixer\InlineCommentSpacerFixer;
+use drupol\PhpCsFixerConfigsDrupal\Fixer\TryCatchBlock;
 use PhpCsFixer\Config;
 use PhpCsFixerCustomFixers\Fixers as CustomFixers;
 use Realodix\PhpCsFixerConfig\RuleSet\RuleSetInterface;
@@ -36,10 +39,10 @@ final class Factory
             ->registerCustomFixers(
                 new CustomFixers(),
                 // Drupal
-                new Drupol\BlankLineBeforeEndOfClass($config->getIndent(), $config->getLineEnding()),
-                new Drupol\ControlStructureCurlyBracketsElseFixer($config->getIndent(), $config->getLineEnding()),
-                new Drupol\InlineCommentSpacerFixer(),
-                new Drupol\TryCatchBlock($config->getIndent(), $config->getLineEnding()),
+                new BlankLineBeforeEndOfClass($config->getIndent(), $config->getLineEnding()),
+                new ControlStructureCurlyBracketsElseFixer($config->getIndent(), $config->getLineEnding()),
+                new InlineCommentSpacerFixer(),
+                new TryCatchBlock($config->getIndent(), $config->getLineEnding()),
             );
 
         return $config;
