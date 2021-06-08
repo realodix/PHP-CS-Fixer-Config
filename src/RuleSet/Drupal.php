@@ -52,7 +52,10 @@ final class Drupal extends AbstractRuleSet implements RuleSetExplicitInterface
             'line_ending'          => true,
             'lowercase_keywords'   => true,
             'no_extra_blank_lines' => [
-                'tokens' => ['break', 'case', 'continue', 'default', 'extra', 'parenthesis_brace_block', 'return', 'square_brace_block', 'switch', 'throw', 'use', 'use_trait'],
+                'tokens' => [
+                    'break', 'case', 'continue', 'default', 'extra', 'parenthesis_brace_block',
+                    'return', 'square_brace_block', 'switch', 'throw', 'use', 'use_trait'
+                ],
             ],
             'no_mixed_echo_print'            => ['use' => 'print'],
             'no_spaces_after_function_name'  => true,
