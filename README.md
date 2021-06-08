@@ -26,6 +26,7 @@ Pick one of the rule sets:
 * [`Laravel`](src/RuleSet/Laravel.php)
 * [`LaravelRisky`](src/RuleSet/LaravelRisky.php) - Laravel + rules that are risky
 * [`PhpStorm`](src/RuleSet/PhpStorm.php)
+* [`PHPUnit`](src/RuleSet/PHPUnit.php)
 * [`Symfony`](src/RuleSet/Symfony.php)
 * [`SymfonyRisky`](src/RuleSet/SymfonyRisky.php) - Symfony + rules that are risky
 
