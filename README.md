@@ -21,6 +21,7 @@ Pick one of the rule sets:
 
 * [`Realodix`](src/RuleSet/Realodix.php)
 * [`RealodixStrict`](src/RuleSet/RealodixStrict.php) - Realodix + some additional rules
+* [`CodeIgniter`](src/RuleSet/CodeIgniter.php)
 * [`Composer`](src/RuleSet/Composer.php)
 * [`Joomla`](src/RuleSet/Joomla.php)
 * [`Laravel`](src/RuleSet/Laravel.php)
