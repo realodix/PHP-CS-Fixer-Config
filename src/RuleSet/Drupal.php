@@ -4,7 +4,7 @@ namespace Realodix\PhpCsFixerConfig\RuleSet;
 
 final class Drupal extends AbstractRuleSet implements RuleSetExplicitInterface
 {
-    protected $name = 'Drupal';
+    protected $name = 'Drupal Coding Standards';
 
     /**
      * drupol/phpcsfixer-configs-drupal
