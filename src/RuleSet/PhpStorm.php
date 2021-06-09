@@ -20,56 +20,47 @@ final class PhpStorm extends AbstractRuleSet implements RuleSetExplicitInterface
      * - [D] PhpStorm/braces_one_line   Currently cannot be implemented, hope it can be
      *                                  implemented in the future
      * - [M] array_syntax               Same as the default value
-     * - [M] function_declaration       Same as the default value
      * - [M] general_phpdoc_tag_rename  Same as the default value
-     * - [M] visibility_required        Same as the default value
      */
     public function myRules(): array
     {
         $rules = [
-            '@PSR1'                           => true,
+            '@PSR2'                             => true,
+            'braces'                            => false,
+            'class_definition'                  => ['single_line' => true],
+            'no_break_comment'                  => false,
+            'no_trailing_whitespace_in_comment' => false,
+            //
             'array_syntax'                    => true,
             'binary_operator_spaces'          => ['operators' => ['|' => 'no_space']],
-            'blank_line_after_namespace'      => true,
             'blank_line_after_opening_tag'    => false,
             'cast_spaces'                     => ['space' => 'none'],
-            'class_definition'                => ['single_line' => true],
             'clean_namespace'                 => true,
             'compact_nullable_typehint'       => true,
             'concat_space'                    => ['spacing' => 'one'],
-            'constant_case'                   => true,
             'declare_equal_normalize'         => true,
             'echo_tag_syntax'                 => true,
-            'elseif'                          => true,
             'fully_qualified_strict_types'    => true,
-            'function_declaration'            => true,
             'function_typehint_space'         => true,
             'general_phpdoc_tag_rename'       => true,
             'include'                         => true,
-            'indentation_type'                => true,
             'lambda_not_used_import'          => true,
-            'line_ending'                     => true,
             'linebreak_after_opening_tag'     => true,
             'lowercase_cast'                  => true,
-            'lowercase_keywords'              => true,
             'lowercase_static_reference'      => true,
             'magic_constant_casing'           => true,
             'magic_method_casing'             => true,
-            'method_argument_space'           => true,
             'native_function_casing'          => true,
             'new_with_braces'                 => true,
             'no_alternative_syntax'           => true,
             'no_binary_string'                => true,
             'no_blank_lines_after_phpdoc'     => true,
-            'no_closing_tag'                  => true,
             'no_empty_comment'                => true,
             'no_empty_phpdoc'                 => true,
             'no_leading_import_slash'         => true,
             'no_leading_namespace_whitespace' => true,
             'no_short_bool_cast'              => true,
-            'no_spaces_after_function_name'   => true,
             'no_spaces_around_offset'         => true,
-            'no_spaces_inside_parenthesis'    => true,
             'no_trailing_comma_in_list_call'  => true,
             'no_trailing_whitespace'          => true,
             'no_unneeded_curly_braces'        => ['namespaces' => true],
@@ -94,20 +85,14 @@ final class PhpStorm extends AbstractRuleSet implements RuleSetExplicitInterface
             'return_type_declaration'         => true,
             'semicolon_after_instruction'     => true,
             'short_scalar_cast'               => true,
-            'single_blank_line_at_eof'        => true,
-            'single_import_per_statement'     => true,
-            'single_line_after_imports'       => true,
             'single_line_throw'               => true,
             'single_space_after_construct'    => true,
             'space_after_semicolon'           => ['remove_in_empty_for_expressions' => true],
             'standardize_not_equals'          => true,
-            'switch_case_semicolon_to_colon'  => true,
-            'switch_case_space'               => true,
             'switch_continue_to_break'        => true,
             'ternary_operator_spaces'         => true,
             'trim_array_spaces'               => true,
             'unary_operator_spaces'           => true,
-            'visibility_required'             => true,
             'whitespace_after_comma_in_array' => true,
 
             'native_function_type_declaration_casing'     => true,
@@ -118,9 +103,7 @@ final class PhpStorm extends AbstractRuleSet implements RuleSetExplicitInterface
             'no_whitespace_before_comma_in_array'         => true,
             'object_operator_without_whitespace'          => true,
             'single_blank_line_before_namespace'          => true,
-            'single_class_element_per_statement'          => ['elements' => ['property']],
             'single_trait_insert_per_statement'           => true,
-            'no_trailing_whitespace_in_comment'           => true,
 
             'no_extra_blank_lines' => [
                 'tokens' => [
