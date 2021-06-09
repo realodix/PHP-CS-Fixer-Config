@@ -16,7 +16,8 @@
     "require": {
         "php": "^7.3 || ^8.0",
         "friendsofphp/php-cs-fixer": "^3.0",
-        "kubawerlos/php-cs-fixer-custom-fixers": "^2.5"
+        "kubawerlos/php-cs-fixer-custom-fixers": "^2.5",
+        "matt-allan/laravel-code-style": "dev-main"
     },
     "scripts": {
         "php-cs-fixer": [
@@ -26,11 +27,6 @@
     "autoload": {
         "psr-4": {
             "Realodix\\PhpCsFixerConfig\\": "src"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Realodix\\PhpCsFixer\\Test\\": "tests"
         }
     },
     "extra": {

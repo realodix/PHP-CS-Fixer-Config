@@ -2,12 +2,16 @@
 
 namespace Realodix\PhpCsFixerConfig\RuleSet;
 
+use PhpCsFixerCustomFixers\Fixer;
+
 final class Realodix extends AbstractRuleSet implements RuleSetExplicitInterface
 {
     protected $name = 'Realodix Coding Standards';
 
     public function myRules(): array
     {
+        $basicRules = (new Laravel())->myRules();
+
         $rules = [
             'align_multiline_comment'      => true,
             'binary_operator_spaces'       => ['operators' => ['=>' => 'align']], // unalign_equals (default)
@@ -28,10 +32,13 @@ final class Realodix extends AbstractRuleSet implements RuleSetExplicitInterface
             'phpdoc_var_annotation_correct_order' => true,
             'ternary_operator_spaces'             => false,
             'unary_operator_spaces'               => false,
+
+            Fixer\NoDuplicatedArrayKeyFixer::name()     => true,
+            Fixer\NoDuplicatedImportsFixer::name()      => true,
+            Fixer\NoUselessParenthesisFixer::name()     => true,
+            Fixer\PhpdocNoSuperfluousParamFixer::name() => true,
         ];
 
-        $laravelByStyleCi = (new LaravelByStyleCI())->myRules();
-
-        return array_merge($laravelByStyleCi, $rules);
+        return array_merge($basicRules, $rules);
     }
 }
