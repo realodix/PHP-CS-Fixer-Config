@@ -28,11 +28,11 @@ final class Factory
         $config = new Config($ruleSet->name());
         $config
             ->setRiskyAllowed(true)
+            ->registerCustomFixers(new CustomFixers())
             ->setRules(\array_merge(
                 $ruleSet->rules(),
                 $overrideRules
-            ))
-            ->registerCustomFixers(new CustomFixers());
+            ));
 
         return $config;
     }
