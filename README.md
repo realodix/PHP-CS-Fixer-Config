@@ -28,7 +28,7 @@ Pick one of the rule sets:
 * [`Joomla`](src/RuleSet/Joomla.php)
 * [`PhpStorm`](src/RuleSet/PhpStorm.php)
 * [`PHPUnit`](src/RuleSet/PHPUnit.php)
-* [`Yii`](src/RuleSet/Yii.php)
+* [`Yii`](src/RuleSet/Yii.php), [`YiiRisky`](src/RuleSet/YiiRisky.php)
 
 Create a configuration file `.php-cs-fixer.php` in the root of your project:
 
