@@ -21,7 +21,8 @@ final class PHPUnit extends AbstractRuleSet implements RuleSetExplicitInterface
     public function myRules(): array
     {
         $rules = [
-            '@PSR12' => true,
+            '@PSR12'                       => true,
+            'braces'                       => true,
             'blank_line_after_opening_tag' => false,
             'new_with_braces'              => false,
             'ordered_class_elements'       => [
@@ -33,9 +34,12 @@ final class PHPUnit extends AbstractRuleSet implements RuleSetExplicitInterface
                     'method_private', 'method_protected_static', 'method_private_static',
                 ],
             ],
+            'ordered_imports config'             => true,
             'single_blank_line_before_namespace' => false,
+            'single_class_element_per_statement' => true,
+            'visibility_required'                => true,
             //
-            'array_syntax' => true,
+            'array_syntax'                    => true,
             'align_multiline_comment'         => true,
             'array_indentation'               => true,
             'array_push'                      => true,
