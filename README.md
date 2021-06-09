@@ -38,10 +38,7 @@ Create a configuration file `.php-cs-fixer.php` in the root of your project:
 use Realodix\PhpCsFixerConfig\Factory;
 use Realodix\PhpCsFixerConfig\RuleSet;
 
-$config = Factory::fromRuleSet(new RuleSet\Realodix());
-$config->getFinder()->in(__DIR__);
-
-return $config;
+return Factory::fromRuleSet(new RuleSet\Realodix());
 ```
 
 ### Configuration with override rules
@@ -54,14 +51,10 @@ return $config;
 use Realodix\PhpCsFixerConfig\Factory;
 use Realodix\PhpCsFixerConfig\RuleSet;
 
-- $config = Factory::fromRuleSet(new RuleSet\Realodix());
-+ $config = Factory::fromRuleSet(new RuleSet\Realodix(), [
-+     'no_extra_blank_lines' => false,
-+ ]);
-
-$config->getFinder()->in(__DIR__);
-
-return $config;
+-return Factory::fromRuleSet(new RuleSet\Realodix());
++return Factory::fromRuleSet(new RuleSet\Realodix(), [
++    'no_extra_blank_lines' => false,
++]);
 ```
 
 ### Configuration with header
@@ -74,20 +67,17 @@ return $config;
 use Realodix\PhpCsFixerConfig\Factory;
 use Realodix\PhpCsFixerConfig\RuleSet;
 
-+ $header = <<<EOF
-+ Copyright (c) 2021 Realodix
-+ 
-+ For the full copyright and license information, please view
-+ the LICENSE file that was distributed with this source code.
-+ 
-+ @see https://github.com/realodix/php-cs-fixer-config
-+ EOF;
++$header = <<<EOF
++Copyright (c) 2021 Realodix
++
++For the full copyright and license information, please view
++the LICENSE file that was distributed with this source code.
++
++@see https://github.com/realodix/php-cs-fixer-config
++EOF;
 
-- $config = Factory::fromRuleSet(new RuleSet\Realodix());
-+ $config = Factory::fromRuleSet(new RuleSet\Realodix($header));
-$config->getFinder()->in(__DIR__);
-
-return $config;
+-return Factory::fromRuleSet(new RuleSet\Realodix());
++return Factory::fromRuleSet(new RuleSet\Realodix($header));
 ```
 
 This will enable and configure the [`HeaderCommentFixer`](https://github.com/FriendsOfPHP/PHP-CS-Fixer/blob/3.0/src/Fixer/Comment/HeaderCommentFixer.php), so that

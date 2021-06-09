@@ -37,7 +37,6 @@ final class Factory
         $options['customFixers'] = $options['customFixers'] ?? [];
         $options['finder'] = $options['finder'] ?? $defaultFinder;
         $options['hideProgress'] = $options['hideProgress'] ?? false;
-        // $options['isRiskyAllowed'] = $options['isRiskyAllowed'] ?? ($ruleSet->willAutoActivateIsRiskyAllowed() ?: false);
         $options['usingCache'] = $options['usingCache'] ?? true;
         $options['rules'] = array_merge($ruleSet->rules(), $overrideRules, $options['customRules'] ?? []);
 
