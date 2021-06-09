@@ -13,7 +13,9 @@ final class Factory
     /**
      * Creates a configuration based on a rule set.
      *
-     * @param array<string, array|bool> $overrideRules
+     * @param \RuleSetInterface $ruleSet
+     * @param array             $overrideRules
+     * @param array             $options
      *
      * @throws \RuntimeException
      *
