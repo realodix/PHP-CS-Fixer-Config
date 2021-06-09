@@ -25,15 +25,12 @@ final class Factory
             ));
         }
 
-        $config = new Config($ruleSet->name());
-        $config
+        return (new Config($ruleSet->name()))
+            ->registerCustomFixers(new CustomFixers())
             ->setRiskyAllowed(true)
             ->setRules(\array_merge(
                 $ruleSet->rules(),
                 $overrideRules
-            ))
-            ->registerCustomFixers(new CustomFixers());
-
-        return $config;
+            ));
     }
 }
