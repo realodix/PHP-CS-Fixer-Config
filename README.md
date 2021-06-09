@@ -43,8 +43,7 @@ return Factory::fromRuleSet(new RuleSet\Realodix());
 
 ### Configuration with override rules
 
-:bulb: Optionally override rules from a rule set by passing in an array of rules to be
-merged in:
+:bulb: Optionally override rules from a rule set by passing in an array of rules to be merged in:
 
 ```diff
 <?php
