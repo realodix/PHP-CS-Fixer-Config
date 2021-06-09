@@ -26,7 +26,6 @@ final class Yii extends AbstractRuleSet implements RuleSetExplicitInterface
      * - [D] binary_operator_spaces
      * - [D] ordered_imports.sortAlgorithm
      * - [M] array_syntax
-     * - [M] binary_operator_spaces
      */
     public function myRules(): array
     {
