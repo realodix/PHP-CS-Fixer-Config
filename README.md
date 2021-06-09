@@ -10,7 +10,7 @@ Provides a configuration factory and multiple rule sets for [`friendsofphp/php-c
 You can install the package via composer:
 
 ```sh
-$ composer require --dev realodix/php-cs-fixer-config:2.*
+composer require --dev realodix/php-cs-fixer-config:2.*
 ```
 
 ## Usage
@@ -20,8 +20,17 @@ $ composer require --dev realodix/php-cs-fixer-config:2.*
 Pick one of the rule sets:
 
 * [`Realodix`](src/RuleSet/Realodix.php)
-* [`RealodixStrict`](src/RuleSet/RealodixStrict.php)
-* [`LaravelByStyleCI`](src/RuleSet/LaravelByStyleCI.php) - StyleCI ([Laravel Preset](https://docs.styleci.io/presets#laravel)).
+* [`RealodixStrict`](src/RuleSet/RealodixStrict.php) - Realodix + some additional rules
+* [`Symfony`](src/RuleSet/Symfony.php)
+* [`SymfonyRisky`](src/RuleSet/SymfonyRisky.php) - Symfony + rules that are risky
+* [`LaravelByStyleCI`](src/RuleSet/LaravelByStyleCI.php) - StyleCI ([Laravel Preset](https://docs.styleci.io/presets#laravel))
+* [`CodeIgniter`](src/RuleSet/CodeIgniter.php)
+* [`Composer`](src/RuleSet/Composer.php)
+* [`Drupal`](src/RuleSet/Drupal.php)
+* [`Joomla`](src/RuleSet/Joomla.php)
+* [`PhpStorm`](src/RuleSet/PhpStorm.php)
+* [`PHPUnit`](src/RuleSet/PHPUnit.php)
+* [`Yii`](src/RuleSet/Yii.php)
 
 Create a configuration file `.php-cs-fixer.php` in the root of your project:
 
