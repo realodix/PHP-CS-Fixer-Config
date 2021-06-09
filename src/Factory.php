@@ -21,8 +21,11 @@ final class Factory
      *
      * @return \PhpCsFixer\ConfigInterface
      */
-    public static function fromRuleSet(RuleSetInterface $ruleSet, array $overrideRules = [], array $options = []): ConfigInterface
-    {
+    public static function fromRuleSet(
+        RuleSetInterface $ruleSet,
+        array $overrideRules = [],
+        array $options = []
+    ): ConfigInterface {
         if (\PHP_VERSION_ID < $ruleSet->targetPhpVersion()) {
             throw new \RuntimeException(\sprintf(
                 'Current PHP version "%s" is less than targeted PHP version "%s".',
