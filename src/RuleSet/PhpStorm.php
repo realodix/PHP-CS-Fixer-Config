@@ -27,6 +27,7 @@ final class PhpStorm extends AbstractRuleSet implements RuleSetExplicitInterface
     public function myRules(): array
     {
         $rules = [
+            '@PSR1'                           => true,
             'array_syntax'                    => true,
             'binary_operator_spaces'          => ['operators' => ['|' => 'no_space']],
             'blank_line_after_namespace'      => true,
@@ -40,8 +41,6 @@ final class PhpStorm extends AbstractRuleSet implements RuleSetExplicitInterface
             'declare_equal_normalize'         => true,
             'echo_tag_syntax'                 => true,
             'elseif'                          => true,
-            'encoding'                        => true,
-            'full_opening_tag'                => true,
             'fully_qualified_strict_types'    => true,
             'function_declaration'            => true,
             'function_typehint_space'         => true,
