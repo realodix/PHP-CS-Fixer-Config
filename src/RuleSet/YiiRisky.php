@@ -13,6 +13,8 @@ final class YiiRisky extends AbstractRuleSet implements RuleSetExplicitInterface
      */
     public function myRules(): array
     {
+        $basicRules = (new Yii())->myRules();
+
         $rules = [
             'dir_constant'             => true,
             'ereg_to_preg'             => true,
@@ -26,6 +28,6 @@ final class YiiRisky extends AbstractRuleSet implements RuleSetExplicitInterface
             'self_accessor'            => true,
         ];
 
-        return $rules;
+        return array_merge($basicRules, $rules);
     }
 }
