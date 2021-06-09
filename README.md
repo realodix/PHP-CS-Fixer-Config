@@ -43,7 +43,8 @@ return Factory::fromRuleSet(new RuleSet\Realodix());
 
 ### Configuration with override rules
 
-:bulb: Optionally override rules from a rule set by passing in an array of rules to be merged in:
+:bulb: Optionally override rules from a rule set by passing in an array of rules to be
+merged in:
 
 ```diff
 <?php
@@ -54,6 +55,37 @@ use Realodix\PhpCsFixerConfig\RuleSet;
 -return Factory::fromRuleSet(new RuleSet\Realodix());
 +return Factory::fromRuleSet(new RuleSet\Realodix(), [
 +    'no_extra_blank_lines' => false,
++]);
+```
+
+### Specifying Options to `PhpCsFixer\Config`
+
+The `Factory` class returns an instance of `PhpCsFixer\Config` and fully supports all of
+its properties setup. You can pass an array to the third parameter of
+`Factory::fromRuleSet()` containing your desired options.
+
+**Options**
+
+| Key            | Allowed Types                              | Default                      |
+| -------------- | :----------------------------------------: | :--------------------------: |
+| customFixers   | `FixerInterface[], iterable, \Traversable` | `[]`                         |
+| finder         | `iterable, string[], \Traversable`         | `PhpCsFixer\Finder` instance |
+| format         | `string`                                   | `txt`                        |
+| hideProgress   | `bool`                                     | `false`                      |
+| isRiskyAllowed | `bool`                                     | `false`                      |
+| usingCache     | `bool`                                     | `true`                       |
+| customRules    | `array`                                    | `[]`                         |
+
+```diff
+<?php
+
+use Nexus\CsConfig\Factory;
+use Nexus\CsConfig\Ruleset\Nexus73;
+
+-return Factory::fromRuleSet(new RuleSet\Realodix());
++return Factory::fromRuleSet(new RuleSet\Realodix(), [], [
++    'usingCache'  => false,
++    'hideProgress => true,
 +]);
 ```
 
@@ -80,8 +112,8 @@ use Realodix\PhpCsFixerConfig\RuleSet;
 +return Factory::fromRuleSet(new RuleSet\Realodix($header));
 ```
 
-This will enable and configure the [`HeaderCommentFixer`](https://github.com/FriendsOfPHP/PHP-CS-Fixer/blob/3.0/src/Fixer/Comment/HeaderCommentFixer.php), so that
-file headers will be added to PHP files, for example:
+This will enable and configure the [`HeaderCommentFixer`](https://github.com/FriendsOfPHP/PHP-CS-Fixer/blob/3.0/src/Fixer/Comment/HeaderCommentFixer.php), so that file headers will be added to PHP 
+files, for example:
 
 ```php
 <?php
