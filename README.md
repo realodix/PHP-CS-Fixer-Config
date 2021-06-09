@@ -10,7 +10,7 @@ Provides a configuration factory and multiple rule sets for [`friendsofphp/php-c
 You can install the package via composer:
 
 ```sh
-composer require --dev realodix/php-cs-fixer-config:2.*
+composer require --dev realodix/php-cs-fixer-config
 ```
 
 ## Usage
