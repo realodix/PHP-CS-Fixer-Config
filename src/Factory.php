@@ -4,6 +4,7 @@ namespace Realodix\PhpCsFixerConfig;
 
 use PhpCsFixer\Config;
 use PhpCsFixer\ConfigInterface;
+use PhpCsFixer\Finder;
 use PhpCsFixerCustomFixers\Fixers as CustomFixers;
 use Realodix\PhpCsFixerConfig\RuleSet\RuleSetInterface;
 
@@ -18,7 +19,7 @@ final class Factory
      *
      * @return \PhpCsFixer\ConfigInterface
      */
-    public static function fromRuleSet(RuleSetInterface $ruleSet, array $overrideRules = []): ConfigInterface
+    public static function fromRuleSet(RuleSetInterface $ruleSet, array $overrideRules = [], array $options = []): ConfigInterface
     {
         if (\PHP_VERSION_ID < $ruleSet->targetPhpVersion()) {
             throw new \RuntimeException(\sprintf(
@@ -28,12 +29,29 @@ final class Factory
             ));
         }
 
+        $defaultFinder = Finder::create()
+            ->files()
+            ->in(__DIR__);
+
+        // Resolve Config options
+        $options['customFixers'] = $options['customFixers'] ?? [];
+        $options['finder'] = $options['finder'] ?? $defaultFinder;
+        $options['hideProgress'] = $options['hideProgress'] ?? false;
+        // $options['isRiskyAllowed'] = $options['isRiskyAllowed'] ?? ($ruleSet->willAutoActivateIsRiskyAllowed() ?: false);
+        $options['usingCache'] = $options['usingCache'] ?? true;
+        $options['rules'] = array_merge($ruleSet->rules(), $overrideRules, $options['customRules'] ?? []);
+
         return (new Config($ruleSet->name()))
-            ->registerCustomFixers(new CustomFixers())
+            ->registerCustomFixers(
+                new CustomFixers(),
+                $options['customFixers']
+            )
+            ->setFinder($options['finder'])
+            ->setHideProgress($options['hideProgress'])
             ->setRiskyAllowed(true)
+            ->setUsingCache($options['usingCache'])
             ->setRules(\array_merge(
-                $ruleSet->rules(),
-                $overrideRules
+                $options['rules']
             ));
     }
 }
