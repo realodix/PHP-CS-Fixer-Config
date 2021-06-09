@@ -32,6 +32,7 @@ final class Yii extends AbstractRuleSet implements RuleSetExplicitInterface
         $rules = [
             '@PSR2'                   => true,
             'array_syntax'            => true,
+            'binary_operator_spaces'  => true,
             'cast_spaces'             => true,
             'concat_space'            => ['spacing' => 'one'],
             'function_typehint_space' => true,
