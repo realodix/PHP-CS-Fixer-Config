@@ -10,7 +10,7 @@ Provides a configuration factory and multiple rule sets for [`friendsofphp/php-c
 You can install the package via composer:
 
 ```sh
-$ composer require --dev realodix/php-cs-fixer-config
+composer require --dev realodix/php-cs-fixer-config
 ```
 
 ## Usage
@@ -19,12 +19,9 @@ $ composer require --dev realodix/php-cs-fixer-config
 
 Pick one of the rule sets:
 
-* [`Realodix`](src/RuleSet/Realodix.php)
-* [`RealodixStrict`](src/RuleSet/RealodixStrict.php) - Realodix + some additional rules
-* [`Laravel`](src/RuleSet/Laravel.php)
-* [`LaravelRisky`](src/RuleSet/LaravelRisky.php) - Laravel + rules that are risky
-* [`Symfony`](src/RuleSet/Symfony.php)
-* [`SymfonyRisky`](src/RuleSet/SymfonyRisky.php) - Symfony + rules that are risky
+* [`Realodix`](src/RuleSet/Realodix.php) or [`RealodixStrict`](src/RuleSet/RealodixStrict.php)
+* [`Laravel`](src/RuleSet/Laravel.php) or [`LaravelRisky`](src/RuleSet/LaravelRisky.php)
+* [`Symfony`](src/RuleSet/Symfony.php) or [`SymfonyRisky`](src/RuleSet/SymfonyRisky.php)
 * [`CodeIgniter`](src/RuleSet/CodeIgniter.php)
 * [`Composer`](src/RuleSet/Composer.php)
 * [`Drupal`](src/RuleSet/Drupal.php)
