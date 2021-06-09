@@ -29,13 +29,13 @@ final class Factory
             ));
         }
 
-        $defaultFinder = Finder::create()
-            ->files()
-            ->in(__DIR__);
+        $finder = Finder::create()
+                  ->files()
+                  ->in(__DIR__);
 
         // Resolve Config options
         $options['customFixers'] = $options['customFixers'] ?? [];
-        $options['finder'] = $options['finder'] ?? $defaultFinder;
+        $options['finder'] = $options['finder'] ?? $finder;
         $options['hideProgress'] = $options['hideProgress'] ?? false;
         $options['usingCache'] = $options['usingCache'] ?? true;
         $options['rules'] = array_merge($ruleSet->rules(), $overrideRules, $options['customRules'] ?? []);
