@@ -10,7 +10,7 @@ final class Realodix extends AbstractRuleSet implements RuleSetExplicitInterface
 
     public function myRules(): array
     {
-        $basicRules = (new Laravel())->myRules();
+        $basicRules = (new LaravelByStyleCI())->myRules();
 
         $rules = [
             'align_multiline_comment'      => true,
