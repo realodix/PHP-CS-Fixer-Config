@@ -75,8 +75,6 @@ abstract class AbstractRulesetTestCase extends TestCase
 
     /**
      * @codeCoverageIgnore
-     *
-     * @return iterable
      */
     final public static function ruleNamesProvider(): iterable
     {
@@ -96,9 +94,6 @@ abstract class AbstractRulesetTestCase extends TestCase
     /**
      * Rules defined by PhpCsFixer.
      *
-     * @param bool $withDeprecated
-     * @param bool $withFixers
-     *
      * @return array<string, FixerInterface>|string[]
      */
     private static function builtInFixers(bool $withDeprecated = true, bool $withFixers = false): array
@@ -107,9 +102,9 @@ abstract class AbstractRulesetTestCase extends TestCase
         $fixerFactory->registerBuiltInFixers();
         $fixers = $fixerFactory->getFixers();
 
-        if (! $withDeprecated) {
+        if (!$withDeprecated) {
             $fixers = array_filter($fixers, static function (FixerInterface $fixer): bool {
-                return ! $fixer instanceof DeprecatedFixerInterface;
+                return !$fixer instanceof DeprecatedFixerInterface;
             });
         }
 
@@ -178,11 +173,6 @@ abstract class AbstractRulesetTestCase extends TestCase
 
     /**
      * @dataProvider ruleNamesProvider
-     *
-     * @param string $source
-     * @param array  $rules
-     *
-     * @return void
      */
     final public function testRulesAreSortedByName(string $source, array $rules): void
     {
@@ -210,7 +200,7 @@ abstract class AbstractRulesetTestCase extends TestCase
         $rulesWithoutDeprecatedRules = array_filter(
             $rules,
             static function (string $fixer): bool {
-                return ! \in_array($fixer, self::$deprecatedBuiltInFixers, true);
+                return !\in_array($fixer, self::$deprecatedBuiltInFixers, true);
             }
         );
 
@@ -232,14 +222,14 @@ abstract class AbstractRulesetTestCase extends TestCase
         $fixers = self::builtInFixers(false, true);
 
         $filtered = array_filter(array_map(static function (string $name, $rule) use ($fixers) {
-            if (! \is_array($rule)) {
+            if (!\is_array($rule)) {
                 return false;
             }
 
             /** @var FixerInterface $fixer */
             $fixer = $fixers[$name];
 
-            if (! $fixer instanceof ConfigurableFixerInterface) {
+            if (!$fixer instanceof ConfigurableFixerInterface) {
                 return false;
             }
 

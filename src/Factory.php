@@ -2,15 +2,6 @@
 
 declare(strict_types=1);
 
-/**
- * This file is part of NexusPHP CS Config.
- *
- * (c) 2020 John Paul E. Balandan, CPA <paulbalandan@gmail.com>
- *
- * For the full copyright and license information, please view
- * the LICENSE file that was distributed with this source code.
- */
-
 namespace Nexus\CsConfig;
 
 use Nexus\CsConfig\Ruleset\RulesetInterface;
@@ -43,8 +34,7 @@ final class Factory
     /**
      * Constructor.
      *
-     * @param \Nexus\CsConfig\Ruleset\RulesetInterface $ruleset
-     * @param array<string, mixed>                     $options
+     * @param array<string, mixed> $options
      */
     private function __construct(RulesetInterface $ruleset, array $options)
     {
@@ -56,21 +46,13 @@ final class Factory
      * Prepares the ruleset and options before the `PhpCsFixer\Config` object
      * is created.
      *
-     * @param \Nexus\CsConfig\Ruleset\RulesetInterface $ruleset
-     * @param array<string, mixed>                     $overrides
-     * @param array<string, mixed>                     $options
-     *
-     * @return self
+     * @param array<string, mixed> $overrides
+     * @param array<string, mixed> $options
      */
     public static function create(RulesetInterface $ruleset, array $overrides = [], array $options = []): self
     {
         if (\PHP_VERSION_ID < $ruleset->getRequiredPHPVersion()) {
-            throw new \RuntimeException(sprintf(
-                'The "%s" ruleset requires a minimum PHP_VERSION_ID of "%d" but current PHP_VERSION_ID is "%d".',
-                $ruleset->getName(),
-                $ruleset->getRequiredPHPVersion(),
-                \PHP_VERSION_ID
-            ));
+            throw new \RuntimeException(sprintf('The "%s" ruleset requires a minimum PHP_VERSION_ID of "%d" but current PHP_VERSION_ID is "%d".', $ruleset->getName(), $ruleset->getRequiredPHPVersion(), \PHP_VERSION_ID));
         }
 
         // Meant to be used in vendor/ to get to the root directory
@@ -103,11 +85,6 @@ final class Factory
      * Creates a `PhpCsFixer\Config` object that is applicable for libraries,
      * i.e., has their own header docblock in place.
      *
-     * @param string   $library
-     * @param string   $author
-     * @param string   $email
-     * @param null|int $startingYear
-     *
      * @return \PhpCsFixer\ConfigInterface
      */
     public function forLibrary(string $library, string $author, string $email = '', ?int $startingYear = null)
@@ -120,7 +97,7 @@ final class Factory
 
         if ('' !== $email) {
             $email = trim($email, '<>');
-            $email = ' <' . $email . '>';
+            $email = ' <'.$email.'>';
         }
 
         $header = sprintf(
@@ -160,8 +137,6 @@ the LICENSE file that was distributed with this source code.
      * The main method of creating the Config instance.
      *
      * @param array<string, array<string>|bool> $overrides
-     *
-     * @return \PhpCsFixer\ConfigInterface
      *
      * @internal
      */

@@ -3,7 +3,8 @@
 declare(strict_types=1);
 
 use Nexus\CsConfig\Factory;
-use Nexus\CsConfig\Ruleset\Nexus73;
+use Nexus\CsConfig\Ruleset\Nexus80;
+use PedroTroller\CS\Fixer\Fixers;
 use PhpCsFixer\Finder;
 
 $finder = Finder::create()
@@ -15,10 +16,12 @@ $finder = Finder::create()
 
 $overrides = [
     'binary_operator_spaces' => ['default' => 'single_space'],
+    'PedroTroller/doctrine_migrations' => true,
 ];
 
 $options = [
     'finder' => $finder,
+    'customFixers' => new Fixers(),
 ];
 
-return Factory::create(new Nexus73(), $overrides, $options)->forProjects();
+return Factory::create(new Nexus80(), $overrides, $options)->forProjects();

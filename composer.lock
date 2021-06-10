@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "804a03f78e2e28a5b3b3b8e7db924e9d",
+    "content-hash": "7d946898ccc9e9ca7fc55c88fdc7cc79",
     "packages": [
         {
             "name": "composer/semver",
@@ -390,6 +390,51 @@
                 }
             ],
             "time": "2021-05-03T21:51:58+00:00"
+        },
+        {
+            "name": "pedrotroller/php-cs-custom-fixer",
+            "version": "v2.25.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PedroTroller/PhpCSFixer-Custom-Fixers.git",
+                "reference": "4e0fc9810eeb467690be83c5427f55ad9819db33"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PedroTroller/PhpCSFixer-Custom-Fixers/zipball/4e0fc9810eeb467690be83c5427f55ad9819db33",
+                "reference": "4e0fc9810eeb467690be83c5427f55ad9819db33",
+                "shasum": ""
+            },
+            "require": {
+                "friendsofphp/php-cs-fixer": "^3.0",
+                "php": "^7.3 || ^8.0"
+            },
+            "require-dev": {
+                "phpspec/phpspec": "^7.0",
+                "twig/twig": "^3.3",
+                "webmozart/assert": "^1.10"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "PedroTroller\\CS\\Fixer\\": "src/PedroTroller/CS/Fixer"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "PHP-CS-FIXER : my custom fixers",
+            "support": {
+                "issues": "https://github.com/PedroTroller/PhpCSFixer-Custom-Fixers/issues",
+                "source": "https://github.com/PedroTroller/PhpCSFixer-Custom-Fixers/tree/v2.25.1"
+            },
+            "time": "2021-05-27T14:32:28+00:00"
         },
         {
             "name": "php-cs-fixer/diff",
