@@ -42,6 +42,7 @@ final class Factory
         $options['customFixers'] = $options['customFixers'] ?? [];
         $options['finder'] = $options['finder'] ?? $finder;
         $options['hideProgress'] = $options['hideProgress'] ?? false;
+        $options['isRiskyAllowed'] = $options['isRiskyAllowed'] ?? (true ?: false);
         $options['usingCache'] = $options['usingCache'] ?? true;
         $options['rules'] = array_merge($ruleSet->rules(), $overrideRules, $options['customRules'] ?? []);
 
@@ -52,7 +53,7 @@ final class Factory
             )
             ->setFinder($options['finder'])
             ->setHideProgress($options['hideProgress'])
-            ->setRiskyAllowed(true)
+            ->setRiskyAllowed($options['isRiskyAllowed'])
             ->setUsingCache($options['usingCache'])
             ->setRules(\array_merge(
                 $options['rules']
