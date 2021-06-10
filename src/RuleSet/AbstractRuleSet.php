@@ -33,7 +33,7 @@ abstract class AbstractRuleSet implements RuleSetInterface
 
     final public function getRules(): array
     {
-        return array_merge($this->RuleSet(), $this->headerComment);
+        return array_merge($this->ruleSet(), $this->headerComment);
     }
 
     final public function getRequiredPHPVersion(): int
@@ -41,5 +41,5 @@ abstract class AbstractRuleSet implements RuleSetInterface
         return $this->requiredPHPVersion;
     }
 
-    abstract public function RuleSet(): array;
+    abstract public function ruleSet(): array;
 }

@@ -8,10 +8,8 @@ use PhpCsFixer\Finder;
 use Realodix\PhpCsFixerConfig\RuleSet\RuleSetInterface;
 
 /**
- * The Factory class is invoked on each project's `.php_cs` to create
- * the specific RuleSet for the project.
- *
- * @internal
+ * The Factory class is invoked on each project's `.php-cs-fixer.php` to create the
+ * specific RuleSet for the project.
  */
 final class Factory
 {

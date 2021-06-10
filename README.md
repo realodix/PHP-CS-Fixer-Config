@@ -38,7 +38,7 @@ Create a configuration file `.php-cs-fixer.php` in the root of your project:
 use Realodix\PhpCsFixerConfig\Factory;
 use Realodix\PhpCsFixerConfig\RuleSet;
 
-$config = Factory::fromRuleSet(new RuleSet\Realodix());
+$config = Factory::create(new RuleSet\Realodix());
 $config->getFinder()->in(__DIR__);
 
 return $config;
@@ -54,8 +54,8 @@ return $config;
 use Realodix\PhpCsFixerConfig\Factory;
 use Realodix\PhpCsFixerConfig\RuleSet;
 
-- $config = Factory::fromRuleSet(new RuleSet\Realodix());
-+ $config = Factory::fromRuleSet(new RuleSet\Realodix(), [
+- $config = Factory::create(new RuleSet\Realodix());
++ $config = Factory::create(new RuleSet\Realodix(), [
 +     'no_extra_blank_lines' => false,
 + ]);
 
@@ -83,8 +83,8 @@ use Realodix\PhpCsFixerConfig\RuleSet;
 + @see https://github.com/realodix/php-cs-fixer-config
 + EOF;
 
-- $config = Factory::fromRuleSet(new RuleSet\Realodix());
-+ $config = Factory::fromRuleSet(new RuleSet\Realodix($header));
+- $config = Factory::create(new RuleSet\Realodix());
++ $config = Factory::create(new RuleSet\Realodix($header));
 $config->getFinder()->in(__DIR__);
 
 return $config;
