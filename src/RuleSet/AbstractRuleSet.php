@@ -35,17 +35,12 @@ abstract class AbstractRuleset implements RulesetInterface
 
     final public function getRules(): array
     {
-        return array_merge($this->rules(), $this->headerComment);
+        return array_merge($this->ruleSet(), $this->headerComment);
     }
 
     final public function getRequiredPHPVersion(): int
     {
         return $this->requiredPHPVersion;
-    }
-
-    final public function willAutoActivateIsRiskyAllowed(): bool
-    {
-        return $this->autoActivateIsRiskyAllowed;
     }
 
     abstract public function ruleSet(): array;

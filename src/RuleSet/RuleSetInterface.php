@@ -20,15 +20,4 @@ interface RulesetInterface
      * @see http://php.net/manual/en/reserved.constants.php
      */
     public function getRequiredPHPVersion(): int;
-
-    /**
-     * Does this ruleset have risky rules?
-     *
-     * If yes and `PhpCsFixer\Config` has the `$isRiskyAllowed`
-     * flag set to `false`, those risky rules won't be run.
-     *
-     * Set this flag to `true` to automatically setup
-     * the `$isRiskyAllowed` flag.
-     */
-    public function willAutoActivateIsRiskyAllowed(): bool;
 }

@@ -67,7 +67,7 @@ final class Factory
         $options['indent'] = $options['indent'] ?? '    ';
         $options['lineEnding'] = $options['lineEnding'] ?? "\n";
         $options['phpExecutable'] = $options['phpExecutable'] ?? null;
-        $options['isRiskyAllowed'] = $options['isRiskyAllowed'] ?? ($ruleset->willAutoActivateIsRiskyAllowed() ?: false);
+        $options['isRiskyAllowed'] = $options['isRiskyAllowed'] ?? true;
         $options['usingCache'] = $options['usingCache'] ?? true;
         $options['rules'] = array_merge($ruleset->getRules(), $overrides, $options['customRules'] ?? []);
 
