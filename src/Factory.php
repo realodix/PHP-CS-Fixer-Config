@@ -80,48 +80,6 @@ final class Factory
     }
 
     /**
-     * Creates a `PhpCsFixer\Config` object that is applicable for libraries,
-     * i.e., has their own header docblock in place.
-     *
-     * @return \PhpCsFixer\ConfigInterface
-     */
-    public function forLibrary(string $library, string $author, string $email = '', ?int $startingYear = null)
-    {
-        $year = (string) $startingYear;
-
-        if ('' !== $year) {
-            $year .= ' ';
-        }
-
-        if ('' !== $email) {
-            $email = trim($email, '<>');
-            $email = ' <'.$email.'>';
-        }
-
-        $header = sprintf(
-            '
-This file is part of %s.
-
-(c) %s%s%s
-
-For the full copyright and license information, please view
-the LICENSE file that was distributed with this source code.
-            ',
-            $library,
-            $year,
-            $author,
-            $email
-        );
-
-        return $this->invoke([
-            'header_comment' => [
-                'header' => trim($header),
-                'comment_type' => 'PHPDoc',
-            ],
-        ]);
-    }
-
-    /**
      * Plain invocation of `Config` with no additional arguments.
      *
      * @return \PhpCsFixer\ConfigInterface
