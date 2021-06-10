@@ -50,18 +50,19 @@ final class Factory
             ->exclude(['build'])
         ;
 
-        // Resolve Config options
-        $options['cacheFile'] = $options['cacheFile'] ?? '.php-cs-fixer.cache';
-        $options['customFixers'] = $options['customFixers'] ?? [];
-        $options['finder'] = $options['finder'] ?? $defaultFinder;
-        $options['format'] = $options['format'] ?? 'txt';
-        $options['hideProgress'] = $options['hideProgress'] ?? false;
-        $options['indent'] = $options['indent'] ?? '    ';
-        $options['lineEnding'] = $options['lineEnding'] ?? "\n";
-        $options['phpExecutable'] = $options['phpExecutable'] ?? null;
-        $options['isRiskyAllowed'] = $options['isRiskyAllowed'] ?? true;
-        $options['usingCache'] = $options['usingCache'] ?? true;
-        $options['rules'] = array_merge($ruleSet->getRules(), $overrideRules, $options['customRules'] ?? []);
+        $options = [
+            'cacheFile' => $options['cacheFile'] ?? '.php-cs-fixer.cache',
+            'customFixers' => $options['customFixers'] ?? [],
+            'finder' => $options['finder'] ?? $defaultFinder,
+            'format' => $options['format'] ?? 'txt',
+            'hideProgress' => $options['hideProgress'] ?? false,
+            'indent' => $options['indent'] ?? '    ',
+            'lineEnding' => $options['lineEnding'] ?? "\n",
+            'phpExecutable' => $options['phpExecutable'] ?? null,
+            'isRiskyAllowed' => $options['isRiskyAllowed'] ?? true,
+            'usingCache' => $options['usingCache'] ?? true,
+            'rules' => array_merge($ruleSet->getRules(), $overrideRules ?? []),
+        ];
 
         return new self($ruleSet, $options);
     }
