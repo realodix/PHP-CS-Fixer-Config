@@ -39,11 +39,6 @@
             "Nexus\\CsConfig\\": "src/"
         }
     },
-    "autoload-dev": {
-        "psr-4": {
-            "Nexus\\CsConfig\\Tests\\": "tests/"
-        }
-    },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "support": {
