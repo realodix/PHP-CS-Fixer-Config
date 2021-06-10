@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Nexus\CsConfig;
 
 use Nexus\CsConfig\Ruleset\RulesetInterface;
