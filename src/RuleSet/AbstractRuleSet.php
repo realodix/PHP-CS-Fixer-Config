@@ -6,7 +6,7 @@ abstract class AbstractRuleset implements RulesetInterface
 {
     protected $name;
 
-    protected $rules = [];
+    protected $headerComment = [];
 
     protected $requiredPHPVersion = 0;
 
@@ -20,9 +20,9 @@ abstract class AbstractRuleset implements RulesetInterface
 
         $this->headerComment['header_comment'] = [
             'comment_type' => 'PHPDoc',
-            'header'       => \trim($header),
-            'location'     => 'after_declare_strict',
-            'separate'     => 'both',
+            'header' => \trim($header),
+            'location' => 'after_declare_strict',
+            'separate' => 'both',
         ];
     }
 
@@ -35,7 +35,7 @@ abstract class AbstractRuleset implements RulesetInterface
 
     final public function getRules(): array
     {
-        return $this->rules;
+        return array_merge($this->rules(), $this->headerComment);
     }
 
     final public function getRequiredPHPVersion(): int
@@ -47,4 +47,6 @@ abstract class AbstractRuleset implements RulesetInterface
     {
         return $this->autoActivateIsRiskyAllowed;
     }
+
+    abstract public function rules(): array;
 }
