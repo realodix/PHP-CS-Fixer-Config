@@ -45,6 +45,7 @@ final class Factory
             'finder'         => $options['finder'] ?? $finder,
             'hideProgress'   => $options['hideProgress'] ?? false,
             'isRiskyAllowed' => $options['isRiskyAllowed'] ?? true,
+            'lineEnding'     => $options['lineEnding'] ?? "\n",
             'usingCache'     => $options['usingCache'] ?? true,
         ];
 
@@ -55,6 +56,7 @@ final class Factory
             )
             ->setFinder($options['finder'])
             ->setHideProgress($options['hideProgress'])
+            ->setLineEnding($options['lineEnding'])
             ->setRiskyAllowed($options['isRiskyAllowed'])
             ->setUsingCache($options['usingCache'])
             ->setRules(\array_merge(

@@ -73,6 +73,7 @@ its properties setup. You can pass an array to the third parameter of
 | hideProgress   | `bool`                                     | `false`                      |
 | isRiskyAllowed | `bool`                                     | `false`                      |
 | usingCache     | `bool`                                     | `true`                       |
+| lineEnding     | `bool`                                     | `'\n'`                       |
 | customRules    | `array`                                    | `[]`                         |
 
 ```diff
