@@ -45,8 +45,7 @@ final class Factory
         $defaultFinder = Finder::create()
             ->files()
             ->in(__DIR__)
-            ->exclude(['build'])
-        ;
+            ->exclude(['build']);
 
         $options = [
             'cacheFile' => $options['cacheFile'] ?? '.php-cs-fixer.cache',
@@ -67,8 +66,6 @@ final class Factory
 
     /**
      * The main method of creating the Config instance.
-     *
-     * @internal
      */
     private function config(array $overrideRules = []): ConfigInterface
     {
@@ -85,8 +82,7 @@ final class Factory
             ->setPhpExecutable($this->options['phpExecutable'])
             ->setRiskyAllowed($this->options['isRiskyAllowed'])
             ->setUsingCache($this->options['usingCache'])
-            ->setRules($rules)
-        ;
+            ->setRules($rules);
     }
 
     /**

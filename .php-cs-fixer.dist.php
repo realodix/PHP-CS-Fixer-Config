@@ -5,14 +5,13 @@ declare(strict_types=1);
 use PedroTroller\CS\Fixer\Fixers;
 use PhpCsFixer\Finder;
 use Realodix\PhpCsFixerConfig\Factory;
-use Realodix\PhpCsFixerConfig\RuleSet\Nexus80;
+use Realodix\PhpCsFixerConfig\RuleSet\Realodix;
 
 $finder = Finder::create()
     ->files()
     ->in(__DIR__)
     ->exclude(['build'])
-    ->append([__FILE__])
-;
+    ->append([__FILE__]);
 
 $overrideRules = [
     'binary_operator_spaces' => ['default' => 'single_space'],
@@ -22,6 +21,7 @@ $overrideRules = [
 $options = [
     'finder' => $finder,
     'customFixers' => new Fixers(),
+
 ];
 
-return Factory::create(new Nexus80(), $overrideRules, $options)->forProjects();
+return Factory::create(new Realodix(), $overrideRules, $options)->forProjects();
