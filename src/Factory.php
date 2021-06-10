@@ -39,7 +39,6 @@ final class Factory
                   ->files()
                   ->in(__DIR__);
 
-        // Resolve Config options
         $options += [
             'customFixers'   => $options['customFixers'] ?? $config->getCustomFixers(),
             'finder'         => $options['finder'] ?? $finder,
