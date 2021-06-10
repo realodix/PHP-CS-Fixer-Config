@@ -12,6 +12,20 @@ abstract class AbstractRuleset implements RulesetInterface
 
     protected $autoActivateIsRiskyAllowed = false;
 
+    final public function __construct(?string $header = null)
+    {
+        if (null === $header) {
+            return;
+        }
+
+        $this->headerComment['header_comment'] = [
+            'comment_type' => 'PHPDoc',
+            'header'       => \trim($header),
+            'location'     => 'after_declare_strict',
+            'separate'     => 'both',
+        ];
+    }
+
     final public function getName(): string
     {
         $class = strrchr(self::class, '\\') ?: self::class;
