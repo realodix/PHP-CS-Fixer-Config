@@ -10,8 +10,6 @@ abstract class AbstractRuleSet implements RuleSetInterface
 
     protected $requiredPHPVersion = 0;
 
-    protected $autoActivateIsRiskyAllowed = false;
-
     final public function __construct(?string $header = null)
     {
         if (null === $header) {
