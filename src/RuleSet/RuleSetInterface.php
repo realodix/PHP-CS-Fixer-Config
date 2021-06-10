@@ -19,7 +19,7 @@ interface RulesetInterface
      *
      * @see http://php.net/manual/en/reserved.constants.php
      */
-    public function targetPhpVersion(): int;
+    public function getRequiredPHPVersion(): int;
 
     /**
      * Does this ruleset have risky rules?
