@@ -14,7 +14,7 @@ $finder = Finder::create()
     ->append([__FILE__])
 ;
 
-$overrides = [
+$overrideRules = [
     'binary_operator_spaces' => ['default' => 'single_space'],
     'PedroTroller/doctrine_migrations' => true,
 ];
@@ -24,4 +24,4 @@ $options = [
     'customFixers' => new Fixers(),
 ];
 
-return Factory::create(new Nexus80(), $overrides, $options)->forProjects();
+return Factory::create(new Nexus80(), $overrideRules, $options)->forProjects();

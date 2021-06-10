@@ -42,7 +42,7 @@ final class Factory
      * Prepares the ruleset and options before the `PhpCsFixer\Config` object
      * is created.
      */
-    public static function create(RulesetInterface $ruleset, array $overrides = [], array $options = []): self
+    public static function create(RulesetInterface $ruleset, array $overrideRules = [], array $options = []): self
     {
         if (\PHP_VERSION_ID < $ruleset->getRequiredPHPVersion()) {
             throw new \RuntimeException(sprintf('The "%s" ruleset requires a minimum PHP_VERSION_ID of "%d" but current PHP_VERSION_ID is "%d".', $ruleset->getName(), $ruleset->getRequiredPHPVersion(), \PHP_VERSION_ID));
@@ -69,7 +69,7 @@ final class Factory
         $options['phpExecutable'] = $options['phpExecutable'] ?? null;
         $options['isRiskyAllowed'] = $options['isRiskyAllowed'] ?? true;
         $options['usingCache'] = $options['usingCache'] ?? true;
-        $options['rules'] = array_merge($ruleset->getRules(), $overrides, $options['customRules'] ?? []);
+        $options['rules'] = array_merge($ruleset->getRules(), $overrideRules, $options['customRules'] ?? []);
 
         return new self($ruleset, $options);
     }
@@ -89,9 +89,9 @@ final class Factory
      *
      * @internal
      */
-    private function config(array $overrides = []): ConfigInterface
+    private function config(array $overrideRules = []): ConfigInterface
     {
-        $rules = array_merge($this->options['rules'], $overrides);
+        $rules = array_merge($this->options['rules'], $overrideRules);
 
         return (new Config($this->ruleset->getName()))
             ->registerCustomFixers($this->options['customFixers'])
