@@ -5,20 +5,21 @@ namespace Realodix\PhpCsFixerConfig\Ruleset;
 interface RulesetInterface
 {
     /**
-     * Name of this ruleset.
+     * Returns the name of the rule set.
      */
     public function getName(): string;
 
     /**
-     * Defined rules for this ruleset.
+     * Returns an array of rules along with their configuration.
      */
     public function getRules(): array;
 
     /**
-     * Returns the minimum `PHP_VERSION_ID`
-     * that is required by this ruleset.
+     * Returns the minimum required PHP version (PHP_VERSION_ID).
+     *
+     * @see http://php.net/manual/en/reserved.constants.php
      */
-    public function getRequiredPHPVersion(): int;
+    public function targetPhpVersion(): int;
 
     /**
      * Does this ruleset have risky rules?
