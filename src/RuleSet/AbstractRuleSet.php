@@ -1,47 +1,79 @@
 <?php
 
-namespace Realodix\PhpCsFixerConfig\RuleSet;
+declare(strict_types=1);
 
 /**
- * @internal
+ * This file is part of NexusPHP CS Config.
+ *
+ * (c) 2020 John Paul E. Balandan, CPA <paulbalandan@gmail.com>
+ *
+ * For the full copyright and license information, please view
+ * the LICENSE file that was distributed with this source code.
  */
-abstract class AbstractRuleSet implements RuleSetInterface
+
+namespace Nexus\CsConfig\Ruleset;
+
+abstract class AbstractRuleset implements RulesetInterface
 {
-    /** @var string */
-    protected $name = '';
+    /**
+     * Name of the ruleset.
+     *
+     * @var string
+     */
+    protected $name;
 
-    protected $headerComment = [];
+    /**
+     * Rules for the ruleset.
+     *
+     * @var array
+     */
+    protected $rules = [];
 
-    protected $targetPhpVersion = 0;
+    /**
+     * Minimum PHP version.
+     *
+     * @var int
+     */
+    protected $requiredPHPVersion = 0;
 
-    final public function __construct(?string $header = null)
+    /**
+     * Have this ruleset turn on `$isRiskyAllowed` flag?
+     *
+     * @var bool
+     */
+    protected $autoActivateIsRiskyAllowed = false;
+
+    /**
+     * {@inheritDoc}
+     */
+    final public function getName(): string
     {
-        if (null === $header) {
-            return;
-        }
+        $class = strrchr(self::class, '\\') ?: self::class;
 
-        $this->headerComment['header_comment'] = [
-            'comment_type' => 'PHPDoc',
-            'header'       => \trim($header),
-            'location'     => 'after_declare_strict',
-            'separate'     => 'both',
-        ];
+        return $this->name ?? trim($class, '\\');
     }
 
-    final public function name(): string
+    /**
+     * {@inheritDoc}
+     */
+    final public function getRules(): array
     {
-        return $this->name;
+        return $this->rules;
     }
 
-    final public function rules(): array
+    /**
+     * {@inheritDoc}
+     */
+    final public function getRequiredPHPVersion(): int
     {
-        return array_merge($this->myRules(), $this->headerComment);
+        return $this->requiredPHPVersion;
     }
 
-    final public function targetPhpVersion(): int
+    /**
+     * {@inheritDoc}
+     */
+    final public function willAutoActivateIsRiskyAllowed(): bool
     {
-        return $this->targetPhpVersion;
+        return $this->autoActivateIsRiskyAllowed;
     }
-
-    abstract public function myRules(): array;
 }

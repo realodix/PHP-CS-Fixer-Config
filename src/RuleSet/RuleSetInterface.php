@@ -1,25 +1,52 @@
 <?php
 
-namespace Realodix\PhpCsFixerConfig\RuleSet;
+declare(strict_types=1);
 
-interface RuleSetInterface
+/**
+ * This file is part of NexusPHP CS Config.
+ *
+ * (c) 2020 John Paul E. Balandan, CPA <paulbalandan@gmail.com>
+ *
+ * For the full copyright and license information, please view
+ * the LICENSE file that was distributed with this source code.
+ */
+
+namespace Nexus\CsConfig\Ruleset;
+
+interface RulesetInterface
 {
     /**
-     * Returns the name of the rule set.
+     * Name of this ruleset.
+     *
+     * @return string
      */
-    public function name(): string;
+    public function getName(): string;
 
     /**
-     * Returns an array of rules along with their configuration.
+     * Defined rules for this ruleset.
      *
-     * @return array<string, array|bool>
+     * @return array
      */
-    public function rules(): array;
+    public function getRules(): array;
 
     /**
-     * Returns the minimum required PHP version (PHP_VERSION_ID).
+     * Returns the minimum `PHP_VERSION_ID`
+     * that is required by this ruleset.
      *
-     * @see http://php.net/manual/en/reserved.constants.php
+     * @return int
      */
-    public function targetPhpVersion(): int;
+    public function getRequiredPHPVersion(): int;
+
+    /**
+     * Does this ruleset have risky rules?
+     *
+     * If yes and `PhpCsFixer\Config` has the `$isRiskyAllowed`
+     * flag set to `false`, those risky rules won't be run.
+     *
+     * Set this flag to `true` to automatically setup
+     * the `$isRiskyAllowed` flag.
+     *
+     * @return bool
+     */
+    public function willAutoActivateIsRiskyAllowed(): bool;
 }

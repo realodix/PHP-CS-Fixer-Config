@@ -1,42 +1,53 @@
 {
-    "name": "realodix/php-cs-fixer-config",
-    "description": "Provides a configuration factory and multiple rule sets for friendsofphp/php-cs-fixer.",
+    "name": "nexusphp/cs-config",
+    "type": "library",
+    "description": "A factory for custom rulesets for PHP CS Fixer.",
     "license": "MIT",
-    "homepage": "https://github.com/realodix/php-cs-fixer-config",
-    "support": {
-        "source": "https://github.com/realodix/php-cs-fixer-config",
-        "issues": "https://github.com/realodix/php-cs-fixer-config/issues"
-    },
     "authors": [
         {
-            "name": "Budi Hermawan",
-            "role": "Developer"
+            "name": "John Paul E. Balandan, CPA",
+            "email": "paulbalandan@gmail.com"
         }
     ],
     "require": {
         "php": "^7.3 || ^8.0",
-        "friendsofphp/php-cs-fixer": "^3.0",
-        "kubawerlos/php-cs-fixer-custom-fixers": "^2.5",
-        "matt-allan/laravel-code-style": "dev-main"
+        "ext-tokenizer": "*",
+        "friendsofphp/php-cs-fixer": "^3.0"
     },
-    "scripts": {
-        "php-cs-fixer": [
-            "php-cs-fixer fix --verbose"
-        ]
+    "conflict": {
+        "liaison/cs-config": "*"
     },
-    "autoload": {
-        "psr-4": {
-            "Realodix\\PhpCsFixerConfig\\": "src"
-        }
+    "require-dev": {
+        "nexusphp/tachycardia": "^1.3",
+        "phpstan/phpstan": "^0.12",
+        "phpstan/phpstan-strict-rules": "^0.12",
+        "phpunit/phpunit": "^9.5"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
     },
     "extra": {
         "branch-alias": {
-            "dev-main": "3.x-dev"
+            "dev-develop": "3.x-dev"
         }
     },
-    "config": {
-        "sort-packages": true
+    "autoload": {
+        "psr-4": {
+            "Nexus\\CsConfig\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Nexus\\CsConfig\\Tests\\": "tests/"
+        }
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "support": {
+        "issues": "https://github.com/NexusPHP/cs-config/issues",
+        "source": "https://github.com/NexusPHP/cs-config.git",
+        "slack": "https://nexusphp.slack.com"
+    }
 }
