@@ -34,7 +34,7 @@ final class Factory
      */
     private function __construct(RuleSetInterface $ruleSet, array $options)
     {
-        $this->ruleset = $ruleSet;
+        $this->ruleSet = $ruleSet;
         $this->options = $options;
     }
 
@@ -83,7 +83,7 @@ final class Factory
     {
         $rules = array_merge($this->options['rules'], $overrideRules);
 
-        return (new Config($this->ruleset->getName()))
+        return (new Config($this->ruleSet->getName()))
             ->registerCustomFixers($this->options['customFixers'])
             ->setCacheFile($this->options['cacheFile'])
             ->setFinder($this->options['finder'])
