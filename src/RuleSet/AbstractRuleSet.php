@@ -48,5 +48,5 @@ abstract class AbstractRuleset implements RulesetInterface
         return $this->autoActivateIsRiskyAllowed;
     }
 
-    abstract public function rules(): array;
+    abstract public function ruleSet(): array;
 }
