@@ -2,7 +2,7 @@
 
 namespace Realodix\PhpCsFixerConfig\Ruleset;
 
-abstract class AbstractRuleset implements RulesetInterface
+abstract class AbstractRuleset implements RuleSetInterface
 {
     protected $name;
 

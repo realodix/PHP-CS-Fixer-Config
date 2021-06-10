@@ -2,7 +2,7 @@
 
 namespace Realodix\PhpCsFixerConfig\Ruleset;
 
-interface RulesetInterface
+interface RuleSetInterface
 {
     /**
      * Returns the name of the rule set.

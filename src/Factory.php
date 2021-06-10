@@ -5,7 +5,7 @@ namespace Realodix\PhpCsFixerConfig;
 use PhpCsFixer\Config;
 use PhpCsFixer\ConfigInterface;
 use PhpCsFixer\Finder;
-use Realodix\PhpCsFixerConfig\Ruleset\RulesetInterface;
+use Realodix\PhpCsFixerConfig\Ruleset\RuleSetInterface;
 
 /**
  * The Factory class is invoked on each project's `.php_cs` to create
@@ -16,11 +16,11 @@ use Realodix\PhpCsFixerConfig\Ruleset\RulesetInterface;
 final class Factory
 {
     /**
-     * Current RulesetInterface instance.
+     * Current RuleSetInterface instance.
      *
-     * @var \Realodix\PhpCsFixerConfig\Ruleset\RulesetInterface
+     * @var \Realodix\PhpCsFixerConfig\Ruleset\RuleSetInterface
      */
-    private $ruleset;
+    private $ruleSet;
 
     /**
      * Array of resolved options.
@@ -32,9 +32,9 @@ final class Factory
     /**
      * Constructor.
      */
-    private function __construct(RulesetInterface $ruleset, array $options)
+    private function __construct(RuleSetInterface $ruleSet, array $options)
     {
-        $this->ruleset = $ruleset;
+        $this->ruleset = $ruleSet;
         $this->options = $options;
     }
 
@@ -42,10 +42,10 @@ final class Factory
      * Prepares the ruleset and options before the `PhpCsFixer\Config` object
      * is created.
      */
-    public static function create(RulesetInterface $ruleset, array $overrideRules = [], array $options = []): self
+    public static function create(RuleSetInterface $ruleSet, array $overrideRules = [], array $options = []): self
     {
-        if (\PHP_VERSION_ID < $ruleset->getRequiredPHPVersion()) {
-            throw new \RuntimeException(sprintf('The "%s" ruleset requires a minimum PHP_VERSION_ID of "%d" but current PHP_VERSION_ID is "%d".', $ruleset->getName(), $ruleset->getRequiredPHPVersion(), \PHP_VERSION_ID));
+        if (\PHP_VERSION_ID < $ruleSet->getRequiredPHPVersion()) {
+            throw new \RuntimeException(sprintf('The "%s" ruleset requires a minimum PHP_VERSION_ID of "%d" but current PHP_VERSION_ID is "%d".', $ruleSet->getName(), $ruleSet->getRequiredPHPVersion(), \PHP_VERSION_ID));
         }
 
         // Meant to be used in vendor/ to get to the root directory
@@ -69,9 +69,9 @@ final class Factory
         $options['phpExecutable'] = $options['phpExecutable'] ?? null;
         $options['isRiskyAllowed'] = $options['isRiskyAllowed'] ?? true;
         $options['usingCache'] = $options['usingCache'] ?? true;
-        $options['rules'] = array_merge($ruleset->getRules(), $overrideRules, $options['customRules'] ?? []);
+        $options['rules'] = array_merge($ruleSet->getRules(), $overrideRules, $options['customRules'] ?? []);
 
-        return new self($ruleset, $options);
+        return new self($ruleSet, $options);
     }
 
     /**
