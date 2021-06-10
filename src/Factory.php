@@ -34,6 +34,7 @@ final class Factory
             ));
         }
 
+        $config = new Config($ruleSet->name());
         $finder = Finder::create()
                   ->files()
                   ->in(__DIR__);
@@ -41,15 +42,15 @@ final class Factory
         // Resolve Config options
         $options['rules'] = array_merge($ruleSet->rules(), $overrideRules, $options['customRules'] ?? []);
         $options += [
-            'customFixers'   => $options['customFixers'] ?? [],
+            'customFixers'   => $options['customFixers'] ?? $config->getCustomFixers(),
             'finder'         => $options['finder'] ?? $finder,
-            'hideProgress'   => $options['hideProgress'] ?? false,
+            'hideProgress'   => $options['hideProgress'] ?? $config->getHideProgress(),
             'isRiskyAllowed' => $options['isRiskyAllowed'] ?? true,
-            'lineEnding'     => $options['lineEnding'] ?? "\n",
-            'usingCache'     => $options['usingCache'] ?? true,
+            'lineEnding'     => $options['lineEnding'] ?? $config->getLineEnding(),
+            'usingCache'     => $options['usingCache'] ?? $config->getUsingCache(),
         ];
 
-        return (new Config($ruleSet->name()))
+        return $config
             ->registerCustomFixers(
                 new CustomFixers(),
                 $options['customFixers']
@@ -59,8 +60,6 @@ final class Factory
             ->setLineEnding($options['lineEnding'])
             ->setRiskyAllowed($options['isRiskyAllowed'])
             ->setUsingCache($options['usingCache'])
-            ->setRules(\array_merge(
-                $options['rules']
-            ));
+            ->setRules(\array_merge($options['rules']));
     }
 }
