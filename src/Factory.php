@@ -31,8 +31,6 @@ final class Factory
 
     /**
      * Constructor.
-     *
-     * @param array<string, mixed> $options
      */
     private function __construct(RulesetInterface $ruleset, array $options)
     {
@@ -43,9 +41,6 @@ final class Factory
     /**
      * Prepares the ruleset and options before the `PhpCsFixer\Config` object
      * is created.
-     *
-     * @param array<string, mixed> $overrides
-     * @param array<string, mixed> $options
      */
     public static function create(RulesetInterface $ruleset, array $overrides = [], array $options = []): self
     {
@@ -86,17 +81,15 @@ final class Factory
      */
     public function forProjects()
     {
-        return $this->invoke();
+        return $this->config();
     }
 
     /**
      * The main method of creating the Config instance.
      *
-     * @param array<string, array<string>|bool> $overrides
-     *
      * @internal
      */
-    private function invoke(array $overrides = []): ConfigInterface
+    private function config(array $overrides = []): ConfigInterface
     {
         $rules = array_merge($this->options['rules'], $overrides);
 
