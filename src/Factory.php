@@ -75,16 +75,6 @@ final class Factory
     }
 
     /**
-     * Plain invocation of `Config` with no additional arguments.
-     *
-     * @return \PhpCsFixer\ConfigInterface
-     */
-    public function forProjects()
-    {
-        return $this->config();
-    }
-
-    /**
      * The main method of creating the Config instance.
      *
      * @internal
@@ -106,5 +96,15 @@ final class Factory
             ->setUsingCache($this->options['usingCache'])
             ->setRules($rules)
         ;
+    }
+
+    /**
+     * Plain invocation of `Config` with no additional arguments.
+     *
+     * @return \PhpCsFixer\ConfigInterface
+     */
+    public function forProjects()
+    {
+        return $this->config();
     }
 }
