@@ -40,7 +40,6 @@ final class Factory
                   ->in(__DIR__);
 
         // Resolve Config options
-        $options['rules'] = array_merge($ruleSet->rules(), $overrideRules, $options['customRules'] ?? []);
         $options += [
             'customFixers'   => $options['customFixers'] ?? $config->getCustomFixers(),
             'finder'         => $options['finder'] ?? $finder,
@@ -48,6 +47,7 @@ final class Factory
             'isRiskyAllowed' => $options['isRiskyAllowed'] ?? true,
             'lineEnding'     => $options['lineEnding'] ?? $config->getLineEnding(),
             'usingCache'     => $options['usingCache'] ?? $config->getUsingCache(),
+            'rules'          => array_merge($ruleSet->rules(), $overrideRules),
         ];
 
         return $config

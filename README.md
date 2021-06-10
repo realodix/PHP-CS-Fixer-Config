@@ -74,7 +74,6 @@ its properties setup. You can pass an array to the third parameter of
 | isRiskyAllowed | `bool`                                     | `false`                      |
 | usingCache     | `bool`                                     | `true`                       |
 | lineEnding     | `bool`                                     | `'\n'`                       |
-| customRules    | `array`                                    | `[]`                         |
 
 ```diff
 <?php
