@@ -18,20 +18,17 @@ final class Factory
     /**
      * Current RuleSetInterface instance.
      *
-     * @var \Realodix\PhpCsFixerConfig\Ruleset\RuleSetInterface
+     * @var \RuleSetInterface
      */
     private $ruleSet;
 
     /**
      * Array of resolved options.
      *
-     * @var array<string, mixed>
+     * @var array
      */
     private $options = [];
 
-    /**
-     * Constructor.
-     */
     private function __construct(RuleSetInterface $ruleSet, array $options)
     {
         $this->ruleSet = $ruleSet;
@@ -39,8 +36,7 @@ final class Factory
     }
 
     /**
-     * Prepares the ruleset and options before the `PhpCsFixer\Config` object
-     * is created.
+     * Prepares the ruleset and options before the `PhpCsFixer\Config` object is created.
      */
     public static function create(RuleSetInterface $ruleSet, array $overrideRules = [], array $options = []): self
     {
@@ -48,13 +44,9 @@ final class Factory
             throw new \RuntimeException(sprintf('The "%s" ruleset requires a minimum PHP_VERSION_ID of "%d" but current PHP_VERSION_ID is "%d".', $ruleSet->getName(), $ruleSet->getRequiredPHPVersion(), \PHP_VERSION_ID));
         }
 
-        // Meant to be used in vendor/ to get to the root directory
-        $dir = \dirname(__DIR__, 4);
-        $dir = realpath($dir) ?: $dir;
-
         $defaultFinder = Finder::create()
             ->files()
-            ->in([$dir])
+            ->in(__DIR__)
             ->exclude(['build'])
         ;
 
