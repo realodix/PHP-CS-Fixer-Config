@@ -1,12 +1,12 @@
 <?php
 
-namespace Realodix\PhpCsFixerConfig\Ruleset;
+namespace Realodix\PhpCsFixerConfig\RuleSet;
 
-final class Nexus80 extends AbstractRuleset
+final class Nexus80 extends AbstractRuleSet
 {
     protected $name = 'Nexus for PHP 8.0';
 
-    public function ruleSet(): array
+    public function RuleSet(): array
     {
         return [
             '@Symfony' => true,

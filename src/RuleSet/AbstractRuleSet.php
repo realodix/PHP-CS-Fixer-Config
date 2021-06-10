@@ -1,8 +1,8 @@
 <?php
 
-namespace Realodix\PhpCsFixerConfig\Ruleset;
+namespace Realodix\PhpCsFixerConfig\RuleSet;
 
-abstract class AbstractRuleset implements RuleSetInterface
+abstract class AbstractRuleSet implements RuleSetInterface
 {
     protected $name;
 
@@ -35,7 +35,7 @@ abstract class AbstractRuleset implements RuleSetInterface
 
     final public function getRules(): array
     {
-        return array_merge($this->ruleSet(), $this->headerComment);
+        return array_merge($this->RuleSet(), $this->headerComment);
     }
 
     final public function getRequiredPHPVersion(): int
@@ -43,5 +43,5 @@ abstract class AbstractRuleset implements RuleSetInterface
         return $this->requiredPHPVersion;
     }
 
-    abstract public function ruleSet(): array;
+    abstract public function RuleSet(): array;
 }

@@ -5,7 +5,7 @@ declare(strict_types=1);
 use PedroTroller\CS\Fixer\Fixers;
 use PhpCsFixer\Finder;
 use Realodix\PhpCsFixerConfig\Factory;
-use Realodix\PhpCsFixerConfig\Ruleset\Nexus80;
+use Realodix\PhpCsFixerConfig\RuleSet\Nexus80;
 
 $finder = Finder::create()
     ->files()
