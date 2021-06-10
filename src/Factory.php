@@ -39,12 +39,14 @@ final class Factory
                   ->in(__DIR__);
 
         // Resolve Config options
-        $options['customFixers'] = $options['customFixers'] ?? [];
-        $options['finder'] = $options['finder'] ?? $finder;
-        $options['hideProgress'] = $options['hideProgress'] ?? false;
-        $options['isRiskyAllowed'] = $options['isRiskyAllowed'] ?? (true ?: false);
-        $options['usingCache'] = $options['usingCache'] ?? true;
         $options['rules'] = array_merge($ruleSet->rules(), $overrideRules, $options['customRules'] ?? []);
+        $options += [
+            'customFixers'   => $options['customFixers'] ?? [],
+            'finder'         => $options['finder'] ?? $finder,
+            'hideProgress'   => $options['hideProgress'] ?? false,
+            'isRiskyAllowed' => $options['isRiskyAllowed'] ?? true,
+            'usingCache'     => $options['usingCache'] ?? true,
+        ];
 
         return (new Config($ruleSet->name()))
             ->registerCustomFixers(
