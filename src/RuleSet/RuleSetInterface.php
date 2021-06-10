@@ -1,6 +1,6 @@
 <?php
 
-namespace Nexus\CsConfig\Ruleset;
+namespace Realodix\PhpCsFixerConfig\Ruleset;
 
 interface RulesetInterface
 {

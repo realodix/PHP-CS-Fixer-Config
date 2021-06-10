@@ -32,7 +32,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Nexus\\CsConfig\\": "src/"
+            "Realodix\\PhpCsFixerConfig\\": "src/"
         }
     },
     "minimum-stability": "dev",

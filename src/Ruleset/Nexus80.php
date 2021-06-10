@@ -1,6 +1,6 @@
 <?php
 
-namespace Nexus\CsConfig\Ruleset;
+namespace Realodix\PhpCsFixerConfig\Ruleset;
 
 final class Nexus80 extends AbstractRuleset
 {

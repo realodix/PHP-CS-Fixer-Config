@@ -1,11 +1,11 @@
 <?php
 
-namespace Nexus\CsConfig;
+namespace Realodix\PhpCsFixerConfig;
 
-use Nexus\CsConfig\Ruleset\RulesetInterface;
 use PhpCsFixer\Config;
 use PhpCsFixer\ConfigInterface;
 use PhpCsFixer\Finder;
+use Realodix\PhpCsFixerConfig\Ruleset\RulesetInterface;
 
 /**
  * The Factory class is invoked on each project's `.php_cs` to create
@@ -18,7 +18,7 @@ final class Factory
     /**
      * Current RulesetInterface instance.
      *
-     * @var \Nexus\CsConfig\Ruleset\RulesetInterface
+     * @var \Realodix\PhpCsFixerConfig\Ruleset\RulesetInterface
      */
     private $ruleset;
 
