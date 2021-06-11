@@ -20,11 +20,11 @@ final class Factory
     /**
      * Creates a configuration based on a rule set.
      *
-     * @param \RuleSetInterface $ruleSet
+     * @param RuleSetInterface $ruleSet
      * @param array             $overrideRules
      * @param array             $options
      *
-     * @throws \RuntimeException
+     * @throws RuntimeException
      */
     public static function fromRuleSet(RuleSetInterface $ruleSet, array $overrideRules = [], array $options = [])
     {
@@ -58,11 +58,11 @@ final class Factory
     /**
      * The main method of creating the Config instance.
      *
-     * @param \RuleSetInterface $ruleSet
+     * @param RuleSetInterface $ruleSet
      * @param array             $overrideRules
      * @param array             $options
      *
-     * @return \ConfigInterface
+     * @return ConfigInterface
      */
     private static function config(RuleSetInterface $ruleSet, array $overrideRules = [], array $options = []): ConfigInterface
     {
