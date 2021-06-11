@@ -4,7 +4,7 @@ use Realodix\PhpCsFixerConfig\Factory;
 use Realodix\PhpCsFixerConfig\RuleSet;
 
 $overrideRules = [
-    'PedroTroller/doctrine_migrations' => true,
+    // ..
 ];
 
 $options = [
