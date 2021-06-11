@@ -64,6 +64,39 @@ $config->getFinder()->in(__DIR__);
 return $config;
 ```
 
+### Specifying Options to `PhpCsFixer\Config`
+
+The `Factory` class returns an instance of `PhpCsFixer\Config` and fully supports all of
+its properties setup. You can pass an array to the third parameter of
+`Factory::create()` containing your desired options.
+
+**Options**
+
+| Key            | Allowed Types                              | Default                      |
+| -------------- | :----------------------------------------: | :--------------------------: |
+| cacheFile      | `string`                                   | PHH CS Fixer default value   |
+| customFixers   | `FixerInterface[], iterable, \Traversable` | `[]`                         |
+| finder         | `iterable, string[], \Traversable`         | `PhpCsFixer\Finder` instance |
+| format         | `string`                                   | PHH CS Fixer default value   |
+| hideProgress   | `bool`                                     | PHH CS Fixer default value   |
+| indent         | `string`                                   | PHH CS Fixer default value   |
+| isRiskyAllowed | `bool`                                     | `true`                       |
+| lineEnding     | `bool`                                     | PHH CS Fixer default value   |
+| usingCache     | `bool`                                     | PHH CS Fixer default value   |
+
+```diff
+<?php
+
+use Nexus\CsConfig\Factory;
+use Nexus\CsConfig\Ruleset\Nexus73;
+
+-return Factory::create(new RuleSet\Realodix());
++return Factory::create(new RuleSet\Realodix(), [], [
++    'usingCache'  => false,
++    'hideProgress => true,
++]);
+```
+
 ### Configuration with header
 
 :bulb: Optionally specify a header:

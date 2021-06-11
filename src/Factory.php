@@ -37,8 +37,8 @@ final class Factory
             'format'         => $options['format'] ?? $phpCsFixer->getFormat(),
             'hideProgress'   => $options['hideProgress'] ?? $phpCsFixer->getHideProgress(),
             'indent'         => $options['indent'] ?? $phpCsFixer->getIndent(),
-            'lineEnding'     => $options['lineEnding'] ?? $phpCsFixer->getLineEnding(),
             'isRiskyAllowed' => $options['isRiskyAllowed'] ?? true,
+            'lineEnding'     => $options['lineEnding'] ?? $phpCsFixer->getLineEnding(),
             'usingCache'     => $options['usingCache'] ?? $phpCsFixer->getUsingCache(),
             'rules'          => array_merge($ruleSet->getRules(), $overrideRules ?? []),
         ];
