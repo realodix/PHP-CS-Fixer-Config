@@ -21,8 +21,8 @@ final class Factory
      * Creates a configuration based on a rule set.
      *
      * @param RuleSetInterface $ruleSet
-     * @param array             $overrideRules
-     * @param array             $options
+     * @param array            $overrideRules
+     * @param array            $options
      *
      * @throws RuntimeException
      */
@@ -59,8 +59,8 @@ final class Factory
      * The main method of creating the Config instance.
      *
      * @param RuleSetInterface $ruleSet
-     * @param array             $overrideRules
-     * @param array             $options
+     * @param array            $overrideRules
+     * @param array            $options
      *
      * @return ConfigInterface
      */
