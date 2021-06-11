@@ -70,7 +70,6 @@ final class Factory
     {
         return Finder::create()
                ->files()
-               ->in(__DIR__)
-               ->exclude(['build']);
+               ->in(__DIR__);
     }
 }
