@@ -15,11 +15,8 @@ final class Factory
     /**
      * Prepares the RuleSet and options before the `PhpCsFixer\Config` object is created.
      */
-    public static function create(
-        RuleSetInterface $ruleSet,
-        array $overrideRules = [],
-        array $options = []
-    ) {
+    public static function create(RuleSetInterface $ruleSet, array $overrideRules = [], array $options = [])
+    {
         if (\PHP_VERSION_ID < $ruleSet->getRequiredPHPVersion()) {
             throw new \RuntimeException(
                 sprintf(
@@ -51,11 +48,8 @@ final class Factory
     /**
      * The main method of creating the Config instance.
      */
-    private static function config(
-        RuleSetInterface $ruleSet,
-        array $overrideRules = [],
-        array $options = []
-    ): ConfigInterface {
+    private static function config(RuleSetInterface $ruleSet, array $overrideRules = [], array $options = []): ConfigInterface
+    {
         return (new \PhpCsFixer\Config($ruleSet->getName()))
                ->setCacheFile($options['cacheFile'])
                ->setFinder($options['finder'])
