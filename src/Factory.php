@@ -70,6 +70,7 @@ final class Factory
                     new DrupolFixer\BlankLineBeforeEndOfClass($config->getIndent(), $config->getLineEnding()),
                     new DrupolFixer\ControlStructureCurlyBracketsElseFixer($config->getIndent(), $config->getLineEnding()),
                     new DrupolFixer\InlineCommentSpacerFixer,
+                    new CustomFixer\BracesOneLineFixer(),
                 ])
                 ->setRules(array_merge($options['rules'], $overrideRules));
     }
