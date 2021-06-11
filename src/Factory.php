@@ -14,7 +14,21 @@ use Realodix\PhpCsFixerConfig\RuleSet\RuleSetInterface;
 final class Factory
 {
     /**
-     * Prepares the RuleSet and options before the `PhpCsFixer\Config` object is created.
+     * @param string $name
+     */
+    private static function phpCsFixer(string $name = 'default')
+    {
+        return new \PhpCsFixer\Config($name);
+    }
+
+    /**
+     * Creates a configuration based on a rule set.
+     *
+     * @param \RuleSetInterface $ruleSet
+     * @param array             $overrideRules
+     * @param array             $options
+     *
+     * @throws \RuntimeException
      */
     public static function fromRuleSet(RuleSetInterface $ruleSet, array $overrideRules = [], array $options = [])
     {
@@ -47,6 +61,10 @@ final class Factory
 
     /**
      * The main method of creating the Config instance.
+     *
+     * @param \RuleSetInterface $ruleSet
+     * @param array             $overrideRules
+     * @param array             $options
      */
     private static function config(RuleSetInterface $ruleSet, array $overrideRules = [], array $options = []): ConfigInterface
     {
@@ -71,18 +89,15 @@ final class Factory
         return [
             new CustomFixer\BracesOneLineFixer(),
             new DrupolFixer\BlankLineBeforeEndOfClass(
-                self::phpCsFixer()->getIndent(), self::phpCsFixer()->getLineEnding()
+                self::phpCsFixer()->getIndent(),
+                self::phpCsFixer()->getLineEnding()
             ),
             new DrupolFixer\ControlStructureCurlyBracketsElseFixer(
-                self::phpCsFixer()->getIndent(), self::phpCsFixer()->getLineEnding()
+                self::phpCsFixer()->getIndent(),
+                self::phpCsFixer()->getLineEnding()
             ),
             new DrupolFixer\InlineCommentSpacerFixer,
         ];
-    }
-
-    private static function phpCsFixer(string $name = 'default')
-    {
-        return new \PhpCsFixer\Config($name);
     }
 
     private static function defaultFinder()
