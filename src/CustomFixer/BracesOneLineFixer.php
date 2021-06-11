@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Realodix\PhpCsFixerConfig\CustomFixer;
@@ -29,7 +30,7 @@ final class BracesOneLineFixer implements FixerInterface
     public function fix(\SplFileInfo $file, Tokens $tokens): void
     {
         foreach ($tokens as $index => $token) {
-            if (!$token->equals('{')) {
+            if (! $token->equals('{')) {
                 continue;
             }
             $braceStartIndex = $index;
@@ -72,7 +73,7 @@ final class BracesOneLineFixer implements FixerInterface
             "Braces of empty function's body should be placed on the same line",
             [
                 new CodeSample(
-                    <<<PHP
+                    <<<'PHP'
 <?php
 declare(strict_types=1);
 function foo() {}
