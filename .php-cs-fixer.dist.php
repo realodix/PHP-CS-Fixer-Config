@@ -1,8 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
-use PedroTroller\CS\Fixer\Fixers;
 use PhpCsFixer\Finder;
 use Realodix\PhpCsFixerConfig\Factory;
 use Realodix\PhpCsFixerConfig\RuleSet\Realodix;
@@ -20,7 +17,6 @@ $overrideRules = [
 
 $options = [
     'finder' => $finder,
-    'customFixers' => new Fixers(),
 
 ];
 

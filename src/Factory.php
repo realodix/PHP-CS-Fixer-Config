@@ -5,7 +5,6 @@ namespace Realodix\PhpCsFixerConfig;
 use PhpCsFixer\Config;
 use PhpCsFixer\ConfigInterface;
 use PhpCsFixer\Finder;
-use PhpCsFixerCustomFixers\Fixers as CustomFixers;
 use Realodix\PhpCsFixerConfig\RuleSet\RuleSetInterface;
 
 /**
@@ -73,8 +72,6 @@ final class Factory
         $rules = array_merge($this->options['rules'], $overrideRules);
 
         return (new Config($this->RuleSet->getName()))
-            ->registerCustomFixers($this->options['customFixers'])
-            ->registerCustomFixers(new CustomFixers())
             ->setCacheFile($this->options['cacheFile'])
             ->setFinder($this->options['finder'])
             ->setFormat($this->options['format'])
@@ -84,6 +81,9 @@ final class Factory
             ->setPhpExecutable($this->options['phpExecutable'])
             ->setRiskyAllowed($this->options['isRiskyAllowed'])
             ->setUsingCache($this->options['usingCache'])
+            ->registerCustomFixers($this->options['customFixers'])
+            ->registerCustomFixers(new \PhpCsFixerCustomFixers\Fixers())
+            ->registerCustomFixers(new \PedroTroller\CS\Fixer\Fixers())
             ->setRules($rules);
     }
 
