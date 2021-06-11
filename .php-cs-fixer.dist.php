@@ -20,4 +20,4 @@ $options = [
 
 ];
 
-return Factory::create(new Realodix(), $overrideRules, $options)->forProjects();
+return Factory::create(new Realodix(), $overrideRules, $options);
