@@ -28,17 +28,18 @@ final class Factory
             );
         }
 
+        $phpCsFixer = new \PhpCsFixer\Config();
+
         $options = [
-            'cacheFile'      => $options['cacheFile'] ?? '.php-cs-fixer.cache',
-            'customFixers'   => $options['customFixers'] ?? [],
+            'cacheFile'      => $options['cacheFile'] ?? $phpCsFixer->getCacheFile(),
+            'customFixers'   => $options['customFixers'] ?? $phpCsFixer->getCustomFixers(),
             'finder'         => $options['finder'] ?? self::defaultFinder(),
-            'format'         => $options['format'] ?? 'txt',
-            'hideProgress'   => $options['hideProgress'] ?? false,
-            'indent'         => $options['indent'] ?? '    ',
-            'lineEnding'     => $options['lineEnding'] ?? "\n",
-            'phpExecutable'  => $options['phpExecutable'] ?? null,
+            'format'         => $options['format'] ?? $phpCsFixer->getFormat(),
+            'hideProgress'   => $options['hideProgress'] ?? $phpCsFixer->getHideProgress(),
+            'indent'         => $options['indent'] ?? $phpCsFixer->getIndent(),
+            'lineEnding'     => $options['lineEnding'] ?? $phpCsFixer->getLineEnding(),
             'isRiskyAllowed' => $options['isRiskyAllowed'] ?? true,
-            'usingCache'     => $options['usingCache'] ?? true,
+            'usingCache'     => $options['usingCache'] ?? $phpCsFixer->getUsingCache(),
             'rules'          => array_merge($ruleSet->getRules(), $overrideRules ?? []),
         ];
 
@@ -57,7 +58,6 @@ final class Factory
                ->setHideProgress($options['hideProgress'])
                ->setIndent($options['indent'])
                ->setLineEnding($options['lineEnding'])
-               ->setPhpExecutable($options['phpExecutable'])
                ->setRiskyAllowed($options['isRiskyAllowed'])
                ->setUsingCache($options['usingCache'])
                ->registerCustomFixers($options['customFixers'])
