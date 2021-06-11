@@ -22,7 +22,7 @@ final class PhpStorm extends AbstractRuleSet
      * - [M] array_syntax               Same as the default value
      * - [M] general_phpdoc_tag_rename  Same as the default value
      */
-    public function ruleSet(): array
+    public function getRules(): array
     {
         $rules = [
             '@PSR12'                            => true,

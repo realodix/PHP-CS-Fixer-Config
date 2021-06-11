@@ -13,7 +13,7 @@ final class Laravel extends AbstractRuleSet
      * - https://docs.styleci.io/presets#laravel
      * - https://github.com/matt-allan/laravel-code-style.
      */
-    public function ruleSet(): array
+    public function getRules(): array
     {
         return Config::RULE_DEFINITIONS['@Laravel'];
     }

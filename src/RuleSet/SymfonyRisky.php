@@ -10,9 +10,9 @@ final class SymfonyRisky extends AbstractRuleSet
      * Based on symfony/symfony
      * https://github.com/symfony/symfony/blob/5.4/.php-cs-fixer.dist.php
      */
-    public function ruleSet(): array
+    public function getRules(): array
     {
-        $basicRules = (new Symfony())->ruleSet();
+        $basicRules = (new Symfony())->getRules();
 
         $rules = [
             '@PHPUnit75Migration:risky' => true,

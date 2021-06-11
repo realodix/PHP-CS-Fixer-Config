@@ -13,9 +13,9 @@ final class PHPUnitRisky extends AbstractRuleSet
      * Diff
      * - [M] ordered_interfaces
      */
-    public function ruleSet(): array
+    public function getRules(): array
     {
-        $basicRules = (new PHPUnit())->ruleSet();
+        $basicRules = (new PHPUnit())->getRules();
 
         $rules = [
             'array_push'                => true,

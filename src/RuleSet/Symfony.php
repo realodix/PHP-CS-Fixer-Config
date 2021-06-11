@@ -10,7 +10,7 @@ final class Symfony extends AbstractRuleSet
      * Based on symfony/symfony
      * https://github.com/symfony/symfony/blob/5.4/.php-cs-fixer.dist.php
      */
-    public function ruleSet(): array
+    public function getRules(): array
     {
         $rules = [
             '@PHP71Migration'      => true,

@@ -16,7 +16,7 @@ final class PHPUnit extends AbstractRuleSet
      * - [M] list_syntax
      * - [M] ordered_interfaces
      */
-    public function ruleSet(): array
+    public function getRules(): array
     {
         $rules = [
             '@Symfony'                           => true,

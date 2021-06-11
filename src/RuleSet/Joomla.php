@@ -17,7 +17,7 @@ final class Joomla extends AbstractRuleSet
      * - [M] no_extra_consecutive_blank_lines   Rename to no_extra_blank_lines
      * - [M] trailing_comma_in_multiline_array  Rename to trailing_comma_in_multiline
      */
-    public function ruleSet(): array
+    public function getRules(): array
     {
         $rules = [
             // psr-1

@@ -10,7 +10,7 @@ abstract class AbstractRuleSet implements RuleSetInterface
 
     protected $requiredPHPVersion = 0;
 
-    abstract public function ruleSet(): array;
+    abstract public function getRules(): array;
 
     public function __construct(?string $header = null)
     {
@@ -26,19 +26,19 @@ abstract class AbstractRuleSet implements RuleSetInterface
         ];
     }
 
-    public function getName(): string
+    public function name(): string
     {
         $class = strrchr(self::class, '\\') ?: self::class;
 
         return $this->name ?? trim($class, '\\');
     }
 
-    public function getRules(): array
+    public function rules(): array
     {
-        return array_merge($this->ruleSet(), $this->headerComment);
+        return array_merge($this->getRules(), $this->headerComment);
     }
 
-    public function getRequiredPHPVersion(): int
+    public function requiredPHPVersion(): int
     {
         return $this->requiredPHPVersion;
     }

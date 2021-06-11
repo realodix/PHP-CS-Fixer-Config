@@ -17,12 +17,12 @@ final class Factory
      */
     public static function fromRuleSet(RuleSetInterface $ruleSet, array $overrideRules = [], array $options = [])
     {
-        if (\PHP_VERSION_ID < $ruleSet->getRequiredPHPVersion()) {
+        if (\PHP_VERSION_ID < $ruleSet->requiredPHPVersion()) {
             throw new \RuntimeException(
                 sprintf(
                     'The "%s" ruleset requires a minimum PHP_VERSION_ID of "%d" but current PHP_VERSION_ID is "%d".',
-                    $ruleSet->getName(),
-                    $ruleSet->getRequiredPHPVersion(),
+                    $ruleSet->name(),
+                    $ruleSet->requiredPHPVersion(),
                     \PHP_VERSION_ID
                 )
             );
@@ -40,7 +40,7 @@ final class Factory
             'isRiskyAllowed' => $options['isRiskyAllowed'] ?? true,
             'lineEnding'     => $options['lineEnding'] ?? $phpCsFixer->getLineEnding(),
             'usingCache'     => $options['usingCache'] ?? $phpCsFixer->getUsingCache(),
-            'rules'          => array_merge($ruleSet->getRules(), $overrideRules ?? []),
+            'rules'          => array_merge($ruleSet->rules(), $overrideRules ?? []),
         ];
 
         return self::config($ruleSet, $overrideRules, $options);
@@ -51,7 +51,7 @@ final class Factory
      */
     private static function config(RuleSetInterface $ruleSet, array $overrideRules = [], array $options = []): ConfigInterface
     {
-        return (new \PhpCsFixer\Config($ruleSet->getName()))
+        return (new \PhpCsFixer\Config($ruleSet->name()))
                ->setCacheFile($options['cacheFile'])
                ->setFinder($options['finder'])
                ->setFormat($options['format'])

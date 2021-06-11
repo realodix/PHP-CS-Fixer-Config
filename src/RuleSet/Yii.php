@@ -27,7 +27,7 @@ final class Yii extends AbstractRuleSet
      * - [D] ordered_imports.sortAlgorithm
      * - [M] array_syntax
      */
-    public function ruleSet(): array
+    public function getRules(): array
     {
         $rules = [
             '@PSR2'                   => true,

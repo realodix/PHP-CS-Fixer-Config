@@ -13,7 +13,7 @@ final class LaravelRisky extends AbstractRuleSet
      * - https://docs.styleci.io/presets#laravel
      * - https://github.com/matt-allan/laravel-code-style.
      */
-    public function ruleSet(): array
+    public function getRules(): array
     {
         $basicRules = Config::RULE_DEFINITIONS['@Laravel'];
         $laravelRisky = Config::RULE_DEFINITIONS['@Laravel:risky'];

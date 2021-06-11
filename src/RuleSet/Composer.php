@@ -19,7 +19,7 @@ final class Composer extends AbstractRuleSet
      * - [M] psr0                               Rename to psr_autoloading
      * - [M] trailing_comma_in_multiline_array  Rename to trailing_comma_in_multiline
      */
-    public function ruleSet(): array
+    public function getRules(): array
     {
         $rules = [
             '@PSR2'                       => true,

@@ -18,7 +18,7 @@ final class Drupal extends AbstractRuleSet
      * - [D] no_superfluous_phpdoc_tags.remove_inheritdoc
      * - [D] yoda_style.always_move_variable
      */
-    public function ruleSet(): array
+    public function getRules(): array
     {
         $rules = [
             'array_syntax'                   => true,

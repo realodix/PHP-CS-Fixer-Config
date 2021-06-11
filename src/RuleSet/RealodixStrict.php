@@ -8,9 +8,9 @@ final class RealodixStrict extends AbstractRuleSet
 {
     protected $name = 'Realodix Coding Standards (strict)';
 
-    public function ruleSet(): array
+    public function getRules(): array
     {
-        $basicRules = (new Realodix())->ruleSet();
+        $basicRules = (new Realodix())->getRules();
 
         $rules = [
             'align_multiline_comment'                               => ['comment_type' => 'all_multiline'],

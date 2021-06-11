@@ -8,9 +8,9 @@ final class Realodix extends AbstractRuleSet
 {
     protected $name = 'Realodix Coding Standards';
 
-    public function ruleSet(): array
+    public function getRules(): array
     {
-        $basicRules = (new Laravel())->ruleSet();
+        $basicRules = (new Laravel())->getRules();
 
         $rules = [
             'align_multiline_comment'      => true,

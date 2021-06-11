@@ -11,9 +11,9 @@ final class YiiRisky extends AbstractRuleSet
      * - https://github.com/yiisoft/yii2/blob/master/cs/src/YiiConfig.php
      * - https://github.com/yiisoft/yii2/blob/master/docs/internals/core-code-style.md
      */
-    public function ruleSet(): array
+    public function getRules(): array
     {
-        $basicRules = (new Yii())->ruleSet();
+        $basicRules = (new Yii())->getRules();
 
         $rules = [
             'dir_constant'             => true,

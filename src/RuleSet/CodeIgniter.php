@@ -16,7 +16,7 @@ final class CodeIgniter extends AbstractRuleSet
      * - [M] align_multiline_comment
      * - [M] array_syntax
      */
-    public function ruleSet(): array
+    public function getRules(): array
     {
         $rules = [
             'align_multiline_comment' => true,
