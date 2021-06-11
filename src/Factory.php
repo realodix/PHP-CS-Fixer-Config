@@ -18,7 +18,7 @@ final class Factory
      *
      * @var \RuleSetInterface
      */
-    private $RuleSet;
+    private $ruleSet;
 
     /**
      * Array of resolved options.
@@ -27,19 +27,26 @@ final class Factory
      */
     private $options = [];
 
-    private function __construct(RuleSetInterface $RuleSet, array $options)
+    private function __construct(RuleSetInterface $ruleSet, array $options)
     {
-        $this->RuleSet = $RuleSet;
+        $this->ruleSet = $ruleSet;
         $this->options = $options;
     }
 
     /**
      * Prepares the RuleSet and options before the `PhpCsFixer\Config` object is created.
      */
-    public static function create(RuleSetInterface $RuleSet, array $overrideRules = [], array $options = []): self
+    public static function create(RuleSetInterface $ruleSet, array $overrideRules = [], array $options = []): self
     {
-        if (\PHP_VERSION_ID < $RuleSet->getRequiredPHPVersion()) {
-            throw new \RuntimeException(sprintf('The "%s" RuleSet requires a minimum PHP_VERSION_ID of "%d" but current PHP_VERSION_ID is "%d".', $RuleSet->getName(), $RuleSet->getRequiredPHPVersion(), \PHP_VERSION_ID));
+        if (\PHP_VERSION_ID < $ruleSet->getRequiredPHPVersion()) {
+            throw new \RuntimeException(
+                sprintf(
+                    'The "%s" ruleset requires a minimum PHP_VERSION_ID of "%d" but current PHP_VERSION_ID is "%d".',
+                    $ruleSet->getName(),
+                    $ruleSet->getRequiredPHPVersion(),
+                    \PHP_VERSION_ID
+                )
+            );
         }
 
         $defaultFinder = Finder::create()
@@ -58,10 +65,10 @@ final class Factory
             'phpExecutable' => $options['phpExecutable'] ?? null,
             'isRiskyAllowed' => $options['isRiskyAllowed'] ?? true,
             'usingCache' => $options['usingCache'] ?? true,
-            'rules' => array_merge($RuleSet->getRules(), $overrideRules ?? []),
+            'rules' => array_merge($ruleSet->getRules(), $overrideRules ?? []),
         ];
 
-        return new self($RuleSet, $options);
+        return new self($ruleSet, $options);
     }
 
     /**
@@ -71,7 +78,7 @@ final class Factory
     {
         $rules = array_merge($this->options['rules'], $overrideRules);
 
-        return (new Config($this->RuleSet->getName()))
+        return (new Config($this->ruleSet->getName()))
             ->setCacheFile($this->options['cacheFile'])
             ->setFinder($this->options['finder'])
             ->setFormat($this->options['format'])
