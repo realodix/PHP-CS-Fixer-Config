@@ -68,6 +68,9 @@ return $config;
 - [kubawerlos/php-cs-fixer-custom-fixers](https://github.com/kubawerlos/php-cs-fixer-custom-fixers)
 - [PedroTroller/PhpCSFixer-Custom-Fixers](https://github.com/PedroTroller/PhpCSFixer-Custom-Fixers)
 - [drupol/phpcsfixer-configs-drupal](https://github.com/drupol/phpcsfixer-configs-drupal/tree/master/src/Fixer)
+  - `Drupal/blank_line_before_end_of_class`
+  - `Drupal/control_structure_braces_else`
+  - `Drupal/inline_comment_spacer`
 - [`PhpStorm/braces_one_line`](src/CustomFixer/BracesOneLineFixer.php)
 
 ### Specifying Options to `PhpCsFixer\Config`
