@@ -29,18 +29,16 @@ final class Factory
             );
         }
 
-        $phpCsFixer = new \PhpCsFixer\Config();
-
         $options = [
-            'cacheFile'      => $options['cacheFile'] ?? $phpCsFixer->getCacheFile(),
-            'customFixers'   => $options['customFixers'] ?? $phpCsFixer->getCustomFixers(),
+            'cacheFile'      => $options['cacheFile'] ?? self::phpCsFixer()->getCacheFile(),
+            'customFixers'   => $options['customFixers'] ?? self::phpCsFixer()->getCustomFixers(),
             'finder'         => $options['finder'] ?? self::defaultFinder(),
-            'format'         => $options['format'] ?? $phpCsFixer->getFormat(),
-            'hideProgress'   => $options['hideProgress'] ?? $phpCsFixer->getHideProgress(),
-            'indent'         => $options['indent'] ?? $phpCsFixer->getIndent(),
+            'format'         => $options['format'] ?? self::phpCsFixer()->getFormat(),
+            'hideProgress'   => $options['hideProgress'] ?? self::phpCsFixer()->getHideProgress(),
+            'indent'         => $options['indent'] ?? self::phpCsFixer()->getIndent(),
             'isRiskyAllowed' => $options['isRiskyAllowed'] ?? true,
-            'lineEnding'     => $options['lineEnding'] ?? $phpCsFixer->getLineEnding(),
-            'usingCache'     => $options['usingCache'] ?? $phpCsFixer->getUsingCache(),
+            'lineEnding'     => $options['lineEnding'] ?? self::phpCsFixer()->getLineEnding(),
+            'usingCache'     => $options['usingCache'] ?? self::phpCsFixer()->getUsingCache(),
             'rules'          => array_merge($ruleSet->rules(), $overrideRules ?? []),
         ];
 
@@ -52,7 +50,7 @@ final class Factory
      */
     private static function config(RuleSetInterface $ruleSet, array $overrideRules = [], array $options = []): ConfigInterface
     {
-        return (new \PhpCsFixer\Config($ruleSet->name()))
+        return self::phpCsFixer($ruleSet->name())
                 ->setCacheFile($options['cacheFile'])
                 ->setFinder($options['finder'])
                 ->setFormat($options['format'])
@@ -73,11 +71,16 @@ final class Factory
         $config = new \PhpCsFixer\Config();
 
         return [
-            new DrupolFixer\BlankLineBeforeEndOfClass($config->getIndent(), $config->getLineEnding()),
-            new DrupolFixer\ControlStructureCurlyBracketsElseFixer($config->getIndent(), $config->getLineEnding()),
+            new DrupolFixer\BlankLineBeforeEndOfClass(self::phpCsFixer()->getIndent(), self::phpCsFixer()->getLineEnding()),
+            new DrupolFixer\ControlStructureCurlyBracketsElseFixer(self::phpCsFixer()->getIndent(), self::phpCsFixer()->getLineEnding()),
             new DrupolFixer\InlineCommentSpacerFixer,
             new CustomFixer\BracesOneLineFixer(),
         ];
+    }
+
+    private static function phpCsFixer(string $name = 'default')
+    {
+        return new \PhpCsFixer\Config($name);
     }
 
     private static function defaultFinder()
