@@ -61,6 +61,8 @@ final class Factory
      * @param \RuleSetInterface $ruleSet
      * @param array             $overrideRules
      * @param array             $options
+     *
+     * @return \ConfigInterface
      */
     private static function config(RuleSetInterface $ruleSet, array $overrideRules = [], array $options = []): ConfigInterface
     {
