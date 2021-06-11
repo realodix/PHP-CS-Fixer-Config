@@ -15,7 +15,7 @@ final class Factory
     /**
      * Prepares the RuleSet and options before the `PhpCsFixer\Config` object is created.
      */
-    public static function create(RuleSetInterface $ruleSet, array $overrideRules = [], array $options = [])
+    public static function fromRuleSet(RuleSetInterface $ruleSet, array $overrideRules = [], array $options = [])
     {
         if (\PHP_VERSION_ID < $ruleSet->getRequiredPHPVersion()) {
             throw new \RuntimeException(

@@ -11,4 +11,4 @@ $options = [
     // ..
 ];
 
-return Factory::create(new RealodixStrict(), $overrideRules, $options);
+return Factory::fromRuleSet(new RealodixStrict(), $overrideRules, $options);

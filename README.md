@@ -38,7 +38,7 @@ Create a configuration file `.php-cs-fixer.php` in the root of your project:
 use Realodix\PhpCsFixerConfig\Factory;
 use Realodix\PhpCsFixerConfig\RuleSet;
 
-$config = Factory::create(new RuleSet\Realodix());
+$config = Factory::fromRuleSet(new RuleSet\Realodix());
 $config->getFinder()->in(__DIR__);
 
 return $config;
@@ -54,8 +54,8 @@ return $config;
 use Realodix\PhpCsFixerConfig\Factory;
 use Realodix\PhpCsFixerConfig\RuleSet;
 
-- $config = Factory::create(new RuleSet\Realodix());
-+ $config = Factory::create(new RuleSet\Realodix(), [
+- $config = Factory::fromRuleSet(new RuleSet\Realodix());
++ $config = Factory::fromRuleSet(new RuleSet\Realodix(), [
 +     'no_extra_blank_lines' => false,
 + ]);
 
@@ -68,7 +68,7 @@ return $config;
 
 The `Factory` class returns an instance of `PhpCsFixer\Config` and fully supports all of
 its properties setup. You can pass an array to the third parameter of
-`Factory::create()` containing your desired options.
+`Factory::fromRuleSet()` containing your desired options.
 
 **Options**
 
@@ -90,8 +90,8 @@ its properties setup. You can pass an array to the third parameter of
 use Nexus\CsConfig\Factory;
 use Nexus\CsConfig\Ruleset\Nexus73;
 
--return Factory::create(new RuleSet\Realodix());
-+return Factory::create(new RuleSet\Realodix(), [], [
+-return Factory::fromRuleSet(new RuleSet\Realodix());
++return Factory::fromRuleSet(new RuleSet\Realodix(), [], [
 +    'usingCache'  => false,
 +    'hideProgress => true,
 +]);
@@ -116,8 +116,8 @@ use Realodix\PhpCsFixerConfig\RuleSet;
 + @see https://github.com/realodix/php-cs-fixer-config
 + EOF;
 
-- $config = Factory::create(new RuleSet\Realodix());
-+ $config = Factory::create(new RuleSet\Realodix($header));
+- $config = Factory::fromRuleSet(new RuleSet\Realodix());
++ $config = Factory::fromRuleSet(new RuleSet\Realodix($header));
 $config->getFinder()->in(__DIR__);
 
 return $config;
