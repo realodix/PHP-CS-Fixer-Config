@@ -2,6 +2,7 @@
 
 namespace Realodix\PhpCsFixerConfig;
 
+use drupol\PhpCsFixerConfigsDrupal\Fixer as DrupolFixer;
 use PhpCsFixer\ConfigInterface;
 use PhpCsFixer\Finder;
 use Realodix\PhpCsFixerConfig\RuleSet\RuleSetInterface;
@@ -51,19 +52,27 @@ final class Factory
      */
     private static function config(RuleSetInterface $ruleSet, array $overrideRules = [], array $options = []): ConfigInterface
     {
-        return (new \PhpCsFixer\Config($ruleSet->name()))
-               ->setCacheFile($options['cacheFile'])
-               ->setFinder($options['finder'])
-               ->setFormat($options['format'])
-               ->setHideProgress($options['hideProgress'])
-               ->setIndent($options['indent'])
-               ->setLineEnding($options['lineEnding'])
-               ->setRiskyAllowed($options['isRiskyAllowed'])
-               ->setUsingCache($options['usingCache'])
-               ->registerCustomFixers($options['customFixers'])
-               ->registerCustomFixers(new \PhpCsFixerCustomFixers\Fixers())
-               ->registerCustomFixers(new \PedroTroller\CS\Fixer\Fixers())
-               ->setRules(array_merge($options['rules'], $overrideRules));
+        $config = new \PhpCsFixer\Config($ruleSet->name());
+
+        return $config
+                ->setCacheFile($options['cacheFile'])
+                ->setFinder($options['finder'])
+                ->setFormat($options['format'])
+                ->setHideProgress($options['hideProgress'])
+                ->setIndent($options['indent'])
+                ->setLineEnding($options['lineEnding'])
+                ->setRiskyAllowed($options['isRiskyAllowed'])
+                ->setUsingCache($options['usingCache'])
+                ->registerCustomFixers($options['customFixers'])
+                ->registerCustomFixers(new \PhpCsFixerCustomFixers\Fixers())
+                ->registerCustomFixers(new \PedroTroller\CS\Fixer\Fixers())
+                ->registerCustomFixers([
+                    new DrupolFixer\BlankLineBeforeEndOfClass($config->getIndent(), $config->getLineEnding()),
+                    new DrupolFixer\ControlStructureCurlyBracketsElseFixer($config->getIndent(), $config->getLineEnding()),
+                    new DrupolFixer\InlineCommentSpacerFixer,
+                    new DrupolFixer\TryCatchBlock($config->getIndent(), $config->getLineEnding()),
+                ])
+                ->setRules(array_merge($options['rules'], $overrideRules));
     }
 
     private static function defaultFinder()
