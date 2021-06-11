@@ -20,13 +20,13 @@ final class CodeIgniter extends AbstractRuleSet
     {
         $rules = [
             'align_multiline_comment' => true,
-            'array_indentation' => true,
-            'array_push' => true, // risky
-            'array_syntax' => true,
-            'backtick_to_shell_exec' => true,
-            'binary_operator_spaces' => [
+            'array_indentation'       => true,
+            'array_push'              => true, // risky
+            'array_syntax'            => true,
+            'backtick_to_shell_exec'  => true,
+            'binary_operator_spaces'  => [
                 'operators' => [
-                    '=' => 'align_single_space',
+                    '='  => 'align_single_space',
                     '=>' => 'align_single_space',
                     '||' => 'align_single_space',
                     '.=' => 'align_single_space',
@@ -52,19 +52,19 @@ final class CodeIgniter extends AbstractRuleSet
                     'yield_from',
                 ],
             ],
-            'blank_line_after_namespace' => true,
+            'blank_line_after_namespace'   => true,
             'blank_line_after_opening_tag' => true,
-            'function_to_constant' => true,
-            'indentation_type' => true,
-            'line_ending' => true,
-            'no_alias_functions' => [
+            'function_to_constant'         => true,
+            'indentation_type'             => true,
+            'line_ending'                  => true,
+            'no_alias_functions'           => [
                 'sets' => ['@all'],
             ],
-            'static_lambda' => true,
+            'static_lambda'              => true,
             'ternary_to_null_coalescing' => true,
-            'yoda_style' => [
-                'equal' => false,
-                'identical' => null,
+            'yoda_style'                 => [
+                'equal'            => false,
+                'identical'        => null,
                 'less_and_greater' => false,
             ],
         ];

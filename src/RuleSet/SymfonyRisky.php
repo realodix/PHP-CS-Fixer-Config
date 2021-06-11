@@ -16,7 +16,7 @@ final class SymfonyRisky extends AbstractRuleSet
 
         $rules = [
             '@PHPUnit75Migration:risky' => true,
-            '@Symfony:risky' => true,
+            '@Symfony:risky'            => true,
         ];
 
         return array_merge($basicRules, $rules);

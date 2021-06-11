@@ -13,8 +13,8 @@ final class Symfony extends AbstractRuleSet
     public function ruleSet(): array
     {
         $rules = [
-            '@PHP71Migration' => true,
-            '@Symfony' => true,
+            '@PHP71Migration'      => true,
+            '@Symfony'             => true,
             'protected_to_private' => false,
         ];
 

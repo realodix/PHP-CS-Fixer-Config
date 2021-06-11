@@ -21,24 +21,24 @@ final class Drupal extends AbstractRuleSet
     public function ruleSet(): array
     {
         $rules = [
-            'array_syntax' => true,
-            'compact_nullable_typehint' => true,
-            'constant_case' => ['case' => 'upper'],
-            'declare_equal_normalize' => ['space' => 'single'],
-            'encoding' => true,
-            'full_opening_tag' => true,
-            'function_declaration' => true,
-            'line_ending' => true,
-            'lowercase_keywords' => true,
-            'no_mixed_echo_print' => ['use' => 'print'],
-            'no_spaces_after_function_name' => true,
-            'no_spaces_inside_parenthesis' => true,
-            'no_superfluous_phpdoc_tags' => ['allow_mixed' => true, 'allow_unused_params' => true],
-            'single_line_comment_style' => true,
+            'array_syntax'                   => true,
+            'compact_nullable_typehint'      => true,
+            'constant_case'                  => ['case' => 'upper'],
+            'declare_equal_normalize'        => ['space' => 'single'],
+            'encoding'                       => true,
+            'full_opening_tag'               => true,
+            'function_declaration'           => true,
+            'line_ending'                    => true,
+            'lowercase_keywords'             => true,
+            'no_mixed_echo_print'            => ['use' => 'print'],
+            'no_spaces_after_function_name'  => true,
+            'no_spaces_inside_parenthesis'   => true,
+            'no_superfluous_phpdoc_tags'     => ['allow_mixed' => true, 'allow_unused_params' => true],
+            'single_line_comment_style'      => true,
             'switch_case_semicolon_to_colon' => true,
-            'switch_case_space' => true,
-            'visibility_required' => true,
-            'blank_line_before_statement' => [
+            'switch_case_space'              => true,
+            'visibility_required'            => true,
+            'blank_line_before_statement'    => [
                 'statements' => [
                     'break', 'case', 'continue', 'declare', 'default', 'do', 'exit',
                     'for', 'foreach', 'goto', 'if', 'include', 'include_once', 'require',
@@ -47,9 +47,9 @@ final class Drupal extends AbstractRuleSet
                 ],
             ],
             'braces' => [
-                'allow_single_line_closure' => true,
+                'allow_single_line_closure'                   => true,
                 'position_after_functions_and_oop_constructs' => 'same',
-                'position_after_control_structures' => 'same',
+                'position_after_control_structures'           => 'same',
             ],
             'general_phpdoc_annotation_remove' => [
                 'annotations' => [
@@ -60,7 +60,7 @@ final class Drupal extends AbstractRuleSet
                 ],
             ],
             'global_namespace_import' => [
-                'import_classes' => false,
+                'import_classes'   => false,
                 'import_constants' => false,
                 'import_functions' => false,
             ],
@@ -71,8 +71,8 @@ final class Drupal extends AbstractRuleSet
                 ],
             ],
             'yoda_style' => [
-                'equal' => false,
-                'identical' => false,
+                'equal'            => false,
+                'identical'        => false,
                 'less_and_greater' => false,
             ],
 

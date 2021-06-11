@@ -2,7 +2,6 @@
 
 namespace Realodix\PhpCsFixerConfig;
 
-use PhpCsFixer\Config;
 use PhpCsFixer\ConfigInterface;
 use PhpCsFixer\Finder;
 use Realodix\PhpCsFixerConfig\RuleSet\RuleSetInterface;
@@ -32,23 +31,18 @@ final class Factory
             );
         }
 
-        $defaultFinder = Finder::create()
-            ->files()
-            ->in(__DIR__)
-            ->exclude(['build']);
-
         $options = [
-            'cacheFile' => $options['cacheFile'] ?? '.php-cs-fixer.cache',
-            'customFixers' => $options['customFixers'] ?? [],
-            'finder' => $options['finder'] ?? $defaultFinder,
-            'format' => $options['format'] ?? 'txt',
-            'hideProgress' => $options['hideProgress'] ?? false,
-            'indent' => $options['indent'] ?? '    ',
-            'lineEnding' => $options['lineEnding'] ?? "\n",
-            'phpExecutable' => $options['phpExecutable'] ?? null,
+            'cacheFile'      => $options['cacheFile'] ?? '.php-cs-fixer.cache',
+            'customFixers'   => $options['customFixers'] ?? [],
+            'finder'         => $options['finder'] ?? self::defaultFinder(),
+            'format'         => $options['format'] ?? 'txt',
+            'hideProgress'   => $options['hideProgress'] ?? false,
+            'indent'         => $options['indent'] ?? '    ',
+            'lineEnding'     => $options['lineEnding'] ?? "\n",
+            'phpExecutable'  => $options['phpExecutable'] ?? null,
             'isRiskyAllowed' => $options['isRiskyAllowed'] ?? true,
-            'usingCache' => $options['usingCache'] ?? true,
-            'rules' => array_merge($ruleSet->getRules(), $overrideRules ?? []),
+            'usingCache'     => $options['usingCache'] ?? true,
+            'rules'          => array_merge($ruleSet->getRules(), $overrideRules ?? []),
         ];
 
         return self::config($ruleSet, $overrideRules, $options);
@@ -62,21 +56,27 @@ final class Factory
         array $overrideRules = [],
         array $options = []
     ): ConfigInterface {
-        $rules = array_merge($options['rules'], $overrideRules);
+        return (new \PhpCsFixer\Config($ruleSet->getName()))
+               ->setCacheFile($options['cacheFile'])
+               ->setFinder($options['finder'])
+               ->setFormat($options['format'])
+               ->setHideProgress($options['hideProgress'])
+               ->setIndent($options['indent'])
+               ->setLineEnding($options['lineEnding'])
+               ->setPhpExecutable($options['phpExecutable'])
+               ->setRiskyAllowed($options['isRiskyAllowed'])
+               ->setUsingCache($options['usingCache'])
+               ->registerCustomFixers($options['customFixers'])
+               ->registerCustomFixers(new \PhpCsFixerCustomFixers\Fixers())
+               ->registerCustomFixers(new \PedroTroller\CS\Fixer\Fixers())
+               ->setRules(array_merge($options['rules'], $overrideRules));
+    }
 
-        return (new Config($ruleSet->getName()))
-            ->setCacheFile($options['cacheFile'])
-            ->setFinder($options['finder'])
-            ->setFormat($options['format'])
-            ->setHideProgress($options['hideProgress'])
-            ->setIndent($options['indent'])
-            ->setLineEnding($options['lineEnding'])
-            ->setPhpExecutable($options['phpExecutable'])
-            ->setRiskyAllowed($options['isRiskyAllowed'])
-            ->setUsingCache($options['usingCache'])
-            ->registerCustomFixers($options['customFixers'])
-            ->registerCustomFixers(new \PhpCsFixerCustomFixers\Fixers())
-            ->registerCustomFixers(new \PedroTroller\CS\Fixer\Fixers())
-            ->setRules($rules);
+    private static function defaultFinder()
+    {
+        return Finder::create()
+               ->files()
+               ->in(__DIR__)
+               ->exclude(['build']);
     }
 }

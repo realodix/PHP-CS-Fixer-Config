@@ -16,16 +16,16 @@ final class YiiRisky extends AbstractRuleSet
         $basicRules = (new Yii())->ruleSet();
 
         $rules = [
-            'dir_constant' => true,
-            'ereg_to_preg' => true,
-            'modernize_types_casting' => true,
-            'no_alias_functions' => true,
-            'no_php4_constructor' => true,
-            'non_printable_character' => true,
-            'php_unit_construct' => true,
+            'dir_constant'             => true,
+            'ereg_to_preg'             => true,
+            'modernize_types_casting'  => true,
+            'no_alias_functions'       => true,
+            'no_php4_constructor'      => true,
+            'non_printable_character'  => true,
+            'php_unit_construct'       => true,
             'php_unit_dedicate_assert' => true,
-            'psr_autoloading' => true,
-            'self_accessor' => true,
+            'psr_autoloading'          => true,
+            'self_accessor'            => true,
         ];
 
         return array_merge($basicRules, $rules);
