@@ -52,9 +52,7 @@ final class Factory
      */
     private static function config(RuleSetInterface $ruleSet, array $overrideRules = [], array $options = []): ConfigInterface
     {
-        $config = new \PhpCsFixer\Config($ruleSet->name());
-
-        return $config
+        return (new \PhpCsFixer\Config($ruleSet->name()))
                 ->setCacheFile($options['cacheFile'])
                 ->setFinder($options['finder'])
                 ->setFormat($options['format'])
@@ -66,13 +64,20 @@ final class Factory
                 ->registerCustomFixers($options['customFixers'])
                 ->registerCustomFixers(new \PhpCsFixerCustomFixers\Fixers())
                 ->registerCustomFixers(new \PedroTroller\CS\Fixer\Fixers())
-                ->registerCustomFixers([
-                    new DrupolFixer\BlankLineBeforeEndOfClass($config->getIndent(), $config->getLineEnding()),
-                    new DrupolFixer\ControlStructureCurlyBracketsElseFixer($config->getIndent(), $config->getLineEnding()),
-                    new DrupolFixer\InlineCommentSpacerFixer,
-                    new CustomFixer\BracesOneLineFixer(),
-                ])
+                ->registerCustomFixers(self::customFixers())
                 ->setRules(array_merge($options['rules'], $overrideRules));
+    }
+
+    private static function customFixers(): array
+    {
+        $config = new \PhpCsFixer\Config();
+
+        return [
+            new DrupolFixer\BlankLineBeforeEndOfClass($config->getIndent(), $config->getLineEnding()),
+            new DrupolFixer\ControlStructureCurlyBracketsElseFixer($config->getIndent(), $config->getLineEnding()),
+            new DrupolFixer\InlineCommentSpacerFixer,
+            new CustomFixer\BracesOneLineFixer(),
+        ];
     }
 
     private static function defaultFinder()
