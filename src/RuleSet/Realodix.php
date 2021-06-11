@@ -33,10 +33,10 @@ final class Realodix extends AbstractRuleSet
             'ternary_operator_spaces' => false,
             'unary_operator_spaces' => false,
 
-            // Fixer\NoDuplicatedArrayKeyFixer::name()     => true,
-            // Fixer\NoDuplicatedImportsFixer::name()      => true,
-            // Fixer\NoUselessParenthesisFixer::name()     => true,
-            // Fixer\PhpdocNoSuperfluousParamFixer::name() => true,
+            Fixer\NoDuplicatedArrayKeyFixer::name() => true,
+            Fixer\NoDuplicatedImportsFixer::name() => true,
+            Fixer\NoUselessParenthesisFixer::name() => true,
+            Fixer\PhpdocNoSuperfluousParamFixer::name() => true,
         ];
 
         return array_merge($basicRules, $rules);

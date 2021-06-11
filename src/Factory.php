@@ -5,6 +5,7 @@ namespace Realodix\PhpCsFixerConfig;
 use PhpCsFixer\Config;
 use PhpCsFixer\ConfigInterface;
 use PhpCsFixer\Finder;
+use PhpCsFixerCustomFixers\Fixers as CustomFixers;
 use Realodix\PhpCsFixerConfig\RuleSet\RuleSetInterface;
 
 /**
@@ -73,6 +74,7 @@ final class Factory
 
         return (new Config($this->RuleSet->getName()))
             ->registerCustomFixers($this->options['customFixers'])
+            ->registerCustomFixers(new CustomFixers())
             ->setCacheFile($this->options['cacheFile'])
             ->setFinder($this->options['finder'])
             ->setFormat($this->options['format'])
