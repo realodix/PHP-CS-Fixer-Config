@@ -68,13 +68,15 @@ final class Factory
 
     private static function customFixers(): array
     {
-        $config = new \PhpCsFixer\Config();
-
         return [
-            new DrupolFixer\BlankLineBeforeEndOfClass(self::phpCsFixer()->getIndent(), self::phpCsFixer()->getLineEnding()),
-            new DrupolFixer\ControlStructureCurlyBracketsElseFixer(self::phpCsFixer()->getIndent(), self::phpCsFixer()->getLineEnding()),
-            new DrupolFixer\InlineCommentSpacerFixer,
             new CustomFixer\BracesOneLineFixer(),
+            new DrupolFixer\BlankLineBeforeEndOfClass(
+                self::phpCsFixer()->getIndent(), self::phpCsFixer()->getLineEnding()
+            ),
+            new DrupolFixer\ControlStructureCurlyBracketsElseFixer(
+                self::phpCsFixer()->getIndent(), self::phpCsFixer()->getLineEnding()
+            ),
+            new DrupolFixer\InlineCommentSpacerFixer,
         ];
     }
 
