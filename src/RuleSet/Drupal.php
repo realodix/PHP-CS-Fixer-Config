@@ -24,7 +24,6 @@ final class Drupal extends AbstractRuleSet
             'Drupal/blank_line_before_end_of_class' => true,
             'Drupal/control_structure_braces_else'  => true,
             'Drupal/inline_comment_spacer'          => true,
-            'Drupal/try_catch_block'                => true,
 
             'array_syntax'                   => true,
             'compact_nullable_typehint'      => true,

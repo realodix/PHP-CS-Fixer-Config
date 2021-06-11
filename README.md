@@ -64,6 +64,11 @@ $config->getFinder()->in(__DIR__);
 return $config;
 ```
 
+**Built-in custom fixers**
+- [kubawerlos/php-cs-fixer-custom-fixers](https://github.com/kubawerlos/php-cs-fixer-custom-fixers)
+- [PedroTroller/PhpCSFixer-Custom-Fixers](https://github.com/PedroTroller/PhpCSFixer-Custom-Fixers)
+- [drupol/phpcsfixer-configs-drupal](https://github.com/drupol/phpcsfixer-configs-drupal/tree/master/src/Fixer)
+
 ### Specifying Options to `PhpCsFixer\Config`
 
 The `Factory` class returns an instance of `PhpCsFixer\Config` and fully supports all of
