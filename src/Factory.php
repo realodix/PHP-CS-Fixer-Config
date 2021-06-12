@@ -48,6 +48,7 @@ final class Factory
             'indent'         => $options['indent'] ?? self::phpCsFixer()->getIndent(),
             'isRiskyAllowed' => $options['isRiskyAllowed'] ?? true,
             'lineEnding'     => $options['lineEnding'] ?? self::phpCsFixer()->getLineEnding(),
+            'phpExecutable'  => $options['phpExecutable'] ?? self::phpCsFixer()->getPhpExecutable(),
             'usingCache'     => $options['usingCache'] ?? self::phpCsFixer()->getUsingCache(),
             'rules'          => array_merge($ruleSet->rules(), $overrideRules ?? []),
         ];
@@ -73,6 +74,7 @@ final class Factory
                 ->setHideProgress($options['hideProgress'])
                 ->setIndent($options['indent'])
                 ->setLineEnding($options['lineEnding'])
+                ->setPhpExecutable($options['phpExecutable'])
                 ->setRiskyAllowed($options['isRiskyAllowed'])
                 ->setUsingCache($options['usingCache'])
                 ->registerCustomFixers($options['customFixers'])

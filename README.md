@@ -85,17 +85,18 @@ its properties setup. You can pass an array to the third parameter of
 
 **Options**
 
-| Key              | Allowed Types                | Default                      |
-| ---------------- | :--------------------------: | :--------------------------: |
-| `finder`         | `null` or `iterable`         | `PhpCsFixer\Finder` instance |
-| `isRiskyAllowed` | `bool`                       | `True`                       |
-| `cacheFile`      | `string`                     | PHP CS Fixer default value   |
-| `customFixers`   | [`FixerInterface[]`][1]      | PHP CS Fixer default value   |
-| `format`         | `string`                     | PHP CS Fixer default value   |
-| `hideProgress`   | `bool`                       | PHP CS Fixer default value   |
-| `indent`         | `string`                     | PHP CS Fixer default value   |
-| `lineEnding`     | `string`                     | PHP CS Fixer default value   |
-| `usingCache`     | `bool`                       | PHP CS Fixer default value   |
+| Key              | Allowed Types           | Default                      |
+| ---------------- | :---------------------: | :--------------------------: |
+| `finder`         | `iterable`, `null`      | `PhpCsFixer\Finder` instance |
+| `isRiskyAllowed` | `bool`                  | `True`                       |
+| `cacheFile`      | `string`                | PHP CS Fixer default value   |
+| `customFixers`   | [`FixerInterface[]`][1] | PHP CS Fixer default value   |
+| `format`         | `string`                | PHP CS Fixer default value   |
+| `hideProgress`   | `bool`                  | PHP CS Fixer default value   |
+| `indent`         | `string`                | PHP CS Fixer default value   |
+| `lineEnding`     | `string`                | PHP CS Fixer default value   |
+| `phpExecutable`  | `string`                | PHP CS Fixer default value   |
+| `usingCache`     | `bool`                  | PHP CS Fixer default value   |
 
 
 ```diff
