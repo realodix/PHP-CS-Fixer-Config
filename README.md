@@ -87,7 +87,7 @@ its properties setup. You can pass an array to the third parameter of
 
 | Key              | Allowed Types                | Default                      |
 | ---------------- | :--------------------------: | :--------------------------: |
-| `finder`         | `null|iterable`              | `PhpCsFixer\Finder` instance |
+| `finder`         | `null` or `iterable`         | `PhpCsFixer\Finder` instance |
 | `isRiskyAllowed` | `bool`                       | `True`                       |
 | `cacheFile`      | `string`                     | PHP CS Fixer default value   |
 | `customFixers`   | [`FixerInterface[]`][1]      | PHP CS Fixer default value   |
