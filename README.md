@@ -85,17 +85,18 @@ its properties setup. You can pass an array to the third parameter of
 
 **Options**
 
-| Key              | Allowed Types                | Default                      |
-| ---------------- | :--------------------------: | :--------------------------: |
-| `cacheFile`      | `string`                     | PHP CS Fixer default value   |
-| `customFixers`   | [`FixerInterface[]`](https://github.com/FriendsOfPHP/PHP-CS-Fixer/blob/3.0/src/Fixer/FixerInterface.php)           | PHP CS Fixer default value   |
-| `finder`         | `PhpCsFixer\Finder` instance |
-| `format`         | `string`                     | PHP CS Fixer default value   |
-| `hideProgress`   | `bool`                       | PHP CS Fixer default value   |
-| `indent`         | `string`                     | PHP CS Fixer default value   |
-| `isRiskyAllowed` | `bool`                       | `True`                       |
-| `lineEnding`     | `string`                     | PHP CS Fixer default value   |
-| `usingCache`     | `bool`                       | PHP CS Fixer default value   |
+| Key              | Allowed Types                | Default                     |
+| ---------------- | :--------------------------: | :-------------------------: |
+| `cacheFile`      | `string`                     | PHP CS Fixer default value  |
+| `customFixers`   | [`FixerInterface[]`][1]      | PHP CS Fixer default value   |
+| `finder`         | `null|iterable`              | PhpCsFixer\Finder` instance |
+| `format`         | `string`                     | PHP CS Fixer default value  |
+| `hideProgress`   | `bool`                       | PHP CS Fixer default value  |
+| `indent`         | `string`                     | PHP CS Fixer default value  |
+| `isRiskyAllowed` | `bool`                       | `True`                      |
+| `lineEnding`     | `string`                     | PHP CS Fixer default value  |
+| `usingCache`     | `bool`                       | PHP CS Fixer default value  |
+
 
 ```diff
  <?php
@@ -139,7 +140,7 @@ use Realodix\CsConfig\RuleSet;
 +return Factory::fromRuleSet(new RuleSet\Realodix($header));
 ```
 
-This will enable and configure the [`HeaderCommentFixer`](https://github.com/FriendsOfPHP/PHP-CS-Fixer/blob/3.0/src/Fixer/Comment/HeaderCommentFixer.php), so that
+This will enable and configure the [`HeaderCommentFixer`][headerCommentFixer], so that
 file headers will be added to PHP files, for example:
 
 ```php
@@ -162,3 +163,7 @@ This package is licensed using the [MIT License](/LICENSE).
 ## Credits
 
 This project is inspired by and also replaces [ergebnis/php-cs-fixer-config](https://github.com/ergebnis/php-cs-fixer-config).
+
+
+[1]: https://github.com/FriendsOfPHP/PHP-CS-Fixer/blob/3.0/src/Fixer/FixerInterface.php
+[headerCommentFixer]: https://github.com/FriendsOfPHP/PHP-CS-Fixer/blob/3.0/src/Fixer/Comment/HeaderCommentFixer.php
