@@ -7,8 +7,6 @@ use PhpCsFixer\FixerDefinition\FixerDefinition;
 use PhpCsFixer\FixerDefinition\FixerDefinitionInterface;
 use PhpCsFixer\Tokenizer\Token;
 use PhpCsFixer\Tokenizer\Tokens;
-use Symplify\RuleDocGenerator\ValueObject\CodeSample\CodeSample;
-use Symplify\RuleDocGenerator\ValueObject\RuleDefinition;
 
 /**
  * Symplify/param_return_and_var_tag_malforms
@@ -17,9 +15,6 @@ use Symplify\RuleDocGenerator\ValueObject\RuleDefinition;
  */
 final class ParamReturnAndVarTagMalformsFixer extends AbstractSymplifyFixer
 {
-    /** @var string */
-    private const ERROR_MESSAGE = 'Fixes @param, @return, @var and inline @var annotations broken formats';
-
     /**
      * @var string
      * @see https://regex101.com/r/8iqNuR/1
@@ -35,7 +30,10 @@ final class ParamReturnAndVarTagMalformsFixer extends AbstractSymplifyFixer
 
     public function getDefinition(): FixerDefinitionInterface
     {
-        return new FixerDefinition(self::ERROR_MESSAGE, []);
+        return new FixerDefinition(
+            'Fixes @param, @return, @var and inline @var annotations broken formats',
+            []
+        );
     }
 
     public function isCandidate(Tokens $tokens): bool
@@ -81,30 +79,5 @@ final class ParamReturnAndVarTagMalformsFixer extends AbstractSymplifyFixer
     public function getPriority(): int
     {
         return -37;
-    }
-
-    public function getRuleDefinition(): RuleDefinition
-    {
-        return new RuleDefinition(self::ERROR_MESSAGE, [
-            new CodeSample(
-                <<<'CODE_SAMPLE'
-/**
- * @param string
- */
-function getPerson($name)
-{
-}
-CODE_SAMPLE
-                ,
-                <<<'CODE_SAMPLE'
-/**
- * @param string $name
- */
-function getPerson($name)
-{
-}
-CODE_SAMPLE
-            ),
-        ]);
     }
 }

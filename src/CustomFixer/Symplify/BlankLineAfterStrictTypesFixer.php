@@ -9,9 +9,6 @@ use PhpCsFixer\FixerDefinition\FixerDefinitionInterface;
 use PhpCsFixer\Tokenizer\Token;
 use PhpCsFixer\Tokenizer\Tokens;
 use PhpCsFixer\WhitespacesFixerConfig;
-use Symplify\CodingStandard\Fixer\AbstractSymplifyFixer;
-use Symplify\RuleDocGenerator\ValueObject\CodeSample\CodeSample;
-use Symplify\RuleDocGenerator\ValueObject\RuleDefinition;
 
 /**
  * Symplify/blank_line_after_strict_types
@@ -20,13 +17,6 @@ use Symplify\RuleDocGenerator\ValueObject\RuleDefinition;
  */
 final class BlankLineAfterStrictTypesFixer extends AbstractSymplifyFixer
 {
-    private const ERROR_MESSAGE = 'Strict type declaration has to be followed by empty line';
-
-    /**
-     * Generates: "declare(strict_types=1);"
-     *
-     * @var Token[]
-     */
     private $declareStrictTypeTokens = [];
 
     public function __construct()
@@ -51,7 +41,10 @@ final class BlankLineAfterStrictTypesFixer extends AbstractSymplifyFixer
 
     public function getDefinition(): FixerDefinitionInterface
     {
-        return new FixerDefinition(self::ERROR_MESSAGE, []);
+        return new FixerDefinition(
+            'Strict type declaration has to be followed by empty line',
+            []
+        );
     }
 
     public function isCandidate(Tokens $tokens): bool
@@ -75,23 +68,5 @@ final class BlankLineAfterStrictTypesFixer extends AbstractSymplifyFixer
         $lineEnding = $this->whitespacesFixerConfig->getLineEnding();
 
         $tokens->ensureWhitespaceAtIndex($semicolonPosition + 1, 0, $lineEnding.$lineEnding);
-    }
-
-    public function getRuleDefinition(): RuleDefinition
-    {
-        return new RuleDefinition(self::ERROR_MESSAGE, [
-            new CodeSample(
-                <<<'CODE_SAMPLE'
-declare(strict_types=1);
-namespace App;
-CODE_SAMPLE
-                ,
-                <<<'CODE_SAMPLE'
-declare(strict_types=1);
-
-namespace App;
-CODE_SAMPLE
-            ),
-        ]);
     }
 }
