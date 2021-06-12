@@ -85,7 +85,10 @@ final class Factory
     private static function customFixers(): array
     {
         return [
-            new CustomFixer\BracesOneLineFixer,
+            new CustomFixer\PhpStorm\BracesOneLineFixer,
+            new CustomFixer\Symplify\BlankLineAfterStrictTypes,
+            new CustomFixer\Symplify\ParamReturnAndVarTagMalforms,
+            new CustomFixer\Symplify\RemoveUselessDefaultComment,
             new DrupolFixer\BlankLineBeforeEndOfClass(
                 self::phpCsFixer()->getIndent(),
                 self::phpCsFixer()->getLineEnding()
@@ -101,9 +104,6 @@ final class Factory
             new \SlamCsFixer\InlineCommentSpacerFixer,
             new \SlamCsFixer\PhpFileOnlyProxyFixer(new \PhpCsFixer\Fixer\Basic\BracesFixer),
             new \SlamCsFixer\Utf8Fixer,
-            new CustomFixer\Symplify\BlankLineAfterStrictTypes,
-            new CustomFixer\Symplify\ParamReturnAndVarTagMalforms,
-            new CustomFixer\Symplify\RemoveUselessDefaultComment,
         ];
     }
 
