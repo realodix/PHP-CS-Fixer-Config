@@ -76,8 +76,8 @@ final class Factory
                 ->setRiskyAllowed($options['isRiskyAllowed'])
                 ->setUsingCache($options['usingCache'])
                 ->registerCustomFixers($options['customFixers'])
-                ->registerCustomFixers(new \PhpCsFixerCustomFixers\Fixers())
-                ->registerCustomFixers(new \PedroTroller\CS\Fixer\Fixers())
+                ->registerCustomFixers(new \PhpCsFixerCustomFixers\Fixers)
+                ->registerCustomFixers(new \PedroTroller\CS\Fixer\Fixers)
                 ->registerCustomFixers(self::customFixers())
                 ->setRules(array_merge($options['rules'], $overrideRules));
     }
@@ -85,7 +85,7 @@ final class Factory
     private static function customFixers(): array
     {
         return [
-            new CustomFixer\BracesOneLineFixer(),
+            new CustomFixer\BracesOneLineFixer,
             new DrupolFixer\BlankLineBeforeEndOfClass(
                 self::phpCsFixer()->getIndent(),
                 self::phpCsFixer()->getLineEnding()
@@ -95,12 +95,12 @@ final class Factory
                 self::phpCsFixer()->getLineEnding()
             ),
             new DrupolFixer\InlineCommentSpacerFixer,
-            new \SlamCsFixer\FinalAbstractPublicFixer(),
-            new \SlamCsFixer\FinalInternalClassFixer(),
-            new \SlamCsFixer\FunctionReferenceSpaceFixer(),
-            new \SlamCsFixer\InlineCommentSpacerFixer(),
-            new \SlamCsFixer\PhpFileOnlyProxyFixer(new \PhpCsFixer\Fixer\Basic\BracesFixer()),
-            new \SlamCsFixer\Utf8Fixer(),
+            new \SlamCsFixer\FinalAbstractPublicFixer,
+            new \SlamCsFixer\FinalInternalClassFixer,
+            new \SlamCsFixer\FunctionReferenceSpaceFixer,
+            new \SlamCsFixer\InlineCommentSpacerFixer,
+            new \SlamCsFixer\PhpFileOnlyProxyFixer(new \PhpCsFixer\Fixer\Basic\BracesFixer),
+            new \SlamCsFixer\Utf8Fixer,
         ];
     }
 
