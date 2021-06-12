@@ -60,6 +60,7 @@ return Factory::fromRuleSet(new RuleSet\Realodix());
 **Built-in custom fixers**
 - [kubawerlos/php-cs-fixer-custom-fixers](https://github.com/kubawerlos/php-cs-fixer-custom-fixers)
 - [PedroTroller/PhpCSFixer-Custom-Fixers](https://github.com/PedroTroller/PhpCSFixer-Custom-Fixers)
+- `PhpStorm/braces_one_line`
 - [Slamdunk/php-cs-fixer-extensions](https://github.com/Slamdunk/php-cs-fixer-extensions)
   - `Slam/final_abstract_public`
   - `Slam/final_internal_class`
@@ -71,7 +72,6 @@ return Factory::fromRuleSet(new RuleSet\Realodix());
   - `Drupal/blank_line_before_end_of_class`
   - `Drupal/control_structure_braces_else`
   - `Drupal/inline_comment_spacer`
-- `PhpStorm/braces_one_line`
 - [symplify/coding-standard](https://github.com/symplify/coding-standard/blob/main/docs/rules_overview.md)
   - `Symplify/blank_line_after_strict_types`
   - `Symplify/param_return_and_var_tag_malforms`
