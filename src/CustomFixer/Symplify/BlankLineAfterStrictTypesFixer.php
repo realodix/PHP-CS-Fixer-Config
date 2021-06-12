@@ -20,7 +20,6 @@ use Symplify\RuleDocGenerator\ValueObject\RuleDefinition;
  */
 final class BlankLineAfterStrictTypesFixer extends AbstractSymplifyFixer
 {
-    /** @var string */
     private const ERROR_MESSAGE = 'Strict type declaration has to be followed by empty line';
 
     /**
