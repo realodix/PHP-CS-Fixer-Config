@@ -84,15 +84,15 @@ its properties setup. You can pass an array to the third parameter of
 `Factory::fromRuleSet()` containing your desired options.
 
 **Options**
-- `cacheFile`
-- `customFixers`
-- `finder`
-- `format`
-- `hideProgress`
-- `indent`
-- `isRiskyAllowed`
-- `lineEnding`
-- `usingCache`
+- `cacheFile` (PHP CS Fixer default value)
+- `customFixers` (PHP CS Fixer default value)
+- `finder` (PHP CS Fixer default value)
+- `format` (PHP CS Fixer default value)
+- `hideProgress` (PHP CS Fixer default value)
+- `indent` (PHP CS Fixer default value)
+- `isRiskyAllowed` (Default: `True`)
+- `lineEnding` (PHP CS Fixer default value)
+- `usingCache` (PHP CS Fixer default value)
 
 ```diff
  <?php
