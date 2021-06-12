@@ -1,16 +1,16 @@
 <?php
 
-namespace Realodix\PhpCsFixerConfig\RuleSet;
+namespace Realodix\CsConfig\RuleSet;
 
 use PhpCsFixerCustomFixers\Fixer;
 
-final class Realodix extends AbstractRuleSet implements RuleSetExplicitInterface
+final class Realodix extends AbstractRuleSet
 {
     protected $name = 'Realodix Coding Standards';
 
-    public function myRules(): array
+    public function getRules(): array
     {
-        $basicRules = (new Laravel())->myRules();
+        $basicRules = (new Laravel())->getRules();
 
         $rules = [
             'align_multiline_comment'      => true,

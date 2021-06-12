@@ -1,8 +1,8 @@
 <?php
 
-namespace Realodix\PhpCsFixerConfig\RuleSet;
+namespace Realodix\CsConfig\RuleSet;
 
-final class YiiRisky extends AbstractRuleSet implements RuleSetExplicitInterface
+final class YiiRisky extends AbstractRuleSet
 {
     protected $name = 'Yii Code Style (risky)';
 
@@ -11,9 +11,9 @@ final class YiiRisky extends AbstractRuleSet implements RuleSetExplicitInterface
      * - https://github.com/yiisoft/yii2/blob/master/cs/src/YiiConfig.php
      * - https://github.com/yiisoft/yii2/blob/master/docs/internals/core-code-style.md
      */
-    public function myRules(): array
+    public function getRules(): array
     {
-        $basicRules = (new Yii())->myRules();
+        $basicRules = (new Yii())->getRules();
 
         $rules = [
             'dir_constant'             => true,

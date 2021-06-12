@@ -1,8 +1,8 @@
 <?php
 
-namespace Realodix\PhpCsFixerConfig\RuleSet;
+namespace Realodix\CsConfig\RuleSet;
 
-final class Yii extends AbstractRuleSet implements RuleSetExplicitInterface
+final class Yii extends AbstractRuleSet
 {
     protected $name = 'Yii Code Style';
 
@@ -27,7 +27,7 @@ final class Yii extends AbstractRuleSet implements RuleSetExplicitInterface
      * - [D] ordered_imports.sortAlgorithm
      * - [M] array_syntax
      */
-    public function myRules(): array
+    public function getRules(): array
     {
         $rules = [
             '@PSR2'                   => true,
@@ -63,7 +63,7 @@ final class Yii extends AbstractRuleSet implements RuleSetExplicitInterface
             'no_useless_return'            => true,
             'no_whitespace_in_blank_line'  => true,
             'normalize_index_brace'        => true,
-            'ordered_imports'              => ['imports_order'  => ['const', 'function', 'class']],
+            'ordered_imports'              => ['imports_order' => ['const', 'function', 'class']],
             'php_unit_fqcn_annotation'     => true,
             'phpdoc_indent'                => true,
             'phpdoc_no_access'             => true,

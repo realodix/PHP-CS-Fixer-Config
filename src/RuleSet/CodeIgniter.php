@@ -1,8 +1,8 @@
 <?php
 
-namespace Realodix\PhpCsFixerConfig\RuleSet;
+namespace Realodix\CsConfig\RuleSet;
 
-final class CodeIgniter extends AbstractRuleSet implements RuleSetExplicitInterface
+final class CodeIgniter extends AbstractRuleSet
 {
     protected $name = 'CodeIgniter4 Coding Standards';
 
@@ -16,7 +16,7 @@ final class CodeIgniter extends AbstractRuleSet implements RuleSetExplicitInterf
      * - [M] align_multiline_comment
      * - [M] array_syntax
      */
-    public function myRules(): array
+    public function getRules(): array
     {
         $rules = [
             'align_multiline_comment' => true,
@@ -60,12 +60,12 @@ final class CodeIgniter extends AbstractRuleSet implements RuleSetExplicitInterf
             'no_alias_functions'           => [
                 'sets' => ['@all'],
             ],
-            'static_lambda'                => true,
-            'ternary_to_null_coalescing'   => true,
-            'yoda_style'                   => [
-                'equal'                => false,
-                'identical'            => null,
-                'less_and_greater'     => false,
+            'static_lambda'              => true,
+            'ternary_to_null_coalescing' => true,
+            'yoda_style'                 => [
+                'equal'            => false,
+                'identical'        => null,
+                'less_and_greater' => false,
             ],
         ];
 

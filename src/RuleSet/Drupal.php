@@ -1,8 +1,8 @@
 <?php
 
-namespace Realodix\PhpCsFixerConfig\RuleSet;
+namespace Realodix\CsConfig\RuleSet;
 
-final class Drupal extends AbstractRuleSet implements RuleSetExplicitInterface
+final class Drupal extends AbstractRuleSet
 {
     protected $name = 'Drupal Coding Standards';
 
@@ -18,9 +18,13 @@ final class Drupal extends AbstractRuleSet implements RuleSetExplicitInterface
      * - [D] no_superfluous_phpdoc_tags.remove_inheritdoc
      * - [D] yoda_style.always_move_variable
      */
-    public function myRules(): array
+    public function getRules(): array
     {
         $rules = [
+            'Drupal/blank_line_before_end_of_class' => true,
+            'Drupal/control_structure_braces_else'  => true,
+            'Drupal/inline_comment_spacer'          => true,
+
             'array_syntax'                   => true,
             'compact_nullable_typehint'      => true,
             'constant_case'                  => ['case' => 'upper'],

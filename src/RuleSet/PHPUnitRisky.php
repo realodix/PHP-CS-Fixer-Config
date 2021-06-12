@@ -1,8 +1,8 @@
 <?php
 
-namespace Realodix\PhpCsFixerConfig\RuleSet;
+namespace Realodix\CsConfig\RuleSet;
 
-final class PHPUnitRisky extends AbstractRuleSet implements RuleSetExplicitInterface
+final class PHPUnitRisky extends AbstractRuleSet
 {
     protected $name = 'PHPUnit Coding Standards (risky)';
 
@@ -13,9 +13,9 @@ final class PHPUnitRisky extends AbstractRuleSet implements RuleSetExplicitInter
      * Diff
      * - [M] ordered_interfaces
      */
-    public function myRules(): array
+    public function getRules(): array
     {
-        $basicRules = (new PHPUnit())->myRules();
+        $basicRules = (new PHPUnit())->getRules();
 
         $rules = [
             'array_push'                => true,

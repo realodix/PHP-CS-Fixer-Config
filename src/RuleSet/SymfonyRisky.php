@@ -1,8 +1,8 @@
 <?php
 
-namespace Realodix\PhpCsFixerConfig\RuleSet;
+namespace Realodix\CsConfig\RuleSet;
 
-final class SymfonyRisky extends AbstractRuleSet implements RuleSetExplicitInterface
+final class SymfonyRisky extends AbstractRuleSet
 {
     protected $name = 'Symfony Coding Standards (risky)';
 
@@ -10,9 +10,9 @@ final class SymfonyRisky extends AbstractRuleSet implements RuleSetExplicitInter
      * Based on symfony/symfony
      * https://github.com/symfony/symfony/blob/5.4/.php-cs-fixer.dist.php
      */
-    public function myRules(): array
+    public function getRules(): array
     {
-        $basicRules = (new Symfony())->myRules();
+        $basicRules = (new Symfony())->getRules();
 
         $rules = [
             '@PHPUnit75Migration:risky' => true,

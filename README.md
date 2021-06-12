@@ -35,13 +35,10 @@ Create a configuration file `.php-cs-fixer.php` in the root of your project:
 ```php
 <?php
 
-use Realodix\PhpCsFixerConfig\Factory;
-use Realodix\PhpCsFixerConfig\RuleSet;
+use Realodix\CsConfig\Factory;
+use Realodix\CsConfig\RuleSet;
 
-$config = Factory::fromRuleSet(new RuleSet\Realodix());
-$config->getFinder()->in(__DIR__);
-
-return $config;
+return Factory::fromRuleSet(new RuleSet\Realodix());
 ```
 
 ### Configuration with override rules
@@ -49,19 +46,76 @@ return $config;
 :bulb: Optionally override rules from a rule set by passing in an array of rules to be merged in:
 
 ```diff
-<?php
+ <?php
 
-use Realodix\PhpCsFixerConfig\Factory;
-use Realodix\PhpCsFixerConfig\RuleSet;
+ use Realodix\CsConfig\Factory;
+ use Realodix\CsConfig\RuleSet;
 
-- $config = Factory::fromRuleSet(new RuleSet\Realodix());
-+ $config = Factory::fromRuleSet(new RuleSet\Realodix(), [
-+     'no_extra_blank_lines' => false,
-+ ]);
+-return Factory::fromRuleSet(new RuleSet\Realodix());
++return Factory::fromRuleSet(new RuleSet\Realodix(), [
++    'no_extra_blank_lines' => false,
++]);
+```
 
-$config->getFinder()->in(__DIR__);
+**Built-in custom fixers**
+- [kubawerlos/php-cs-fixer-custom-fixers](https://github.com/kubawerlos/php-cs-fixer-custom-fixers)
+- [PedroTroller/PhpCSFixer-Custom-Fixers](https://github.com/PedroTroller/PhpCSFixer-Custom-Fixers)
+- `PhpStorm/braces_one_line`
+- [Slamdunk/php-cs-fixer-extensions](https://github.com/Slamdunk/php-cs-fixer-extensions)
+  - `Slam/final_abstract_public`
+  - `Slam/final_internal_class`
+  - `Slam/function_reference_space`
+  - `Slam/inline_comment_spacer`
+  - `Slam/php_only_braces`
+  - `Slam/utf8`
+- [drupol/phpcsfixer-configs-drupal](https://github.com/drupol/phpcsfixer-configs-drupal/tree/master/src/Fixer)
+  - `Drupal/blank_line_before_end_of_class`
+  - `Drupal/control_structure_braces_else`
+  - `Drupal/inline_comment_spacer`
+- [symplify/coding-standard](https://github.com/symplify/coding-standard/blob/main/docs/rules_overview.md)
+  - `Symplify/blank_line_after_strict_types`
+  - `Symplify/param_return_and_var_tag_malforms`
+  - `Symplify/remove_useless_default_comment`
 
-return $config;
+### Specifying Options to `PhpCsFixer\Config`
+
+The `Factory` class returns an instance of `PhpCsFixer\Config` and fully supports all of
+its properties setup. You can pass an array to the third parameter of
+`Factory::fromRuleSet()` containing your desired options.
+
+**Options**
+
+| Key              | Allowed Types           | Default                      |
+| ---------------- | :---------------------: | :--------------------------: |
+| `finder`         | `iterable`, `null`      | `PhpCsFixer\Finder` instance |
+| `isRiskyAllowed` | `bool`                  | `True`                       |
+| `cacheFile`      | `string`                | PHP CS Fixer default value   |
+| `customFixers`   | [`FixerInterface[]`][1] | PHP CS Fixer default value   |
+| `format`         | `string`                | PHP CS Fixer default value   |
+| `hideProgress`   | `bool`                  | PHP CS Fixer default value   |
+| `indent`         | `string`                | PHP CS Fixer default value   |
+| `lineEnding`     | `string`                | PHP CS Fixer default value   |
+| `phpExecutable`  | `string`                | PHP CS Fixer default value   |
+| `usingCache`     | `bool`                  | PHP CS Fixer default value   |
+
+
+```diff
+ <?php
+
++use PhpCsFixer\Finder;
+ use Realodix\CsConfig\Factory;
+ use Realodix\CsConfig\RuleSet;
+
++$finder = Finder::create()
++              ->files()
++              ->in(__DIR__);
+
+-return Factory::fromRuleSet(new RuleSet\Realodix());
++return Factory::fromRuleSet(new RuleSet\Realodix(), [], [
++    'usingCache'   => false,
++    'hideProgress' => true,
++    'finder'       => $finder,
++]);
 ```
 
 ### Configuration with header
@@ -71,26 +125,23 @@ return $config;
 ```diff
 <?php
 
-use Realodix\PhpCsFixerConfig\Factory;
-use Realodix\PhpCsFixerConfig\RuleSet;
+use Realodix\CsConfig\Factory;
+use Realodix\CsConfig\RuleSet;
 
-+ $header = <<<EOF
-+ Copyright (c) 2021 Realodix
++$header = <<<EOF
++Copyright (c) 2021 Realodix
 + 
-+ For the full copyright and license information, please view
-+ the LICENSE file that was distributed with this source code.
++For the full copyright and license information, please view
++the LICENSE file that was distributed with this source code.
 + 
-+ @see https://github.com/realodix/php-cs-fixer-config
-+ EOF;
++@see https://github.com/realodix/php-cs-fixer-config
++EOF;
 
-- $config = Factory::fromRuleSet(new RuleSet\Realodix());
-+ $config = Factory::fromRuleSet(new RuleSet\Realodix($header));
-$config->getFinder()->in(__DIR__);
-
-return $config;
+-return Factory::fromRuleSet(new RuleSet\Realodix());
++return Factory::fromRuleSet(new RuleSet\Realodix($header));
 ```
 
-This will enable and configure the [`HeaderCommentFixer`](https://github.com/FriendsOfPHP/PHP-CS-Fixer/blob/3.0/src/Fixer/Comment/HeaderCommentFixer.php), so that
+This will enable and configure the [`HeaderCommentFixer`][headerCommentFixer], so that
 file headers will be added to PHP files, for example:
 
 ```php
@@ -113,3 +164,7 @@ This package is licensed using the [MIT License](/LICENSE).
 ## Credits
 
 This project is inspired by and also replaces [ergebnis/php-cs-fixer-config](https://github.com/ergebnis/php-cs-fixer-config).
+
+
+[1]: https://github.com/FriendsOfPHP/PHP-CS-Fixer/blob/3.0/src/Fixer/FixerInterface.php
+[headerCommentFixer]: https://github.com/FriendsOfPHP/PHP-CS-Fixer/blob/3.0/src/Fixer/Comment/HeaderCommentFixer.php

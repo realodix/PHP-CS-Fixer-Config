@@ -1,10 +1,10 @@
 <?php
 
-namespace Realodix\PhpCsFixerConfig\RuleSet;
+namespace Realodix\CsConfig\RuleSet;
 
 use MattAllan\LaravelCodeStyle\Config;
 
-final class Laravel extends AbstractRuleSet implements RuleSetExplicitInterface
+final class Laravel extends AbstractRuleSet
 {
     protected $name = 'Laravel Coding Standards';
 
@@ -13,7 +13,7 @@ final class Laravel extends AbstractRuleSet implements RuleSetExplicitInterface
      * - https://docs.styleci.io/presets#laravel
      * - https://github.com/matt-allan/laravel-code-style.
      */
-    public function myRules(): array
+    public function getRules(): array
     {
         return Config::RULE_DEFINITIONS['@Laravel'];
     }

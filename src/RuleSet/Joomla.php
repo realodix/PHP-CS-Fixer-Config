@@ -1,8 +1,8 @@
 <?php
 
-namespace Realodix\PhpCsFixerConfig\RuleSet;
+namespace Realodix\CsConfig\RuleSet;
 
-final class Joomla extends AbstractRuleSet implements RuleSetExplicitInterface
+final class Joomla extends AbstractRuleSet
 {
     protected $name = 'Joomla Coding Standards';
 
@@ -17,7 +17,7 @@ final class Joomla extends AbstractRuleSet implements RuleSetExplicitInterface
      * - [M] no_extra_consecutive_blank_lines   Rename to no_extra_blank_lines
      * - [M] trailing_comma_in_multiline_array  Rename to trailing_comma_in_multiline
      */
-    public function myRules(): array
+    public function getRules(): array
     {
         $rules = [
             // psr-1

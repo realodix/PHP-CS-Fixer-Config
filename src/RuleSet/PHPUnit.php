@@ -1,8 +1,8 @@
 <?php
 
-namespace Realodix\PhpCsFixerConfig\RuleSet;
+namespace Realodix\CsConfig\RuleSet;
 
-final class PHPUnit extends AbstractRuleSet implements RuleSetExplicitInterface
+final class PHPUnit extends AbstractRuleSet
 {
     protected $name = 'PHPUnit Coding Standards';
 
@@ -16,7 +16,7 @@ final class PHPUnit extends AbstractRuleSet implements RuleSetExplicitInterface
      * - [M] list_syntax
      * - [M] ordered_interfaces
      */
-    public function myRules(): array
+    public function getRules(): array
     {
         $rules = [
             '@Symfony'                           => true,
@@ -61,7 +61,7 @@ final class PHPUnit extends AbstractRuleSet implements RuleSetExplicitInterface
                     'require_once', 'return', 'switch', 'throw', 'try', 'while', 'yield',
                 ],
             ],
-            'ordered_class_elements'       => [
+            'ordered_class_elements' => [
                 'order' => [
                     'use_trait', 'constant_public', 'constant_protected', 'constant_private',
                     'property_public_static', 'property_protected_static', 'property_private_static',

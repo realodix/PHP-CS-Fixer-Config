@@ -1,20 +1,18 @@
 <?php
 
-namespace Realodix\PhpCsFixerConfig\RuleSet;
+namespace Realodix\CsConfig\RuleSet;
 
-/**
- * @internal
- */
 abstract class AbstractRuleSet implements RuleSetInterface
 {
-    /** @var string */
-    protected $name = '';
+    protected $name;
 
     protected $headerComment = [];
 
-    protected $targetPhpVersion = 0;
+    protected $requiredPHPVersion = 0;
 
-    final public function __construct(?string $header = null)
+    abstract public function getRules(): array;
+
+    public function __construct(?string $header = null)
     {
         if (null === $header) {
             return;
@@ -28,20 +26,20 @@ abstract class AbstractRuleSet implements RuleSetInterface
         ];
     }
 
-    final public function name(): string
+    public function name(): string
     {
-        return $this->name;
+        $class = strrchr(self::class, '\\') ?: self::class;
+
+        return $this->name ?? trim($class, '\\');
     }
 
-    final public function rules(): array
+    public function rules(): array
     {
-        return array_merge($this->myRules(), $this->headerComment);
+        return array_merge($this->getRules(), $this->headerComment);
     }
 
-    final public function targetPhpVersion(): int
+    public function requiredPHPVersion(): int
     {
-        return $this->targetPhpVersion;
+        return $this->requiredPHPVersion;
     }
-
-    abstract public function myRules(): array;
 }

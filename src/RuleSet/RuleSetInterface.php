@@ -1,6 +1,6 @@
 <?php
 
-namespace Realodix\PhpCsFixerConfig\RuleSet;
+namespace Realodix\CsConfig\RuleSet;
 
 interface RuleSetInterface
 {
@@ -11,8 +11,6 @@ interface RuleSetInterface
 
     /**
      * Returns an array of rules along with their configuration.
-     *
-     * @return array<string, array|bool>
      */
     public function rules(): array;
 
@@ -21,5 +19,5 @@ interface RuleSetInterface
      *
      * @see http://php.net/manual/en/reserved.constants.php
      */
-    public function targetPhpVersion(): int;
+    public function requiredPHPVersion(): int;
 }

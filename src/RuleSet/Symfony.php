@@ -1,8 +1,8 @@
 <?php
 
-namespace Realodix\PhpCsFixerConfig\RuleSet;
+namespace Realodix\CsConfig\RuleSet;
 
-final class Symfony extends AbstractRuleSet implements RuleSetExplicitInterface
+final class Symfony extends AbstractRuleSet
 {
     protected $name = 'Symfony Coding Standards';
 
@@ -10,7 +10,7 @@ final class Symfony extends AbstractRuleSet implements RuleSetExplicitInterface
      * Based on symfony/symfony
      * https://github.com/symfony/symfony/blob/5.4/.php-cs-fixer.dist.php
      */
-    public function myRules(): array
+    public function getRules(): array
     {
         $rules = [
             '@PHP71Migration'      => true,

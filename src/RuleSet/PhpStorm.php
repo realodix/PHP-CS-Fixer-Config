@@ -1,8 +1,8 @@
 <?php
 
-namespace Realodix\PhpCsFixerConfig\RuleSet;
+namespace Realodix\CsConfig\RuleSet;
 
-final class PhpStorm extends AbstractRuleSet implements RuleSetExplicitInterface
+final class PhpStorm extends AbstractRuleSet
 {
     protected $name = 'PhpStorm Coding Standards';
 
@@ -22,16 +22,17 @@ final class PhpStorm extends AbstractRuleSet implements RuleSetExplicitInterface
      * - [M] array_syntax               Same as the default value
      * - [M] general_phpdoc_tag_rename  Same as the default value
      */
-    public function myRules(): array
+    public function getRules(): array
     {
         $rules = [
+            'PhpStorm/braces_one_line'          => true,
             '@PSR12'                            => true,
             'blank_line_after_opening_tag'      => false,
             'braces'                            => false,
             'class_definition'                  => ['single_line' => true],
             'no_break_comment'                  => false,
             'no_trailing_whitespace_in_comment' => false,
-            //
+
             'array_syntax'                    => true,
             'binary_operator_spaces'          => ['operators' => ['|' => 'no_space']],
             'cast_spaces'                     => ['space' => 'none'],
