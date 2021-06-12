@@ -85,17 +85,17 @@ its properties setup. You can pass an array to the third parameter of
 
 **Options**
 
-| Key              | Default                      |
-| ---------------- | :--------------------------: |
-| `isRiskyAllowed` | `True`                       |
+| Key              | Allowed Types                | Default                      |
+| ---------------- | :--------------------------: | :--------------------------: |
+| `cacheFile`      | `string`                     | PHP CS Fixer default value   |
+| `customFixers`   | [`FixerInterface[]`](https://github.com/FriendsOfPHP/PHP-CS-Fixer/blob/3.0/src/Fixer/FixerInterface.php)           | PHP CS Fixer default value   |
 | `finder`         | `PhpCsFixer\Finder` instance |
-| `cacheFile`      | PHP CS Fixer default value   |
-| `customFixers`   | PHP CS Fixer default value   |
-| `format`         | PHP CS Fixer default value   |
-| `hideProgress`   | PHP CS Fixer default value   |
-| `indent`         | PHP CS Fixer default value   |
-| `lineEnding`     | PHP CS Fixer default value   |
-| `usingCache`     | PHP CS Fixer default value   |
+| `format`         | `string`                     | PHP CS Fixer default value   |
+| `hideProgress`   | `bool`                       | PHP CS Fixer default value   |
+| `indent`         | `string`                     | PHP CS Fixer default value   |
+| `isRiskyAllowed` | `bool`                       | `True`                       |
+| `lineEnding`     | `string`                     | PHP CS Fixer default value   |
+| `usingCache`     | `bool`                       | PHP CS Fixer default value   |
 
 ```diff
  <?php
