@@ -97,13 +97,19 @@ its properties setup. You can pass an array to the third parameter of
 ```diff
  <?php
 
++use PhpCsFixer\Finder;
  use Realodix\CsConfig\Factory;
  use Realodix\CsConfig\RuleSet;
 
++$finder = Finder::create()
++              ->files()
++              ->in(__DIR__);
+
 -return Factory::fromRuleSet(new RuleSet\Realodix());
 +return Factory::fromRuleSet(new RuleSet\Realodix(), [], [
-+    'usingCache'  => false,
-+    'hideProgress => true,
++    'usingCache'   => false,
++    'hideProgress' => true,
++    'finder'       => $finder,
 +]);
 ```
 
@@ -126,11 +132,8 @@ use Realodix\CsConfig\RuleSet;
 +@see https://github.com/realodix/php-cs-fixer-config
 +EOF;
 
--$config = Factory::fromRuleSet(new RuleSet\Realodix());
-+$config = Factory::fromRuleSet(new RuleSet\Realodix($header));
- $config->getFinder()->in(__DIR__);
-
- return $config;
+-return Factory::fromRuleSet(new RuleSet\Realodix());
++return Factory::fromRuleSet(new RuleSet\Realodix($header));
 ```
 
 This will enable and configure the [`HeaderCommentFixer`](https://github.com/FriendsOfPHP/PHP-CS-Fixer/blob/3.0/src/Fixer/Comment/HeaderCommentFixer.php), so that
