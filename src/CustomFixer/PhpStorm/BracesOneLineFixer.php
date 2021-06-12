@@ -12,7 +12,7 @@ use PhpCsFixer\Tokenizer\Token;
 use PhpCsFixer\Tokenizer\Tokens;
 
 /**
- * PhpStorm - BracesOneLineFixer
+ * PhpStorm/braces_one_line
  * https://github.com/JetBrains/phpstorm-stubs/blob/master/tests/CodeStyle/BracesOneLineFixer.php
  */
 final class BracesOneLineFixer implements FixerInterface
