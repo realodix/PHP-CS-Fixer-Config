@@ -1,15 +1,24 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Realodix\CsConfig\CustomFixer\Symplify;
 
 use PhpCsFixer\Fixer\FixerInterface;
 use PhpCsFixer\Tokenizer\Token;
 use PhpCsFixer\Tokenizer\Tokens;
+use PhpCsFixer\Utils;
 
 abstract class AbstractSymplifyFixer implements FixerInterface
 {
+    public function getName(): string
+    {
+        $nameParts = explode('\\', static::class);
+        $name = Utils::camelCaseToUnderscore(
+            substr(end($nameParts), 0, -\strlen('Fixer'))
+        );
+
+        return 'Symplify/'.$name;
+    }
+
     public function getPriority(): int
     {
         return 0;

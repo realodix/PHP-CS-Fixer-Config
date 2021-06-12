@@ -4,12 +4,11 @@ namespace Realodix\CsConfig\CustomFixer\Symplify;
 
 use PhpCsFixer\FixerDefinition\FixerDefinition;
 use PhpCsFixer\FixerDefinition\FixerDefinitionInterface;
-use PhpCsFixer\Tokenizer\Token;
 use PhpCsFixer\Tokenizer\Tokens;
 use Symplify\CodingStandard\DocBlock\UselessDocBlockCleaner;
 
 /**
- * Symplify/remove_useless_default_comment
+ * Symplify - Remove useless default comment
  * - https://github.com/symplify/coding-standard/blob/main/src/Fixer/Commenting/RemoveUselessDefaultCommentFixer.php
  * - https://github.com/symplify/coding-standard/blob/main/docs/rules_overview.md#removeuselessdefaultcommentfixer
  */
@@ -18,11 +17,6 @@ final class RemoveUselessDefaultComment extends AbstractSymplifyFixer
     public function __construct()
     {
         $this->uselessDocBlockCleaner = new UselessDocBlockCleaner;
-    }
-
-    public function getName(): string
-    {
-        return 'Symplify/remove_useless_default_comment';
     }
 
     public function getDefinition(): FixerDefinitionInterface

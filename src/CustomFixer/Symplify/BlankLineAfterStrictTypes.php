@@ -11,7 +11,7 @@ use PhpCsFixer\Tokenizer\Tokens;
 use PhpCsFixer\WhitespacesFixerConfig;
 
 /**
- * Symplify/blank_line_after_strict_types
+ * Symplify - Blank line after strict types
  * - https://github.com/symplify/coding-standard/blob/main/src/Fixer/Strict/BlankLineAfterStrictTypesFixer.php
  * - https://github.com/symplify/coding-standard/blob/main/docs/rules_overview.md#blanklineafterstricttypesfixer
  */
@@ -32,11 +32,6 @@ final class BlankLineAfterStrictTypes extends AbstractSymplifyFixer
             new Token(')'),
             new Token(';'),
         ];
-    }
-
-    public function getName(): string
-    {
-        return 'Symplify/blank_line_after_strict_types';
     }
 
     public function getDefinition(): FixerDefinitionInterface

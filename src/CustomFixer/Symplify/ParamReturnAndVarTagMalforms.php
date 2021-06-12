@@ -5,11 +5,10 @@ namespace Realodix\CsConfig\CustomFixer\Symplify;
 use Nette\Utils\Strings;
 use PhpCsFixer\FixerDefinition\FixerDefinition;
 use PhpCsFixer\FixerDefinition\FixerDefinitionInterface;
-use PhpCsFixer\Tokenizer\Token;
 use PhpCsFixer\Tokenizer\Tokens;
 
 /**
- * Symplify/param_return_and_var_tag_malforms
+ * Symplify - Param return and var tag malforms
  * - https://github.com/symplify/coding-standard/blob/main/src/Fixer/Commenting/ParamReturnAndVarTagMalformsFixer.php
  * - https://github.com/symplify/coding-standard/blob/main/docs/rules_overview.md#paramreturnandvartagmalformsfixer
  */
@@ -22,11 +21,6 @@ final class ParamReturnAndVarTagMalforms extends AbstractSymplifyFixer
     private const TYPE_ANNOTATION_REGEX = '#@(param|return|var)#';
 
     private $malformWorkers = [];
-
-    public function getName(): string
-    {
-        return 'Symplify/param_return_and_var_tag_malforms';
-    }
 
     public function getDefinition(): FixerDefinitionInterface
     {
