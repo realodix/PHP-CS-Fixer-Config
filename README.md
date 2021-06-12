@@ -35,8 +35,8 @@ Create a configuration file `.php-cs-fixer.php` in the root of your project:
 ```php
 <?php
 
-use Realodix\PhpCsFixerConfig\Factory;
-use Realodix\PhpCsFixerConfig\RuleSet;
+use Realodix\CsConfig\Factory;
+use Realodix\CsConfig\RuleSet;
 
 $config = Factory::fromRuleSet(new RuleSet\Realodix());
 $config->getFinder()->in(__DIR__);
@@ -51,8 +51,8 @@ return $config;
 ```diff
  <?php
 
- use Realodix\PhpCsFixerConfig\Factory;
- use Realodix\PhpCsFixerConfig\RuleSet;
+ use Realodix\CsConfig\Factory;
+ use Realodix\CsConfig\RuleSet;
 
 -$config = Factory::fromRuleSet(new RuleSet\Realodix());
 +$config = Factory::fromRuleSet(new RuleSet\Realodix(), [
@@ -104,8 +104,8 @@ its properties setup. You can pass an array to the third parameter of
 ```diff
  <?php
 
- use Realodix\PhpCsFixerConfig\Factory;
- use Realodix\PhpCsFixerConfig\RuleSet;
+ use Realodix\CsConfig\Factory;
+ use Realodix\CsConfig\RuleSet;
 
 -return Factory::fromRuleSet(new RuleSet\Realodix());
 +return Factory::fromRuleSet(new RuleSet\Realodix(), [], [
@@ -121,8 +121,8 @@ its properties setup. You can pass an array to the third parameter of
 ```diff
 <?php
 
-use Realodix\PhpCsFixerConfig\Factory;
-use Realodix\PhpCsFixerConfig\RuleSet;
+use Realodix\CsConfig\Factory;
+use Realodix\CsConfig\RuleSet;
 
 +$header = <<<EOF
 +Copyright (c) 2021 Realodix

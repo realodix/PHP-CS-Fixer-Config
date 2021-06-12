@@ -1,11 +1,11 @@
 <?php
 
-namespace Realodix\PhpCsFixerConfig;
+namespace Realodix\CsConfig;
 
 use drupol\PhpCsFixerConfigsDrupal\Fixer as DrupolFixer;
 use PhpCsFixer\ConfigInterface;
 use PhpCsFixer\Finder;
-use Realodix\PhpCsFixerConfig\RuleSet\RuleSetInterface;
+use Realodix\CsConfig\RuleSet\RuleSetInterface;
 
 final class Factory
 {

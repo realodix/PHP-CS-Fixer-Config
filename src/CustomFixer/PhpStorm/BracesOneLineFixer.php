@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Realodix\PhpCsFixerConfig\CustomFixer\PhpStorm;
+namespace Realodix\CsConfig\CustomFixer\PhpStorm;
 
 use PhpCsFixer\Fixer\FixerInterface;
 use PhpCsFixer\FixerDefinition\CodeSample;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Realodix\PhpCsFixerConfig\CustomFixer\Symplify;
+namespace Realodix\CsConfig\CustomFixer\Symplify;
 
 use Nette\Utils\Strings;
 use PhpCsFixer\FixerDefinition\FixerDefinition;

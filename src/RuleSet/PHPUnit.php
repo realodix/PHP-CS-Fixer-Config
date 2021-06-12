@@ -1,6 +1,6 @@
 <?php
 
-namespace Realodix\PhpCsFixerConfig\RuleSet;
+namespace Realodix\CsConfig\RuleSet;
 
 final class PHPUnit extends AbstractRuleSet
 {

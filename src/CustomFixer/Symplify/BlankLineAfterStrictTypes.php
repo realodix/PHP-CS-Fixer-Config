@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Realodix\PhpCsFixerConfig\CustomFixer\Symplify;
+namespace Realodix\CsConfig\CustomFixer\Symplify;
 
 use PhpCsFixer\FixerDefinition\FixerDefinition;
 use PhpCsFixer\FixerDefinition\FixerDefinitionInterface;

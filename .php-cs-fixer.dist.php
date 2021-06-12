@@ -1,7 +1,7 @@
 <?php
 
-use Realodix\PhpCsFixerConfig\Factory;
-use Realodix\PhpCsFixerConfig\RuleSet;
+use Realodix\CsConfig\Factory;
+use Realodix\CsConfig\RuleSet;
 
 $overrideRules = [
     // ..
