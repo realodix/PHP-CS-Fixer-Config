@@ -38,10 +38,7 @@ Create a configuration file `.php-cs-fixer.php` in the root of your project:
 use Realodix\CsConfig\Factory;
 use Realodix\CsConfig\RuleSet;
 
-$config = Factory::fromRuleSet(new RuleSet\Realodix());
-$config->getFinder()->in(__DIR__);
-
-return $config;
+return Factory::fromRuleSet(new RuleSet\Realodix());
 ```
 
 ### Configuration with override rules
@@ -54,14 +51,10 @@ return $config;
  use Realodix\CsConfig\Factory;
  use Realodix\CsConfig\RuleSet;
 
--$config = Factory::fromRuleSet(new RuleSet\Realodix());
-+$config = Factory::fromRuleSet(new RuleSet\Realodix(), [
+-return Factory::fromRuleSet(new RuleSet\Realodix());
++return Factory::fromRuleSet(new RuleSet\Realodix(), [
 +    'no_extra_blank_lines' => false,
 +]);
-
- $config->getFinder()->in(__DIR__);
-
- return $config;
 ```
 
 **Built-in custom fixers**
