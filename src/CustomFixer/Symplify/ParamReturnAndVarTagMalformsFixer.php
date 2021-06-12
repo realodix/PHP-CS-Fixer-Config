@@ -11,7 +11,7 @@ use Symplify\RuleDocGenerator\ValueObject\CodeSample\CodeSample;
 use Symplify\RuleDocGenerator\ValueObject\RuleDefinition;
 
 /**
- * Symplify/param_return_and_var_tag_malforms_fixer
+ * Symplify/param_return_and_var_tag_malforms
  * - https://github.com/symplify/coding-standard/blob/main/src/Fixer/Commenting/ParamReturnAndVarTagMalformsFixer.php
  * - https://github.com/symplify/coding-standard/blob/main/docs/rules_overview.md#paramreturnandvartagmalformsfixer
  */
@@ -30,7 +30,7 @@ final class ParamReturnAndVarTagMalformsFixer extends AbstractSymplifyFixer
 
     public function getName(): string
     {
-        return 'Symplify/param_return_and_var_tag_malforms_fixer';
+        return 'Symplify/param_return_and_var_tag_malforms';
     }
 
     public function getDefinition(): FixerDefinitionInterface

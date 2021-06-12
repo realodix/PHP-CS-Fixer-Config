@@ -102,7 +102,8 @@ final class Factory
             new \SlamCsFixer\PhpFileOnlyProxyFixer(new \PhpCsFixer\Fixer\Basic\BracesFixer),
             new \SlamCsFixer\Utf8Fixer,
 
-            new \Realodix\PhpCsFixerConfig\CustomFixer\Symplify\ParamReturnAndVarTagMalformsFixer(),
+            new CustomFixer\Symplify\ParamReturnAndVarTagMalformsFixer,
+            new CustomFixer\Symplify\BlankLineAfterStrictTypesFixer,
         ];
     }
 
