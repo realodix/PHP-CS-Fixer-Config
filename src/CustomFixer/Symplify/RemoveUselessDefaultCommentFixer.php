@@ -34,17 +34,11 @@ final class RemoveUselessDefaultCommentFixer extends AbstractSymplifyFixer
         return new FixerDefinition(self::ERROR_MESSAGE, []);
     }
 
-    /**
-     * @param Tokens<Token> $tokens
-     */
     public function isCandidate(Tokens $tokens): bool
     {
         return $tokens->isAnyTokenKindsFound([T_DOC_COMMENT, T_COMMENT]);
     }
 
-    /**
-     * @param Tokens<Token> $tokens
-     */
     public function fix(\SplFileInfo $file, Tokens $tokens): void
     {
         $reversedTokens = $this->reverseTokens($tokens);
