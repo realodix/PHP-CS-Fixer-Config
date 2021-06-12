@@ -79,6 +79,10 @@ return $config;
   - `Drupal/control_structure_braces_else`
   - `Drupal/inline_comment_spacer`
 - [`PhpStorm/braces_one_line`](src/CustomFixer/BracesOneLineFixer.php)
+- [symplify/coding-standard](https://github.com/symplify/coding-standard)
+  - `Symplify/blank_line_after_strict_types`
+  - `Symplify/param_return_and_var_tag_malforms`
+  - `Symplify/remove_useless_default_comment`
 
 ### Specifying Options to `PhpCsFixer\Config`
 
