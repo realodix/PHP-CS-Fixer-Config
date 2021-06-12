@@ -67,6 +67,13 @@ return $config;
 **Built-in custom fixers**
 - [kubawerlos/php-cs-fixer-custom-fixers](https://github.com/kubawerlos/php-cs-fixer-custom-fixers)
 - [PedroTroller/PhpCSFixer-Custom-Fixers](https://github.com/PedroTroller/PhpCSFixer-Custom-Fixers)
+- [Slamdunk/php-cs-fixer-extensions](https://github.com/Slamdunk/php-cs-fixer-extensions)
+  - `Slam/final_abstract_public`
+  - `Slam/final_internal_class`
+  - `Slam/function_reference_space`
+  - `Slam/inline_comment_spacer`
+  - `Slam/php_only_braces`
+  - `Slam/utf8`
 - [drupol/phpcsfixer-configs-drupal](https://github.com/drupol/phpcsfixer-configs-drupal/tree/master/src/Fixer)
   - `Drupal/blank_line_before_end_of_class`
   - `Drupal/control_structure_braces_else`
