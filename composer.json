@@ -20,7 +20,8 @@
         "kubawerlos/php-cs-fixer-custom-fixers": "^2.5",
         "matt-allan/laravel-code-style": "dev-main",
         "pedrotroller/php-cs-custom-fixer": "^2.25",
-        "slam/php-cs-fixer-extensions": "^3.0"
+        "slam/php-cs-fixer-extensions": "^3.0",
+        "symplify/coding-standard": "^9.3"
     },
     "autoload": {
         "psr-4": {
