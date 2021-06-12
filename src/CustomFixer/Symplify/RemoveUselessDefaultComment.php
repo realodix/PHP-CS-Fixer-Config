@@ -13,7 +13,7 @@ use Symplify\CodingStandard\DocBlock\UselessDocBlockCleaner;
  * - https://github.com/symplify/coding-standard/blob/main/src/Fixer/Commenting/RemoveUselessDefaultCommentFixer.php
  * - https://github.com/symplify/coding-standard/blob/main/docs/rules_overview.md#removeuselessdefaultcommentfixer
  */
-final class RemoveUselessDefaultCommentFixer extends AbstractSymplifyFixer
+final class RemoveUselessDefaultComment extends AbstractSymplifyFixer
 {
     public function __construct()
     {

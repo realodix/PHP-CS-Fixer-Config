@@ -101,9 +101,9 @@ final class Factory
             new \SlamCsFixer\InlineCommentSpacerFixer,
             new \SlamCsFixer\PhpFileOnlyProxyFixer(new \PhpCsFixer\Fixer\Basic\BracesFixer),
             new \SlamCsFixer\Utf8Fixer,
-            new CustomFixer\Symplify\BlankLineAfterStrictTypesFixer,
-            new CustomFixer\Symplify\ParamReturnAndVarTagMalformsFixer,
-            new CustomFixer\Symplify\RemoveUselessDefaultCommentFixer,
+            new CustomFixer\Symplify\BlankLineAfterStrictTypes,
+            new CustomFixer\Symplify\ParamReturnAndVarTagMalforms,
+            new CustomFixer\Symplify\RemoveUselessDefaultComment,
         ];
     }
 

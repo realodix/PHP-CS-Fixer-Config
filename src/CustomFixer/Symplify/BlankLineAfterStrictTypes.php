@@ -15,7 +15,7 @@ use PhpCsFixer\WhitespacesFixerConfig;
  * - https://github.com/symplify/coding-standard/blob/main/src/Fixer/Strict/BlankLineAfterStrictTypesFixer.php
  * - https://github.com/symplify/coding-standard/blob/main/docs/rules_overview.md#blanklineafterstricttypesfixer
  */
-final class BlankLineAfterStrictTypesFixer extends AbstractSymplifyFixer
+final class BlankLineAfterStrictTypes extends AbstractSymplifyFixer
 {
     private $declareStrictTypeTokens = [];
 
