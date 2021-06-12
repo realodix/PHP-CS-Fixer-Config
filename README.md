@@ -84,15 +84,18 @@ its properties setup. You can pass an array to the third parameter of
 `Factory::fromRuleSet()` containing your desired options.
 
 **Options**
-- `isRiskyAllowed` (Default: `True`)
-- `cacheFile` (PHP CS Fixer default value)
-- `customFixers` (PHP CS Fixer default value)
-- `finder` (PHP CS Fixer default value)
-- `format` (PHP CS Fixer default value)
-- `hideProgress` (PHP CS Fixer default value)
-- `indent` (PHP CS Fixer default value)
-- `lineEnding` (PHP CS Fixer default value)
-- `usingCache` (PHP CS Fixer default value)
+
+| Key              | Default                      |
+| ---------------- | :--------------------------: |
+| `isRiskyAllowed` | `True`                       |
+| `finder`         | `PhpCsFixer\Finder` instance |
+| `cacheFile`      | PHP CS Fixer default value   |
+| `customFixers`   | PHP CS Fixer default value   |
+| `format`         | PHP CS Fixer default value   |
+| `hideProgress`   | PHP CS Fixer default value   |
+| `indent`         | PHP CS Fixer default value   |
+| `lineEnding`     | PHP CS Fixer default value   |
+| `usingCache`     | PHP CS Fixer default value   |
 
 ```diff
  <?php
