@@ -19,7 +19,7 @@ final class RealodixStrict extends AbstractRuleSet
                     // SlevomatCodingStandard.Commenting.ForbiddenAnnotations
                     // https://github.com/doctrine/coding-standard/blob/9.0.x/lib/Doctrine/ruleset.xml
                     'api', 'author', 'category', 'copyright', 'created', 'license',
-                    'package', 'since', 'subpackage', 'version'
+                    'package', 'since', 'subpackage', 'version',
                 ],
             ],
 
