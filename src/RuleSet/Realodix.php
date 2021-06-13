@@ -46,6 +46,7 @@ final class Realodix extends AbstractRuleSet
             Fixer\NoDuplicatedImportsFixer::name()      => true,
             Fixer\NoUselessParenthesisFixer::name()     => true,
             Fixer\PhpdocNoSuperfluousParamFixer::name() => true,
+            Fixer\PhpdocTypesTrimFixer::name()          => true,
         ];
 
         return array_merge($basicRules, $rules);

@@ -37,7 +37,6 @@ final class RealodixStrict extends AbstractRuleSet
             Fixer\PhpdocParamTypeFixer::name()                      => true,
             Fixer\PhpdocSelfAccessorFixer::name()                   => true,
             Fixer\PhpdocSingleLineVarFixer::name()                  => true,
-            Fixer\PhpdocTypesTrimFixer::name()                      => true,
             Fixer\SingleSpaceAfterStatementFixer::name()            => true,
             Fixer\SingleSpaceBeforeStatementFixer::name()           => true,
             // Fixer\OperatorLinebreakFixer::name()                   => true,
