@@ -13,7 +13,16 @@ final class RealodixStrict extends AbstractRuleSet
         $basicRules = (new Realodix())->getRules();
 
         $rules = [
-            'align_multiline_comment'                               => ['comment_type' => 'all_multiline'],
+            'align_multiline_comment'          => ['comment_type' => 'all_multiline'],
+            'general_phpdoc_annotation_remove' => [
+                'annotations' => [
+                    // SlevomatCodingStandard.Commenting.ForbiddenAnnotations
+                    // https://github.com/doctrine/coding-standard/blob/9.0.x/lib/Doctrine/ruleset.xml
+                    'api', 'author', 'category', 'copyright', 'created', 'license',
+                    'package', 'since', 'subpackage', 'version'
+                ],
+            ],
+
             Fixer\CommentedOutFunctionFixer::name()                 => true,
             Fixer\CommentSurroundedBySpacesFixer::name()            => true,
             Fixer\DataProviderNameFixer::name()                     => ['prefix' => '', 'suffix' => 'Provider'],
