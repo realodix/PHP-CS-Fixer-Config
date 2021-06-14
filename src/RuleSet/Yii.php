@@ -16,7 +16,7 @@ final class Yii extends AbstractRuleSet
      * - method_separation
      * - no_extra_consecutive_blank_lines.curly_brace_block
      * - no_extra_consecutive_blank_lines.extra
-     * - ordered_class_elements
+     * - object_operator_without_whitespace.ordered_class_elements
      * - php_unit_strict
      * - phpdoc_inline_tag
      * - phpdoc_order
