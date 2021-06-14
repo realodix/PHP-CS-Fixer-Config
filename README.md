@@ -19,9 +19,9 @@ composer require --dev realodix/php-cs-fixer-config
 
 Pick one of the rule sets:
 
-* [`Realodix`](src/RuleSet/Realodix.php) or [`RealodixStrict`](src/RuleSet/RealodixStrict.php)
-* [`Laravel`](src/RuleSet/Laravel.php) or [`LaravelRisky`](src/RuleSet/LaravelRisky.php)
-* [`Symfony`](src/RuleSet/Symfony.php) or [`SymfonyRisky`](src/RuleSet/SymfonyRisky.php)
+* [`Realodix`](src/RuleSet/Realodix.php), [`RealodixStrict`](src/RuleSet/RealodixStrict.php)
+* [`Laravel`](src/RuleSet/Laravel.php), [`LaravelRisky`](src/RuleSet/LaravelRisky.php)
+* [`Symfony`](src/RuleSet/Symfony.php), [`SymfonyRisky`](src/RuleSet/SymfonyRisky.php)
 * [`CodeIgniter`](src/RuleSet/CodeIgniter.php)
 * [`Composer`](src/RuleSet/Composer.php)
 * [`Drupal`](src/RuleSet/Drupal.php)
