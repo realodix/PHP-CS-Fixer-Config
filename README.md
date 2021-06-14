@@ -75,7 +75,6 @@ return Factory::fromRuleSet(new RuleSet\Realodix());
 - [symplify/coding-standard](https://github.com/symplify/coding-standard/blob/main/docs/rules_overview.md)
   - `Symplify/blank_line_after_strict_types`
   - `Symplify/param_return_and_var_tag_malforms`
-  - `Symplify/remove_useless_default_comment`
 
 ### Specifying Options to `PhpCsFixer\Config`
 
