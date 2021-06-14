@@ -31,7 +31,6 @@ final class RealodixStrict extends AbstractRuleSet
             Fixer\NoDoctrineMigrationsGeneratedCommentFixer::name() => true,
             Fixer\NoLeadingSlashInGlobalNamespaceFixer::name()      => true,
             Fixer\NoPhpStormGeneratedCommentFixer::name()           => true,
-            Fixer\NoReferenceInFunctionDefinitionFixer::name()      => true,
             Fixer\NoUselessCommentFixer::name()                     => true,
             Fixer\NoUselessDoctrineRepositoryCommentFixer::name()   => true,
             Fixer\PhpdocNoIncorrectVarAnnotationFixer::name()       => true,
