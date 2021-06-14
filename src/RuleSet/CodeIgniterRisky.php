@@ -13,6 +13,7 @@ final class CodeIgniterRisky extends AbstractRuleSet
     public function getRules(): array
     {
         $basicRules = (new CodeIgniter())->getRules();
+
         $rules = [
             'array_push'           => true,
             'function_to_constant' => true,
