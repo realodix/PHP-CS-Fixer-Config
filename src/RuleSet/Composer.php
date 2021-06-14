@@ -15,7 +15,6 @@ final class Composer extends AbstractRuleSet
      * - [D] header_comment                     Must be set manually
      * - [M] class_attributes_separation        New option syntax
      * - [M] no_extra_consecutive_blank_lines   Rename to no_extra_blank_lines
-     * - [M] psr0                               Rename to psr_autoloading
      * - [M] trailing_comma_in_multiline_array  Rename to trailing_comma_in_multiline
      */
     public function getRules(): array
@@ -39,7 +38,6 @@ final class Composer extends AbstractRuleSet
             'phpdoc_scalar'               => true,
             'phpdoc_trim'                 => true,
             'phpdoc_types'                => true,
-            'psr_autoloading'             => true,
             'standardize_not_equals'      => true,
             'ternary_operator_spaces'     => true,
             'trailing_comma_in_multiline' => true,
