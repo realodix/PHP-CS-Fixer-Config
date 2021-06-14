@@ -35,7 +35,6 @@ final class RealodixStrict extends AbstractRuleSet
             Fixer\NoUselessCommentFixer::name()                     => true,
             Fixer\NoUselessDoctrineRepositoryCommentFixer::name()   => true,
             Fixer\PhpdocNoIncorrectVarAnnotationFixer::name()       => true,
-            Fixer\PhpdocNoSuperfluousParamFixer::name()             => true,
             Fixer\PhpdocParamOrderFixer::name()                     => true,
             Fixer\PhpdocParamTypeFixer::name()                      => true,
             Fixer\PhpdocSelfAccessorFixer::name()                   => true,
