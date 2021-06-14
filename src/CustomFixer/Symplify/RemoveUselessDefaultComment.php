@@ -14,6 +14,8 @@ use Symplify\CodingStandard\DocBlock\UselessDocBlockCleaner;
  */
 final class RemoveUselessDefaultComment extends AbstractSymplifyFixer
 {
+    private $uselessDocBlockCleaner;
+
     public function __construct()
     {
         $this->uselessDocBlockCleaner = new UselessDocBlockCleaner;
