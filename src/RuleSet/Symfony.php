@@ -8,7 +8,7 @@ final class Symfony extends AbstractRuleSet
 
     /**
      * Based on symfony/symfony
-     * https://github.com/symfony/symfony/blob/5.4/.php-cs-fixer.dist.php
+     * - https://github.com/symfony/symfony/blob/8680214/.php-cs-fixer.dist.php (6.0)
      */
     public function getRules(): array
     {

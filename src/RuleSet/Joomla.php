@@ -8,8 +8,7 @@ final class Joomla extends AbstractRuleSet
 
     /**
      * Based on joomla/joomla-cms
-     *
-     * See https://github.com/joomla/joomla-cms/blob/4.0-dev/.php_cs.dist
+     * - https://github.com/joomla/joomla-cms/blob/125b2d7/.php_cs.dist (4.1-dev)
      *
      * Diff
      * - [M] blank_line_before_return           Rename to blank_line_before_statement

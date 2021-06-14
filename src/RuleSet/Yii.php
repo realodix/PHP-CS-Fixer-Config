@@ -8,8 +8,8 @@ final class Yii extends AbstractRuleSet
 
     /**
      * Based on yiisoft/yii2
-     * - https://github.com/yiisoft/yii2/blob/master/cs/src/YiiConfig.php
-     * - https://github.com/yiisoft/yii2/blob/master/docs/internals/core-code-style.md
+     * - https://github.com/yiisoft/yii2/blob/8ac70d4/cs/src/YiiConfig.php (master)
+     * - https://github.com/yiisoft/yii2/blob/8ac70d4/docs/internals/core-code-style.md (master)
      *
      * There are 9 rules found commented:
      * - mb_str_functions
