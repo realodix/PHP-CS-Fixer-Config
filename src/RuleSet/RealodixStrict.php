@@ -40,7 +40,6 @@ final class RealodixStrict extends AbstractRuleSet
             Fixer\PhpdocSingleLineVarFixer::name()                  => true,
             Fixer\SingleSpaceAfterStatementFixer::name()            => true,
             Fixer\SingleSpaceBeforeStatementFixer::name()           => true,
-            // Fixer\OperatorLinebreakFixer::name()                   => true,
         ];
 
         return array_merge($basicRules, $rules);
