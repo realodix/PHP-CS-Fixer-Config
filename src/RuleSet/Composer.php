@@ -39,7 +39,6 @@ final class Composer extends AbstractRuleSet
             'phpdoc_scalar'               => true,
             'phpdoc_trim'                 => true,
             'phpdoc_types'                => true,
-            'psr_autoloading'             => true,
             'standardize_not_equals'      => true,
             'ternary_operator_spaces'     => true,
             'trailing_comma_in_multiline' => true,
