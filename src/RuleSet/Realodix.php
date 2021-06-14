@@ -28,12 +28,12 @@ final class Realodix extends AbstractRuleSet
             'phpdoc_var_annotation_correct_order' => true,
             'binary_operator_spaces'              => [
                 // unalign_equals (default)
-                'operators' => ['=>' => 'align'],
+                'operators' => ['=>' => 'align_single_space_minimal'],
             ],
             'phpdoc_add_missing_param_annotation' => [
                 'only_untyped' => false,
             ],
-            'phpdoc_align'                        => [
+            'phpdoc_align' => [
                 // align_phpdoc
                 'tags' => [
                     'param',
