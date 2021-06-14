@@ -4,7 +4,7 @@ namespace Realodix\CsConfig\RuleSet;
 
 final class ComposerRisky extends AbstractRuleSet
 {
-    protected $name = 'Composer Coding Standards  (risky)';
+    protected $name = 'Composer Coding Standards (risky)';
 
     /**
      * Based on composer/composer
