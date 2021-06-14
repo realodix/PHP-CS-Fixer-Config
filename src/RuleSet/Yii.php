@@ -8,15 +8,15 @@ final class Yii extends AbstractRuleSet
 
     /**
      * Based on yiisoft/yii2
-     * - https://github.com/yiisoft/yii2/blob/master/cs/src/YiiConfig.php
-     * - https://github.com/yiisoft/yii2/blob/master/docs/internals/core-code-style.md
+     * - https://github.com/yiisoft/yii2/blob/8ac70d4/cs/src/YiiConfig.php (master)
+     * - https://github.com/yiisoft/yii2/blob/8ac70d4/docs/internals/core-code-style.md (master)
      *
      * There are 9 rules found commented:
      * - mb_str_functions
      * - method_separation
      * - no_extra_consecutive_blank_lines.curly_brace_block
      * - no_extra_consecutive_blank_lines.extra
-     * - ordered_class_elements
+     * - object_operator_without_whitespace.ordered_class_elements
      * - php_unit_strict
      * - phpdoc_inline_tag
      * - phpdoc_order

@@ -7,11 +7,11 @@ final class Drupal extends AbstractRuleSet
     protected $name = 'Drupal Coding Standards';
 
     /**
-     * drupol/phpcsfixer-configs-drupal
-     * - https://github.com/drupol/phpcsfixer-configs-drupal/blob/master/src/Config/Drupal8.php
-     * - https://github.com/drupol/phpcsfixer-configs-drupal/blob/master/config/drupal/phpcsfixer.rules.yml
-     * - https://github.com/drupol/phpcsfixer-configs-drupal/blob/master/config/drupal8/phpcsfixer.rules.yml
-     * - https://github.com/drupol/phpcsfixer-configs-drupal/tree/master/src/Fixer
+     * Based on drupol/phpcsfixer-configs-drupal
+     * - https://github.com/drupol/phpcsfixer-configs-drupal/blob/774b1b9/src/Config/Drupal8.php (master)
+     * - https://github.com/drupol/phpcsfixer-configs-drupal/blob/774b1b9/config/drupal/phpcsfixer.rules.yml (master)
+     * - https://github.com/drupol/phpcsfixer-configs-drupal/blob/774b1b9/config/drupal8/phpcsfixer.rules.yml (master)
+     * - https://github.com/drupol/phpcsfixer-configs-drupal/tree/774b1b9/src/Fixer (master)
      *
      * Diff
      * - [D] brace.position_after_anonymous_constructs

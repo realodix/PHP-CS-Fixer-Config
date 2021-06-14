@@ -6,6 +6,7 @@ use Nette\Utils\Strings;
 use PhpCsFixer\FixerDefinition\FixerDefinition;
 use PhpCsFixer\FixerDefinition\FixerDefinitionInterface;
 use PhpCsFixer\Tokenizer\Tokens;
+use SplFileInfo;
 
 /**
  * Symplify - Param return and var tag malforms
@@ -39,7 +40,7 @@ final class ParamReturnAndVarTagMalforms extends AbstractSymplifyFixer
         return $tokens->isAnyTokenKindsFound([T_FUNCTION, T_VARIABLE]);
     }
 
-    public function fix(\SplFileInfo $file, Tokens $tokens): void
+    public function fix(SplFileInfo $file, Tokens $tokens): void
     {
         $reversedTokens = $this->reverseTokens($tokens);
         foreach ($reversedTokens as $index => $token) {

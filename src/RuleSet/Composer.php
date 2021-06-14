@@ -8,8 +8,7 @@ final class Composer extends AbstractRuleSet
 
     /**
      * Based on composer/composer
-     *
-     * See https://github.com/composer/composer/blob/master/.php_cs
+     * - https://github.com/composer/composer/blob/9a32bf9/.php_cs (master)
      *
      * Diff
      * - [D] cast_spaces                        Same as the default value

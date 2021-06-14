@@ -7,8 +7,8 @@ final class PhpStorm extends AbstractRuleSet
     protected $name = 'PhpStorm Coding Standards';
 
     /**
-     * JetBrains/phpstorm-stubs
-     * https://github.com/JetBrains/phpstorm-stubs/blob/master/.php-cs-fixer.php
+     * Based on JetBrains/phpstorm-stubs
+     * - https://github.com/JetBrains/phpstorm-stubs/blob/a09a014/.php-cs-fixer.php (master)
      *
      * There are 4 rules found commented:
      * - phpdoc_align

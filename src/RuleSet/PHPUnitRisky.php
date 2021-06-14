@@ -7,8 +7,8 @@ final class PHPUnitRisky extends AbstractRuleSet
     protected $name = 'PHPUnit Coding Standards (risky)';
 
     /**
-     * sebastianbergmann/phpunit
-     * https://github.com/sebastianbergmann/phpunit/blob/master/.php-cs-fixer.dist.php
+     * Based on sebastianbergmann/phpunit
+     * https://github.com/sebastianbergmann/phpunit/blob/1824636/.php-cs-fixer.dist.php (master)
      *
      * Diff
      * - [M] ordered_interfaces

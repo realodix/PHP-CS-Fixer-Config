@@ -9,9 +9,8 @@ final class Laravel extends AbstractRuleSet
     protected $name = 'Laravel Coding Standards';
 
     /**
-     * Based on
-     * - https://docs.styleci.io/presets#laravel
-     * - https://github.com/matt-allan/laravel-code-style
+     * Based on matt-allan/laravel-code-style
+     * - https://github.com/matt-allan/laravel-code-style/blob/b224862/src/Config.php (main)
      */
     public function getRules(): array
     {

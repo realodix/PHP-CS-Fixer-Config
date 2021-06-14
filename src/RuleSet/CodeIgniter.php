@@ -7,8 +7,8 @@ final class CodeIgniter extends AbstractRuleSet
     protected $name = 'CodeIgniter4 Coding Standards';
 
     /**
-     * codeigniter4/CodeIgniter4
-     * https://github.com/codeigniter4/CodeIgniter4/blob/develop/utils/PhpCsFixer/CodeIgniter4.php
+     * Based on codeigniter4/CodeIgniter4
+     * - https://github.com/codeigniter4/CodeIgniter4/blob/3d0a4a7/utils/PhpCsFixer/CodeIgniter4.php (develop)
      *
      * Diff
      * - [D] binary_operator_spaces.default     Same as the default value

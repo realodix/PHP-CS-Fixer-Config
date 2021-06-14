@@ -19,6 +19,8 @@ final class BlankLineAfterStrictTypes extends AbstractSymplifyFixer
 {
     private $declareStrictTypeTokens = [];
 
+    private $whitespacesFixerConfig;
+
     public function __construct()
     {
         $this->whitespacesFixerConfig = new WhitespacesFixerConfig;

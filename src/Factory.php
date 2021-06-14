@@ -24,7 +24,7 @@ final class Factory
      * @param array            $overrideRules
      * @param array            $options
      *
-     * @throws RuntimeException
+     * @throws \RuntimeException
      */
     public static function fromRuleSet(RuleSetInterface $ruleSet, array $overrideRules = [], array $options = [])
     {

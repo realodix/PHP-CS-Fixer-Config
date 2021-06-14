@@ -7,8 +7,8 @@ final class PHPUnit extends AbstractRuleSet
     protected $name = 'PHPUnit Coding Standards';
 
     /**
-     * sebastianbergmann/phpunit
-     * https://github.com/sebastianbergmann/phpunit/blob/master/.php-cs-fixer.dist.php
+     * Based on sebastianbergmann/phpunit
+     * - https://github.com/sebastianbergmann/phpunit/blob/1824636/.php-cs-fixer.dist.php (master)
      *
      * Diff
      * - [D] global_namespace_import.import_classes Same as the default value
