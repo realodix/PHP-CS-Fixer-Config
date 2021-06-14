@@ -24,9 +24,7 @@ final class RealodixStrict extends AbstractRuleSet
                 ],
             ],
 
-            Fixer\CommentedOutFunctionFixer::name()                 => true,
             Fixer\CommentSurroundedBySpacesFixer::name()            => true,
-            Fixer\DataProviderNameFixer::name()                     => ['prefix' => '', 'suffix' => 'Provider'],
             Fixer\MultilineCommentOpeningClosingAloneFixer::name()  => true,
             Fixer\NoDoctrineMigrationsGeneratedCommentFixer::name() => true,
             Fixer\NoLeadingSlashInGlobalNamespaceFixer::name()      => true,

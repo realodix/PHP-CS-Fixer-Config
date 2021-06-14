@@ -41,8 +41,8 @@ final class CodeIgniter extends AbstractRuleSet
             'blank_line_after_opening_tag' => true,
             'indentation_type'             => true,
             'line_ending'                  => true,
-            'ternary_to_null_coalescing' => true,
-            'yoda_style'                 => [
+            'ternary_to_null_coalescing'   => true,
+            'yoda_style'                   => [
                 'equal'            => false,
                 'identical'        => null,
                 'less_and_greater' => false,

@@ -17,7 +17,7 @@ final class CodeIgniterRisky extends AbstractRuleSet
         $rules = [
             'array_push'           => true,
             'function_to_constant' => true,
-            'no_alias_functions'   => [ 'sets' => ['@all']],
+            'no_alias_functions'   => ['sets' => ['@all']],
             'static_lambda'        => true,
         ];
 
