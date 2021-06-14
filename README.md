@@ -22,7 +22,7 @@ Pick one of the rule sets:
 * [`Realodix`](src/RuleSet/Realodix.php), [`RealodixStrict`](src/RuleSet/RealodixStrict.php)
 * [`Laravel`](src/RuleSet/Laravel.php), [`LaravelRisky`](src/RuleSet/LaravelRisky.php)
 * [`Symfony`](src/RuleSet/Symfony.php), [`SymfonyRisky`](src/RuleSet/SymfonyRisky.php)
-* [`CodeIgniter`](src/RuleSet/CodeIgniter.php)
+* [`CodeIgniter`](src/RuleSet/CodeIgniter.php), [`CodeIgniterRisky`](src/RuleSet/CodeIgniterRisky.php)
 * [`Composer`](src/RuleSet/Composer.php)
 * [`Drupal`](src/RuleSet/Drupal.php)
 * [`Joomla`](src/RuleSet/Joomla.php)
