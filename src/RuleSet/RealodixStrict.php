@@ -16,10 +16,11 @@ final class RealodixStrict extends AbstractRuleSet
             'align_multiline_comment'          => ['comment_type' => 'all_multiline'],
             'general_phpdoc_annotation_remove' => [
                 'annotations' => [
-                    // SlevomatCodingStandard.Commenting.ForbiddenAnnotations
-                    // https://github.com/doctrine/coding-standard/blob/9.0.x/lib/Doctrine/ruleset.xml
-                    'api', 'author', 'category', 'copyright', 'created', 'license',
-                    'package', 'since', 'subpackage', 'version',
+                    // https://github.com/doctrine/coding-standard/blob/cfda1d6/lib/Doctrine/ruleset.xml#L192
+                    'api', 'author', 'category', 'copyright', 'created', 'license', 'package', 'since',
+                    'subpackage', 'version',
+                    // https://github.com/laminas/laminas-coding-standard/blob/bcf6e07/src/LaminasCodingStandard/ruleset.xml#L883
+                    'expectedException', 'expectedExceptionCode', 'expectedExceptionMessage', 'expectedExceptionMessageRegExp',
                 ],
             ],
 
