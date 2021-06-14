@@ -40,7 +40,6 @@ final class Joomla extends AbstractRuleSet
             'cast_spaces'                           => true,
             'function_typehint_space'               => true,
             'include'                               => true,
-            'no_alias_functions'                    => true,
             'no_blank_lines_after_class_opening'    => true,
             'no_empty_statement'                    => true,
             'no_extra_blank_lines'                  => true,
