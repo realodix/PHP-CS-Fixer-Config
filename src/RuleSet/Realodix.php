@@ -42,11 +42,7 @@ final class Realodix extends AbstractRuleSet
                 ],
             ],
 
-            '@PSR12'
-            '@PSR12'
             Fixer\NoDuplicatedArrayKeyFixer::name()     => true,
-            Fixer\NoDuplicatedArrayKeyFixer::name()     => true,
-
             Fixer\NoDuplicatedImportsFixer::name()      => true,
             Fixer\NoUselessParenthesisFixer::name()     => true,
             Fixer\PhpdocNoSuperfluousParamFixer::name() => true,
