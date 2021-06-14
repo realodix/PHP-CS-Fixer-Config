@@ -90,7 +90,6 @@ final class Factory
             new CustomFixer\PhpStorm\BracesOneLineFixer,
             new CustomFixer\Symplify\BlankLineAfterStrictTypes,
             new CustomFixer\Symplify\ParamReturnAndVarTagMalforms,
-            new CustomFixer\Symplify\RemoveUselessDefaultComment,
             new DrupolFixer\BlankLineBeforeEndOfClass(
                 self::phpCsFixer()->getIndent(),
                 self::phpCsFixer()->getLineEnding()
