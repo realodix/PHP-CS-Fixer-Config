@@ -57,10 +57,7 @@ final class Drupal extends AbstractRuleSet
             ],
             'general_phpdoc_annotation_remove' => [
                 'annotations' => [
-                    'package',
-                    'subpackage',
-                    'author',
-                    'version',
+                    'author', 'package', 'subpackage', 'version',
                 ],
             ],
             'global_namespace_import' => [
