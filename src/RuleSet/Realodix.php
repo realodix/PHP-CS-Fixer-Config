@@ -39,6 +39,7 @@ final class Realodix extends AbstractRuleSet
             'no_useless_else'              => true,
             'php_unit_method_casing'       => true,
             'phpdoc_to_comment'            => true,
+            'phpdoc_order'                 => true,
 
             'phpdoc_var_annotation_correct_order' => true,
             'phpdoc_add_missing_param_annotation' => [
