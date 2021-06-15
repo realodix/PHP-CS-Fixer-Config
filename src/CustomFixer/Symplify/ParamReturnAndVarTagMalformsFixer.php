@@ -13,7 +13,7 @@ use SplFileInfo;
  * - https://github.com/symplify/coding-standard/blob/main/src/Fixer/Commenting/ParamReturnAndVarTagMalformsFixer.php
  * - https://github.com/symplify/coding-standard/blob/main/docs/rules_overview.md#paramreturnandvartagmalformsfixer
  */
-final class ParamReturnAndVarTagMalforms extends AbstractSymplifyFixer
+final class ParamReturnAndVarTagMalformsFixer extends AbstractSymplifyFixer
 {
     /**
      * @var string
