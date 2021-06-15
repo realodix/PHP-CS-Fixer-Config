@@ -40,6 +40,19 @@ use Realodix\CsConfig\RuleSet;
 return Factory::fromRuleSet(new RuleSet\Realodix());
 ```
 
+**Not interested with the built-in rule set?**
+
+Very easy, just use `Blank` rule set, then add your rules.
+
+```php
+$yourRules = [
+    `your_rules_1` = true,
+    `your_rules_2` = true,
+];
+
+Factory::fromRuleSet(new RuleSet\Blank(), $yourRules);
+```
+
 ### Configuration with override rules
 
 :bulb: Optionally override rules from a rule set by passing in an array of rules to be merged in:
