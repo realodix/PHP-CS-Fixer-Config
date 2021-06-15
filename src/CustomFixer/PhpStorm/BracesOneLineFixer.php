@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Realodix\CsConfig\CustomFixer\PhpStorm;
 
 use PhpCsFixer\Fixer\FixerInterface;
