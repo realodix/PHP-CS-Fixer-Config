@@ -3,7 +3,7 @@
 namespace Realodix\CsConfig;
 
 use drupol\PhpCsFixerConfigsDrupal\Fixer as DrupolFixer;
-use PhpCsFixer\ConfigInterface;
+use PhpCsFixer\Config;
 use PhpCsFixer\Finder;
 use Realodix\CsConfig\RuleSet\RuleSetInterface;
 
@@ -52,9 +52,9 @@ final class Factory
      * @param array            $overrideRules
      * @param array            $options
      *
-     * @return ConfigInterface
+     * @return Config
      */
-    private static function config(RuleSetInterface $ruleSet, array $overrideRules = [], array $options = []): ConfigInterface
+    private static function config(RuleSetInterface $ruleSet, array $overrideRules = [], array $options = []): Config
     {
         return self::phpCsFixer($ruleSet->name())
                 ->setCacheFile($options['cacheFile'])
