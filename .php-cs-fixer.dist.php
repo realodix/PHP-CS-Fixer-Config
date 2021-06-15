@@ -11,4 +11,4 @@ $options = [
     // ..
 ];
 
-return Factory::fromRuleSet(new RuleSet\LaravelRisky(), $overrideRules, $options)->setRiskyAllowed(false);
+return Factory::fromRuleSet(new RuleSet\RealodixStrict(), $overrideRules, $options);

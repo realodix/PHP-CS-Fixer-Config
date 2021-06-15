@@ -52,7 +52,7 @@ final class Factory
      * @param array            $overrideRules
      * @param array            $options
      *
-     * @return Config
+     * @return PhpCsFixer\Config
      */
     private static function config(RuleSetInterface $ruleSet, array $overrideRules = [], array $options = []): Config
     {
