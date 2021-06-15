@@ -6,9 +6,9 @@ abstract class AbstractRuleSet implements RuleSetInterface
 {
     protected $name;
 
-    protected $headerComment = [];
-
     protected $requiredPHPVersion = 0;
+
+    private $headerComment = [];
 
     abstract public function getRules(): array;
 
