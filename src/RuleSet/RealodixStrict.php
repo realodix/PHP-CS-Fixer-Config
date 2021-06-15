@@ -1,5 +1,6 @@
 <?php
 
+declare(strict_types=1);
 namespace Realodix\CsConfig\RuleSet;
 
 use PhpCsFixerCustomFixers\Fixer;
@@ -13,6 +14,7 @@ final class RealodixStrict extends AbstractRuleSet
         $basicRules = (new Realodix())->getRules();
 
         $rules = [
+            'Symplify/blank_line_after_strict_types' => true,
             'align_multiline_comment'          => ['comment_type' => 'all_multiline'],
             'general_phpdoc_annotation_remove' => [
                 'annotations' => [
