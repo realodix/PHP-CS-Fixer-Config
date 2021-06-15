@@ -2,7 +2,7 @@
 
 namespace Realodix\CsConfig\RuleSet;
 
-use MattAllan\LaravelCodeStyle\Config;
+use MattAllan\LaravelCodeStyle\Config as LaravelCS;
 
 final class LaravelRisky extends AbstractRuleSet
 {
@@ -14,8 +14,9 @@ final class LaravelRisky extends AbstractRuleSet
      */
     public function getRules(): array
     {
-        $basicRules = Config::RULE_DEFINITIONS['@Laravel'];
-        $laravelRisky = Config::RULE_DEFINITIONS['@Laravel:risky'];
+        $basicRules = (new Laravel())->getRules();
+
+        $rules = LaravelCS::RULE_DEFINITIONS['@Laravel:risky'];
 
         return array_merge($basicRules, $laravelRisky);
     }

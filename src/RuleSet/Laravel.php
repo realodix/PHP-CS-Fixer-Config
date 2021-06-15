@@ -2,7 +2,7 @@
 
 namespace Realodix\CsConfig\RuleSet;
 
-use MattAllan\LaravelCodeStyle\Config;
+use MattAllan\LaravelCodeStyle\Config as LaravelCS;
 
 final class Laravel extends AbstractRuleSet
 {
@@ -14,6 +14,6 @@ final class Laravel extends AbstractRuleSet
      */
     public function getRules(): array
     {
-        return Config::RULE_DEFINITIONS['@Laravel'];
+        return LaravelCS::RULE_DEFINITIONS['@Laravel'];
     }
 }
