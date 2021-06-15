@@ -58,13 +58,8 @@ Factory::fromRuleSet(new RuleSet\Blank(), $yourRules);
 :bulb: Optionally override rules from a rule set by passing in an array of rules to be merged in:
 
 ```diff
- <?php
-
- use Realodix\CsConfig\Factory;
- use Realodix\CsConfig\RuleSet;
-
--return Factory::fromRuleSet(new RuleSet\Realodix());
-+return Factory::fromRuleSet(new RuleSet\Realodix(), [
+-Factory::fromRuleSet(new RuleSet\Realodix());
++Factory::fromRuleSet(new RuleSet\Realodix(), [
 +    'no_extra_blank_lines' => false,
 +]);
 ```
@@ -111,18 +106,14 @@ its properties setup. You can pass an array to the third parameter of
 
 
 ```diff
- <?php
-
 +use PhpCsFixer\Finder;
- use Realodix\CsConfig\Factory;
- use Realodix\CsConfig\RuleSet;
 
 +$finder = Finder::create()
 +              ->files()
 +              ->in(__DIR__);
 
--return Factory::fromRuleSet(new RuleSet\Realodix());
-+return Factory::fromRuleSet(new RuleSet\Realodix(), [], [
+-Factory::fromRuleSet(new RuleSet\Realodix());
++Factory::fromRuleSet(new RuleSet\Realodix(), [], [
 +    'usingCache'   => false,
 +    'hideProgress' => true,
 +    'finder'       => $finder,
@@ -134,11 +125,6 @@ its properties setup. You can pass an array to the third parameter of
 :bulb: Optionally specify a header:
 
 ```diff
-<?php
-
-use Realodix\CsConfig\Factory;
-use Realodix\CsConfig\RuleSet;
-
 +$header = <<<EOF
 +Copyright (c) 2021 Realodix
 + 
@@ -148,8 +134,8 @@ use Realodix\CsConfig\RuleSet;
 +@see https://github.com/realodix/php-cs-fixer-config
 +EOF;
 
--return Factory::fromRuleSet(new RuleSet\Realodix());
-+return Factory::fromRuleSet(new RuleSet\Realodix($header));
+-Factory::fromRuleSet(new RuleSet\Realodix());
++Factory::fromRuleSet(new RuleSet\Realodix($header));
 ```
 
 This will enable and configure the [`HeaderCommentFixer`][headerCommentFixer], so that
