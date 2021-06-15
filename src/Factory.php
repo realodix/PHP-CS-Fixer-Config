@@ -28,17 +28,6 @@ final class Factory
      */
     public static function fromRuleSet(RuleSetInterface $ruleSet, array $overrideRules = [], array $options = [])
     {
-        if (\PHP_VERSION_ID < $ruleSet->requiredPHPVersion()) {
-            throw new \RuntimeException(
-                sprintf(
-                    'The "%s" ruleset requires a minimum PHP_VERSION_ID of "%d" but current PHP_VERSION_ID is "%d".',
-                    $ruleSet->name(),
-                    $ruleSet->requiredPHPVersion(),
-                    \PHP_VERSION_ID
-                )
-            );
-        }
-
         $options = [
             'cacheFile'      => $options['cacheFile'] ?? self::phpCsFixer()->getCacheFile(),
             'customFixers'   => $options['customFixers'] ?? self::phpCsFixer()->getCustomFixers(),

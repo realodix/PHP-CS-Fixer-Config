@@ -6,8 +6,6 @@ abstract class AbstractRuleSet implements RuleSetInterface
 {
     protected $name;
 
-    protected $requiredPHPVersion = 0;
-
     private $headerComment = [];
 
     abstract public function getRules(): array;
@@ -36,10 +34,5 @@ abstract class AbstractRuleSet implements RuleSetInterface
     public function rules(): array
     {
         return array_merge($this->getRules(), $this->headerComment);
-    }
-
-    public function requiredPHPVersion(): int
-    {
-        return $this->requiredPHPVersion;
     }
 }
