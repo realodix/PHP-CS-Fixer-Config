@@ -25,7 +25,6 @@ Pick one of the rule sets:
 * [`CodeIgniter`](src/RuleSet/CodeIgniter.php), [`CodeIgniterRisky`](src/RuleSet/CodeIgniterRisky.php)
 * [`Composer`](src/RuleSet/Composer.php), [`ComposerRisky`](src/RuleSet/ComposerRisky.php)
 * [`Drupal`](src/RuleSet/Drupal.php)
-* [`Joomla`](src/RuleSet/Joomla.php), [`JoomlaRisky`](src/RuleSet/JoomlaRisky.php)
 * [`PhpStorm`](src/RuleSet/PhpStorm.php)
 * [`PHPUnit`](src/RuleSet/PHPUnit.php), [`PHPUnitRisky`](src/RuleSet/PHPUnitRisky.php)
 * [`Yii`](src/RuleSet/Yii.php), [`YiiRisky`](src/RuleSet/YiiRisky.php)
