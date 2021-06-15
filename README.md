@@ -83,43 +83,6 @@ Factory::fromRuleSet(new RuleSet\Blank(), $yourRules);
   - `Symplify/blank_line_after_strict_types`
   - `Symplify/param_return_and_var_tag_malforms`
 
-### Specifying Options to `PhpCsFixer\Config`
-
-The `Factory` class returns an instance of `PhpCsFixer\Config` and fully supports all of
-its properties setup. You can pass an array to the third parameter of
-`Factory::fromRuleSet()` containing your desired options.
-
-**Options**
-
-| Key              | Allowed Types           | Default                      |
-| ---------------- | :---------------------: | :--------------------------: |
-| `finder`         | `iterable`, `null`      | `PhpCsFixer\Finder` instance |
-| `isRiskyAllowed` | `bool`                  | `True`                       |
-| `cacheFile`      | `string`                | PHP CS Fixer default value   |
-| `customFixers`   | [`FixerInterface[]`][1] | PHP CS Fixer default value   |
-| `format`         | `string`                | PHP CS Fixer default value   |
-| `hideProgress`   | `bool`                  | PHP CS Fixer default value   |
-| `indent`         | `string`                | PHP CS Fixer default value   |
-| `lineEnding`     | `string`                | PHP CS Fixer default value   |
-| `phpExecutable`  | `string`                | PHP CS Fixer default value   |
-| `usingCache`     | `bool`                  | PHP CS Fixer default value   |
-
-
-```diff
-+use PhpCsFixer\Finder;
-
-+$finder = Finder::create()
-+              ->files()
-+              ->in(__DIR__);
-
--Factory::fromRuleSet(new RuleSet\Realodix());
-+Factory::fromRuleSet(new RuleSet\Realodix(), [], [
-+    'usingCache'   => false,
-+    'hideProgress' => true,
-+    'finder'       => $finder,
-+]);
-```
-
 ### Configuration with header
 
 :bulb: Optionally specify a header:
