@@ -88,8 +88,8 @@ final class Factory
     {
         return [
             new CustomFixer\PhpStorm\BracesOneLineFixer,
-            new CustomFixer\Symplify\BlankLineAfterStrictTypes,
-            new CustomFixer\Symplify\ParamReturnAndVarTagMalforms,
+            new CustomFixer\Symplify\BlankLineAfterStrictTypesFixer,
+            new CustomFixer\Symplify\ParamReturnAndVarTagMalformsFixer,
             new DrupolFixer\BlankLineBeforeEndOfClass(
                 self::phpCsFixer()->getIndent(),
                 self::phpCsFixer()->getLineEnding()
