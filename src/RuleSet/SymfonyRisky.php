@@ -12,13 +12,13 @@ final class SymfonyRisky extends AbstractRuleSet
      */
     public function getRules(): array
     {
-        $basicRules = (new Symfony())->getRules();
+        $baseRules = (new Symfony())->getRules();
 
         $rules = [
             '@PHPUnit75Migration:risky' => true,
             '@Symfony:risky'            => true,
         ];
 
-        return array_merge($basicRules, $rules);
+        return array_merge($baseRules, $rules);
     }
 }

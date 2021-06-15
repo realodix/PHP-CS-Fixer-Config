@@ -15,12 +15,12 @@ final class ComposerRisky extends AbstractRuleSet
      */
     public function getRules(): array
     {
-        $basicRules = (new Composer())->getRules();
+        $baseRules = (new Composer())->getRules();
 
         $rules = [
             'psr_autoloading' => true,
         ];
 
-        return array_merge($basicRules, $rules);
+        return array_merge($baseRules, $rules);
     }
 }

@@ -10,7 +10,7 @@ final class Realodix extends AbstractRuleSet
 
     public function getRules(): array
     {
-        $basicRules = (new Laravel())->getRules();
+        $baseRules = (new Laravel())->getRules();
 
         $rules = [
             /*
@@ -59,6 +59,6 @@ final class Realodix extends AbstractRuleSet
             Fixer\PhpdocTypesTrimFixer::name()          => true,
         ];
 
-        return array_merge($basicRules, $rules);
+        return array_merge($baseRules, $rules);
     }
 }

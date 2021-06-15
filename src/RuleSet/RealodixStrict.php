@@ -10,7 +10,7 @@ final class RealodixStrict extends AbstractRuleSet
 
     public function getRules(): array
     {
-        $basicRules = (new Realodix())->getRules();
+        $baseRules = (new Realodix())->getRules();
 
         $rules = [
             'align_multiline_comment'          => ['comment_type' => 'all_multiline'],
@@ -39,6 +39,6 @@ final class RealodixStrict extends AbstractRuleSet
             Fixer\SingleSpaceBeforeStatementFixer::name()           => true,
         ];
 
-        return array_merge($basicRules, $rules);
+        return array_merge($baseRules, $rules);
     }
 }

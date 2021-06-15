@@ -15,7 +15,7 @@ final class PHPUnitRisky extends AbstractRuleSet
      */
     public function getRules(): array
     {
-        $basicRules = (new PHPUnit())->getRules();
+        $baseRules = (new PHPUnit())->getRules();
 
         $rules = [
             'array_push'                => true,
@@ -53,6 +53,6 @@ final class PHPUnitRisky extends AbstractRuleSet
             'no_trailing_whitespace_in_string'       => true,
         ];
 
-        return array_merge($basicRules, $rules);
+        return array_merge($baseRules, $rules);
     }
 }

@@ -12,7 +12,7 @@ final class CodeIgniterRisky extends AbstractRuleSet
      */
     public function getRules(): array
     {
-        $basicRules = (new CodeIgniter())->getRules();
+        $baseRules = (new CodeIgniter())->getRules();
 
         $rules = [
             'array_push'           => true,
@@ -21,6 +21,6 @@ final class CodeIgniterRisky extends AbstractRuleSet
             'static_lambda'        => true,
         ];
 
-        return array_merge($basicRules, $rules);
+        return array_merge($baseRules, $rules);
     }
 }

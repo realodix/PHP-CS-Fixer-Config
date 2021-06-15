@@ -14,10 +14,10 @@ final class LaravelRisky extends AbstractRuleSet
      */
     public function getRules(): array
     {
-        $basicRules = (new Laravel())->getRules();
+        $baseRules = (new Laravel())->getRules();
 
         $rules = LaravelCS::RULE_DEFINITIONS['@Laravel:risky'];
 
-        return array_merge($basicRules, $rules);
+        return array_merge($baseRules, $rules);
     }
 }

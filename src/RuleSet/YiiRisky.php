@@ -13,7 +13,7 @@ final class YiiRisky extends AbstractRuleSet
      */
     public function getRules(): array
     {
-        $basicRules = (new Yii())->getRules();
+        $baseRules = (new Yii())->getRules();
 
         $rules = [
             'dir_constant'             => true,
@@ -28,6 +28,6 @@ final class YiiRisky extends AbstractRuleSet
             'self_accessor'            => true,
         ];
 
-        return array_merge($basicRules, $rules);
+        return array_merge($baseRules, $rules);
     }
 }
