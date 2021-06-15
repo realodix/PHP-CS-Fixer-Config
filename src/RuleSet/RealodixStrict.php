@@ -23,6 +23,7 @@ final class RealodixStrict extends AbstractRuleSet
                     'expectedException', 'expectedExceptionCode', 'expectedExceptionMessage', 'expectedExceptionMessageRegExp',
                 ],
             ],
+            'phpdoc_separation' => true,
 
             Fixer\CommentSurroundedBySpacesFixer::name()            => true,
             Fixer\MultilineCommentOpeningClosingAloneFixer::name()  => true,
