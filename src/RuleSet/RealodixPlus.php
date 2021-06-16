@@ -4,7 +4,7 @@ namespace Realodix\CsConfig\RuleSet;
 
 use PhpCsFixerCustomFixers\Fixer;
 
-final class RealodixStrict extends AbstractRuleSet
+final class RealodixPlus extends AbstractRuleSet
 {
     protected $name = 'Realodix Coding Standards (strict)';
 
