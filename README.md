@@ -37,7 +37,7 @@ Create a configuration file `.php-cs-fixer.php` in the root of your project:
 use Realodix\CsConfig\Factory;
 use Realodix\CsConfig\RuleSet;
 
-return Factory::fromRuleSet(new RuleSet\Realodix());
+return Factory::fromRuleSet(new RuleSet\Realodix);
 ```
 
 **Not interested with the built-in rule set?**
@@ -50,7 +50,7 @@ $yourRules = [
     `your_rule_2` = true,
 ];
 
-Factory::fromRuleSet(new RuleSet\Blank(), $yourRules);
+Factory::fromRuleSet(new RuleSet\Blank, $yourRules);
 ```
 
 ### Configuration with override rules
@@ -58,8 +58,8 @@ Factory::fromRuleSet(new RuleSet\Blank(), $yourRules);
 :bulb: Optionally override rules from a rule set by passing in an array of rules to be merged in:
 
 ```diff
--Factory::fromRuleSet(new RuleSet\Realodix());
-+Factory::fromRuleSet(new RuleSet\Realodix(), [
+-Factory::fromRuleSet(new RuleSet\Realodix);
++Factory::fromRuleSet(new RuleSet\Realodix, [
 +    'no_extra_blank_lines' => false,
 +]);
 ```
@@ -97,7 +97,7 @@ Factory::fromRuleSet(new RuleSet\Blank(), $yourRules);
 +@see https://github.com/realodix/php-cs-fixer-config
 +EOF;
 
--Factory::fromRuleSet(new RuleSet\Realodix());
+-Factory::fromRuleSet(new RuleSet\Realodix);
 +Factory::fromRuleSet(new RuleSet\Realodix($header));
 ```
 
