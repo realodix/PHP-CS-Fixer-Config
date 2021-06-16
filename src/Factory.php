@@ -3,19 +3,11 @@
 namespace Realodix\CsConfig;
 
 use drupol\PhpCsFixerConfigsDrupal\Fixer as DrupolFixer;
-use PhpCsFixer\Finder;
+use PhpCsFixer\Config;
 use Realodix\CsConfig\RuleSet\RuleSetInterface;
 
-final class Factory
+class Factory
 {
-    /**
-     * @param string $name
-     */
-    private static function phpCsFixer(string $name = 'default')
-    {
-        return new \PhpCsFixer\Config($name);
-    }
-
     /**
      * Creates a configuration based on a rule set.
      *
@@ -23,14 +15,16 @@ final class Factory
      * @param array            $overrideRules
      *
      * @throws \RuntimeException
+     *
+     * @return \PhpCsFixer\Config
      */
-    public static function fromRuleSet(RuleSetInterface $ruleSet, array $overrideRules = [])
+    public static function fromRuleSet(RuleSetInterface $ruleSet, array $overrideRules = []): Config
     {
-        $finder = Finder::create()
+        $finder = \PhpCsFixer\Finder::create()
                   ->files()
                   ->in(__DIR__);
 
-        return self::phpCsFixer($ruleSet->name())
+        return (new \PhpCsFixer\Config($ruleSet->name()))
                 ->registerCustomFixers(new \PedroTroller\CS\Fixer\Fixers)
                 ->registerCustomFixers(new \PhpCsFixerCustomFixers\Fixers)
                 ->registerCustomFixers(self::customFixers())
@@ -41,17 +35,19 @@ final class Factory
 
     private static function customFixers(): array
     {
+        $PhpCsFixer = new \PhpCsFixer\Config;
+
         return [
             new CustomFixer\PhpStorm\BracesOneLineFixer,
             new CustomFixer\Symplify\BlankLineAfterStrictTypesFixer,
             new CustomFixer\Symplify\ParamReturnAndVarTagMalformsFixer,
             new DrupolFixer\BlankLineBeforeEndOfClass(
-                self::phpCsFixer()->getIndent(),
-                self::phpCsFixer()->getLineEnding()
+                $PhpCsFixer->getIndent(),
+                $PhpCsFixer->getLineEnding()
             ),
             new DrupolFixer\ControlStructureCurlyBracketsElseFixer(
-                self::phpCsFixer()->getIndent(),
-                self::phpCsFixer()->getLineEnding()
+                $PhpCsFixer->getIndent(),
+                $PhpCsFixer->getLineEnding()
             ),
             new DrupolFixer\InlineCommentSpacerFixer,
             new \SlamCsFixer\FinalAbstractPublicFixer,

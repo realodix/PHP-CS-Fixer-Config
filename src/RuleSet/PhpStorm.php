@@ -17,15 +17,14 @@ final class PhpStorm extends AbstractRuleSet
      * - single_quote
      *
      * Diff
-     * - [D] PhpStorm/braces_one_line   Currently cannot be implemented, hope it can be
-     *                                  implemented in the future
+     * - [M] @PSR12                     Some rules removed and some rules added to keep
+     *                                  compatibility
      * - [M] array_syntax               Same as the default value
      * - [M] general_phpdoc_tag_rename  Same as the default value
      */
     public function getRules(): array
     {
         $rules = [
-            'PhpStorm/braces_one_line'          => true,
             '@PSR12'                            => true,
             'blank_line_after_opening_tag'      => false,
             'braces'                            => false,
@@ -33,6 +32,7 @@ final class PhpStorm extends AbstractRuleSet
             'no_break_comment'                  => false,
             'no_trailing_whitespace_in_comment' => false,
 
+            'PhpStorm/braces_one_line'        => true,
             'array_syntax'                    => true,
             'binary_operator_spaces'          => ['operators' => ['|' => 'no_space']],
             'cast_spaces'                     => ['space' => 'none'],

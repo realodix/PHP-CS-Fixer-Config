@@ -11,8 +11,8 @@ final class CodeIgniter extends AbstractRuleSet
      * - https://github.com/codeigniter4/CodeIgniter4/blob/3d0a4a7/utils/PhpCsFixer/CodeIgniter4.php (develop)
      *
      * Diff
-     * - [D] binary_operator_spaces.default     Same as the default value
-     * - [D] yoda_style.always_move_variable    Same as the default value
+     * - [D] binary_operator_spaces.default   Same as the default value
+     * - [D] yoda_style.always_move_variable  Same as the default value
      * - [M] align_multiline_comment
      * - [M] array_syntax
      */

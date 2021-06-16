@@ -15,6 +15,8 @@ final class PHPUnit extends AbstractRuleSet
      * - [D] header_comment                         Must be set manually
      * - [M] list_syntax
      * - [M] ordered_interfaces
+     * - [M] @Symfony                               Some rules removed and some rules added to keep
+     *                                              compatibility
      */
     public function getRules(): array
     {
@@ -71,38 +73,51 @@ final class PHPUnit extends AbstractRuleSet
                 ],
             ],
 
-            'align_multiline_comment'    => true,
-            'array_indentation'          => true,
-            'combine_consecutive_issets' => true,
-            'combine_consecutive_unsets' => true,
-            'explicit_indirect_variable' => true,
-            'explicit_string_variable'   => true,
-            'global_namespace_import'    => ['import_constants' => true, 'import_functions' => true],
-            'heredoc_to_nowdoc'          => true,
-            'list_syntax'                => true,
-            'native_constant_invocation' => false,
-            'native_function_invocation' => false,
-            'no_superfluous_elseif'      => true,
-            'no_useless_else'            => true,
-            'no_useless_return'          => true,
-            'operator_linebreak'         => ['only_booleans' => true, 'position' => 'end'],
-            'ordered_imports'            => ['imports_order' => ['const', 'class', 'function']],
-            'phpdoc_no_empty_return'     => true,
-            'phpdoc_order_by_value'      => ['annotations' => ['covers', 'dataProvider', 'throws', 'uses']],
-            'phpdoc_order'               => true,
-            'phpdoc_tag_casing'          => true,
-            'return_assignment'          => true,
-            'self_static_accessor'       => true,
-            'simplified_null_return'     => false,
-            'ternary_to_null_coalescing' => true,
-
+            'align_multiline_comment'                => true,
+            'array_indentation'                      => true,
+            'combine_consecutive_issets'             => true,
+            'combine_consecutive_unsets'             => true,
+            'explicit_indirect_variable'             => true,
+            'explicit_string_variable'               => true,
+            'heredoc_to_nowdoc'                      => true,
+            'list_syntax'                            => true,
             'multiline_comment_opening_closing'      => true,
             'multiline_whitespace_before_semicolons' => true,
+            'native_constant_invocation'             => false,
+            'native_function_invocation'             => false,
             'no_blank_lines_before_namespace'        => true,
             'no_null_property_initialization'        => true,
+            'no_superfluous_elseif'                  => true,
+            'no_useless_else'                        => true,
+            'no_useless_return'                      => true,
             'phpdoc_add_missing_param_annotation'    => false,
+            'phpdoc_no_empty_return'                 => true,
+            'phpdoc_order'                           => true,
+            'phpdoc_tag_casing'                      => true,
             'phpdoc_var_annotation_correct_order'    => true,
+            'return_assignment'                      => true,
+            'self_static_accessor'                   => true,
             'simple_to_complex_string_variable'      => true,
+            'simplified_null_return'                 => false,
+            'ternary_to_null_coalescing'             => true,
+            'global_namespace_import'                => [
+                'import_constants' => true,
+                'import_functions' => true,
+            ],
+            'operator_linebreak' => [
+                'only_booleans' => true,
+                'position'      => 'end',
+            ],
+            'ordered_imports' => [
+                'imports_order' => [
+                    'const', 'class', 'function',
+                ],
+            ],
+            'phpdoc_order_by_value' => [
+                'annotations' => [
+                    'covers', 'dataProvider', 'throws', 'uses',
+                ],
+            ],
         ];
 
         return $rules;
