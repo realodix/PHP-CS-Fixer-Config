@@ -20,11 +20,7 @@ final class Realodix extends AbstractRuleSet
             'phpdoc_summary'          => false,
             'ternary_operator_spaces' => false,
             'unary_operator_spaces'   => false,
-            'binary_operator_spaces'  => [
-                // Diff https://github.com/matt-allan/laravel-code-style/blob/b224862/src/Config.php#L26
-                'operators' => ['=>' => 'align_single_space_minimal'],
-            ],
-            'method_argument_space' => [
+            'method_argument_space'   => [
                 // PHP80Migration
                 // Diff https://github.com/matt-allan/laravel-code-style/blob/b224862/src/Config.php#L70
                 'after_heredoc' => true,
@@ -35,11 +31,11 @@ final class Realodix extends AbstractRuleSet
              */
             'explicit_string_variable'     => true,
             'fully_qualified_strict_types' => true,
-            'no_superfluous_elseif'        => true,
             'no_useless_else'              => true,
             'php_unit_method_casing'       => true,
-            'phpdoc_to_comment'            => true,
             'phpdoc_order'                 => true,
+            'phpdoc_separation'            => true,
+            'phpdoc_to_comment'            => true,
 
             'phpdoc_var_annotation_correct_order' => true,
             'phpdoc_add_missing_param_annotation' => [
@@ -53,11 +49,12 @@ final class Realodix extends AbstractRuleSet
                     // 'return',
                 ],
             ],
-            Fixer\NoDuplicatedArrayKeyFixer::name()     => true,
-            Fixer\NoDuplicatedImportsFixer::name()      => true,
-            Fixer\NoUselessParenthesisFixer::name()     => true,
-            Fixer\PhpdocNoSuperfluousParamFixer::name() => true,
-            Fixer\PhpdocTypesTrimFixer::name()          => true,
+            Fixer\NoDuplicatedArrayKeyFixer::name() => true,
+            Fixer\NoDuplicatedImportsFixer::name()  => true,
+            Fixer\NoUselessParenthesisFixer::name() => true,
+            Fixer\PhpdocParamOrderFixer::name()     => true,
+            Fixer\PhpdocParamTypeFixer::name()      => true,
+            Fixer\PhpdocTypesTrimFixer::name()      => true,
         ];
 
         return array_merge($baseRules, $rules);

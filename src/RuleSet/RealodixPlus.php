@@ -13,7 +13,13 @@ final class RealodixPlus extends AbstractRuleSet
         $baseRules = (new Realodix())->getRules();
 
         $rules = [
-            'align_multiline_comment'          => ['comment_type' => 'all_multiline'],
+            'no_superfluous_elseif'  => true,
+            'binary_operator_spaces' => [
+                // Diff https://github.com/matt-allan/laravel-code-style/blob/b224862/src/Config.php#L26
+                'operators' => [
+                    '=>' => 'align_single_space_minimal',
+                ],
+            ],
             'general_phpdoc_annotation_remove' => [
                 'annotations' => [
                     // https://github.com/doctrine/coding-standard/blob/cfda1d6/lib/Doctrine/ruleset.xml#L192
@@ -23,7 +29,6 @@ final class RealodixPlus extends AbstractRuleSet
                     'expectedException', 'expectedExceptionCode', 'expectedExceptionMessage', 'expectedExceptionMessageRegExp',
                 ],
             ],
-            'phpdoc_separation' => true,
 
             Fixer\CommentSurroundedBySpacesFixer::name()            => true,
             Fixer\MultilineCommentOpeningClosingAloneFixer::name()  => true,
@@ -33,8 +38,7 @@ final class RealodixPlus extends AbstractRuleSet
             Fixer\NoUselessCommentFixer::name()                     => true,
             Fixer\NoUselessDoctrineRepositoryCommentFixer::name()   => true,
             Fixer\PhpdocNoIncorrectVarAnnotationFixer::name()       => true,
-            Fixer\PhpdocParamOrderFixer::name()                     => true,
-            Fixer\PhpdocParamTypeFixer::name()                      => true,
+            Fixer\PhpdocNoSuperfluousParamFixer::name()             => true,
             Fixer\PhpdocSelfAccessorFixer::name()                   => true,
             Fixer\SingleSpaceAfterStatementFixer::name()            => true,
             Fixer\SingleSpaceBeforeStatementFixer::name()           => true,
