@@ -20,9 +20,13 @@ class Factory
      */
     public static function fromRuleSet(RuleSetInterface $ruleSet, array $overrideRules = []): Config
     {
+        // Meant to be used in vendor/ to get to the root directory
+        $dir = \dirname(__DIR__, 4);
+        $dir = realpath($dir) ?: $dir;
+
         $finder = \PhpCsFixer\Finder::create()
                   ->files()
-                  ->in(__DIR__);
+                  ->in($dir);
 
         return (new \PhpCsFixer\Config($ruleSet->name()))
                 ->registerCustomFixers(new \PedroTroller\CS\Fixer\Fixers)
