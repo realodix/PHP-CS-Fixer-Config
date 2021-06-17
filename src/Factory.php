@@ -49,15 +49,6 @@ class Factory
                 $PhpCsFixer->getIndent(),
                 $PhpCsFixer->getLineEnding()
             ),
-            new DrupolFixer\InlineCommentSpacerFixer,
-            new \SlamCsFixer\FinalAbstractPublicFixer,
-            new \SlamCsFixer\FinalInternalClassFixer,
-            new \SlamCsFixer\FunctionReferenceSpaceFixer,
-            new \SlamCsFixer\InlineCommentSpacerFixer,
-            new \SlamCsFixer\PhpFileOnlyProxyFixer(
-                new \PhpCsFixer\Fixer\Basic\BracesFixer
-            ),
-            new \SlamCsFixer\Utf8Fixer,
         ];
     }
 }

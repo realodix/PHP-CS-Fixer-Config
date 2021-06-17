@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "78d9cdc15d6cc808f0a5d6a56573ca75",
+    "content-hash": "ceb7e94444d0bb653e34aef3f298090f",
     "packages": [
         {
             "name": "composer/semver",
@@ -1373,73 +1373,6 @@
                 "source": "https://github.com/php-fig/simple-cache/tree/master"
             },
             "time": "2017-10-23T01:57:42+00:00"
-        },
-        {
-            "name": "slam/php-cs-fixer-extensions",
-            "version": "v3.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Slamdunk/php-cs-fixer-extensions.git",
-                "reference": "abbf8615b93badd541b22261b0a479b8ed3ac2e5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Slamdunk/php-cs-fixer-extensions/zipball/abbf8615b93badd541b22261b0a479b8ed3ac2e5",
-                "reference": "abbf8615b93badd541b22261b0a479b8ed3ac2e5",
-                "shasum": ""
-            },
-            "require": {
-                "ext-mbstring": "*",
-                "ext-tokenizer": "*",
-                "friendsofphp/php-cs-fixer": "^3.0.0",
-                "php": "^7.4 || ^8.0"
-            },
-            "require-dev": {
-                "malukenho/mcbumpface": "^1.1.5",
-                "phpstan/phpstan": "^0.12.86",
-                "phpstan/phpstan-phpunit": "^0.12.18",
-                "phpunit/phpunit": "^9.5.4",
-                "slam/php-debug-r": "^1.7.0",
-                "slam/phpstan-extensions": "^5.1.0",
-                "thecodingmachine/phpstan-strict-rules": "^0.12.1"
-            },
-            "type": "library",
-            "extra": {
-                "mc-bumpface": {
-                    "stripVersionPrefixes": true
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "SlamCsFixer\\": "lib/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Filippo Tessarotto",
-                    "email": "zoeslam@gmail.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Slam extension of friendsofphp/php-cs-fixer",
-            "support": {
-                "source": "https://github.com/Slamdunk/php-cs-fixer-extensions/tree/v3.0.1"
-            },
-            "funding": [
-                {
-                    "url": "https://paypal.me/filippotessarotto",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/Slamdunk",
-                    "type": "github"
-                }
-            ],
-            "time": "2021-05-10T07:55:05+00:00"
         },
         {
             "name": "symfony/console",
