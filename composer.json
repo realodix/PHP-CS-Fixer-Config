@@ -17,6 +17,13 @@
         "matt-allan/laravel-code-style": "dev-main",
         "pedrotroller/php-cs-custom-fixer": "^2.25"
     },
+    "require-dev": {
+        "phpcompatibility/php-compatibility": "*"
+    },
+    "scripts": {
+        "post-install-cmd": "\"vendor/bin/phpcs\" --config-set installed_paths vendor/phpcompatibility/php-compatibility",
+        "post-update-cmd": "\"vendor/bin/phpcs\" --config-set installed_paths vendor/phpcompatibility/php-compatibility"
+    },
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
