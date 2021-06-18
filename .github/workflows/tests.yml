@@ -41,4 +41,4 @@ jobs:
               composer update --prefer-dist --no-interaction --no-progress --lock
 
       - name: Execute tests
-        run: ./vendor/bin/phpcs -p . --standard=PHPCompatibility
+        run: ./vendor/bin/phpcs -p ./src --standard=PHPCompatibility --runtime-set testVersion 7.3-
