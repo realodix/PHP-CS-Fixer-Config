@@ -39,6 +39,7 @@ jobs:
           command: |
               composer -V
               composer update --${{ matrix.stability }} --prefer-dist --no-interaction --no-progress ${{ matrix.flags }}
+              composer update --lock
 
       - name: Execute tests
         run: ./vendor/bin/phpcs -p . --standard=PHPCompatibility
