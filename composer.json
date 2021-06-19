@@ -18,8 +18,7 @@
         "pedrotroller/php-cs-custom-fixer": "^2.25"
     },
     "require-dev": {
-        "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
-        "phpcompatibility/php-compatibility": "*"
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1"
     },
     "config": {
         "optimize-autoloader": true,
