@@ -12,7 +12,7 @@
         {
             "label": "[CS] PHP Compatibility",
             "type": "shell",
-            "command": "./vendor/bin/phpcs -p src --standard=PHPCompatibility --runtime-set testVersion 7.3-",
+            "command": "./vendor/bin/phpcs -p . --extensions=php --ignore=*/vendor/* --standard=PHPCompatibility --runtime-set testVersion 7.3-",
             "problemMatcher": []
         }
     ]
