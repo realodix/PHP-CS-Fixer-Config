@@ -4,6 +4,7 @@ namespace Realodix\CsConfig\Test;
 
 use PHPUnit\Framework\TestCase;
 use Realodix\CsConfig\Factory;
+use Realodix\CsConfig\RuleSet;
 
 class FactoryTest extends TestCase
 {
@@ -29,6 +30,19 @@ class FactoryTest extends TestCase
 
         self::assertEquals(
             array_merge($rules, $overrideRules),
+            $config->getRules()
+        );
+    }
+
+    /**
+     * @covers Factory
+     */
+    public function testHeaderComment(): void
+    {
+        $config = Factory::fromRuleSet(new RuleSet\Blank('a'));
+
+        self::assertArrayHasKey(
+            'header_comment',
             $config->getRules()
         );
     }
