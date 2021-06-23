@@ -19,7 +19,8 @@
     },
     "require-dev": {
         "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
-        "phpcompatibility/php-compatibility": "^9.3"
+        "phpcompatibility/php-compatibility": "^9.3",
+        "phpunit/phpunit": "^9.5"
     },
     "config": {
         "optimize-autoloader": true,
@@ -34,6 +35,11 @@
     "autoload": {
         "psr-4": {
             "Realodix\\CsConfig\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Realodix\\CsConfig\\Test\\": "tests/"
         }
     },
     "minimum-stability": "dev",
