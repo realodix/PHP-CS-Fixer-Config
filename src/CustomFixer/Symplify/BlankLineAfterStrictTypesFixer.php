@@ -2,6 +2,7 @@
 
 namespace Realodix\CsConfig\CustomFixer\Symplify;
 
+use function Arrayy\create as a;
 use PhpCsFixer\FixerDefinition\FixerDefinition;
 use PhpCsFixer\FixerDefinition\FixerDefinitionInterface;
 use PhpCsFixer\Tokenizer\Token;
@@ -53,7 +54,7 @@ final class BlankLineAfterStrictTypesFixer extends AbstractSymplifyFixer
         if ($sequenceLocation === null) {
             return;
         }
-        $semicolonPosition = (int) array_key_last($sequenceLocation);
+        $semicolonPosition = (int) a($sequenceLocation)->lastKey();
 
         // empty file
         if (! isset($tokens[$semicolonPosition + 2])) {
