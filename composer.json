@@ -1,6 +1,7 @@
 {
     "name": "realodix/php-cs-fixer-config",
     "description": "Provides a configuration factory and multiple rule sets for friendsofphp/php-cs-fixer.",
+    "keywords": ["code style", "codestyle", "coding standards", "coding style", "config"],
     "homepage": "https://github.com/realodix/php-cs-fixer-config",
     "license": "MIT",
     "authors": [
@@ -14,8 +15,6 @@
         "drupol/phpcsfixer-configs-drupal": "^2.0",
         "friendsofphp/php-cs-fixer": "^3.0",
         "kubawerlos/php-cs-fixer-custom-fixers": "^2.5",
-        "matt-allan/laravel-code-style": "dev-main",
-        "pedrotroller/php-cs-custom-fixer": "^2.25",
         "voku/arrayy": "^7.8"
     },
     "require-dev": {
