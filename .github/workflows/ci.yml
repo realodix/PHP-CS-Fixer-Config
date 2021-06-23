@@ -5,7 +5,7 @@ on:
   - push
 
 jobs:
-  build:
+  PHPCompatibility:
     name: PHP Compatibility
 
     runs-on: ubuntu-latest
