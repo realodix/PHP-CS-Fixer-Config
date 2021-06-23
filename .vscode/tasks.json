@@ -10,12 +10,6 @@
             "problemMatcher": []
         },
         {
-            "label": "[Tests] PHPUnit (coverage-html)",
-            "type": "shell",
-            "command": "./vendor/bin/phpunit --coverage-html tests/coverage",
-            "problemMatcher": []
-        },
-        {
             "label": "[CS] PHP CS Fixer",
             "type": "shell",
             "command": "./vendor/bin/php-cs-fixer fix -v",

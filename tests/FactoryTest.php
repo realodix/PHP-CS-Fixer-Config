@@ -6,6 +6,9 @@ use PHPUnit\Framework\TestCase;
 use Realodix\CsConfig\Factory;
 use Realodix\CsConfig\RuleSet;
 
+/**
+ * @coversDefaultClass Realodix\CsConfig\Factory
+ */
 class FactoryTest extends TestCase
 {
     /**
@@ -32,7 +35,7 @@ class FactoryTest extends TestCase
     }
 
     /**
-     * @covers Factory
+     * @covers ::fromRuleSet
      */
     public function testHeaderComment(): void
     {
