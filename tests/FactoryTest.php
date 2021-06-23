@@ -14,11 +14,25 @@ class FactoryTest extends TestCase
     /**
      * @covers ::fromRuleSet
      */
+    public function testFromRuleSetCreatesConfig()
+    {
+        $rules = ['foo' => 'bar'];
+
+        $ruleSet = new DummyRuleSet($rules);
+
+        $config = Factory::fromRuleSet($ruleSet);
+
+        self::assertTrue($config->getUsingCache());
+        self::assertTrue($config->getRiskyAllowed());
+        self::assertSame($rules, $config->getRules());
+    }
+
+    /**
+     * @covers ::fromRuleSet
+     */
     public function testOverrideRules(): void
     {
-        $rules = [
-            'foo' => true,
-        ];
+        $rules = ['foo' => true];
 
         $ruleSet = new DummyRuleSet($rules);
 
