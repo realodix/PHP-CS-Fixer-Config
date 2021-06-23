@@ -1,6 +1,7 @@
 {
     "name": "realodix/php-cs-fixer-config",
     "description": "Provides a configuration factory and multiple rule sets for friendsofphp/php-cs-fixer.",
+    "keywords": ["code style", "codestyle", "coding standards", "coding style", "config"],
     "homepage": "https://github.com/realodix/php-cs-fixer-config",
     "license": "MIT",
     "authors": [
