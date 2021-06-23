@@ -20,12 +20,6 @@
             "type": "shell",
             "command": "./vendor/bin/php-cs-fixer fix -v",
             "problemMatcher": []
-        },
-        {
-            "label": "[CS] PHP Compatibility",
-            "type": "shell",
-            "command": "./vendor/bin/phpcs -p . --extensions=php --ignore=*/vendor/* --standard=PHPCompatibility --runtime-set testVersion 7.2-",
-            "problemMatcher": []
         }
     ]
 }
