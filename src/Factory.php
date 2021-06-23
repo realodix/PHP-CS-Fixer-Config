@@ -29,7 +29,6 @@ class Factory
                   ->in($dir);
 
         return (new \PhpCsFixer\Config($ruleSet->name()))
-                ->registerCustomFixers(new \PedroTroller\CS\Fixer\Fixers)
                 ->registerCustomFixers(new \PhpCsFixerCustomFixers\Fixers)
                 ->registerCustomFixers(self::customFixers())
                 ->setFinder($finder)
