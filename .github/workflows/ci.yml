@@ -38,7 +38,7 @@ jobs:
           max_attempts: 5
           command: |
               composer -V
-              composer update --prefer-dist --no-interaction --no-progress --lock
+              composer update --prefer-dist --no-interaction --no-progress
 
       - name: Run PHPCompatibility
         run: ./vendor/bin/phpcs -p . --extensions=php --ignore=*/vendor/* --standard=PHPCompatibility --runtime-set testVersion 7.2-
