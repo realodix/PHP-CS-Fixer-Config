@@ -4,15 +4,15 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "[CS] PHP CS Fixer",
+            "label": "[Tests] PHPUnit",
             "type": "shell",
-            "command": "./vendor/bin/php-cs-fixer fix -v",
+            "command": "./vendor/bin/phpunit",
             "problemMatcher": []
         },
         {
-            "label": "[CS] PHP Compatibility",
+            "label": "[CS] PHP CS Fixer",
             "type": "shell",
-            "command": "./vendor/bin/phpcs -p . --extensions=php --ignore=*/vendor/* --standard=PHPCompatibility --runtime-set testVersion 7.2-",
+            "command": "./vendor/bin/php-cs-fixer fix -v",
             "problemMatcher": []
         }
     ]

@@ -6,9 +6,16 @@ on:
 
 jobs:
   build:
-    name: PHP Compatibility
-
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php-version: ['7.2', '7.3', '7.4', '8.0']
+        include:
+          - php-version: '8.1'
+            flags: "--ignore-platform-req=php"
+            stability: prefer-stable
+
+    name: PHP ${{ matrix.php-version }}
 
     steps:
       - name: Checkout
@@ -17,7 +24,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.0'
+          php-version: ${{ matrix.php-version }}
           coverage: xdebug
 
       # https://github.com/marketplace/actions/setup-php-action#cache-composer-dependencies
@@ -38,7 +45,6 @@ jobs:
           max_attempts: 5
           command: |
               composer -V
-              composer update --prefer-dist --no-interaction --no-progress
-
-      - name: Run PHPCompatibility
-        run: ./vendor/bin/phpcs -p . --extensions=php --ignore=*/vendor/* --standard=PHPCompatibility --runtime-set testVersion 7.2-
+              composer update --prefer-dist --no-interaction --no-progress ${{ matrix.flags }}
+      - name: Execute tests
+        run: ./vendor/bin/phpunit
