@@ -38,19 +38,16 @@ class Factory
 
     private static function customFixers(): array
     {
-        $PhpCsFixer = new \PhpCsFixer\Config;
+        $indent = (new \PhpCsFixer\Config)->getIndent();
+        $lineEnding = (new \PhpCsFixer\Config)->getLineEnding();
 
         return [
             new CustomFixer\PhpStorm\BracesOneLineFixer,
-            new DrupolFixer\BlankLineBeforeEndOfClass(
-                $PhpCsFixer->getIndent(),
-                $PhpCsFixer->getLineEnding()
-            ),
-            new DrupolFixer\ControlStructureCurlyBracketsElseFixer(
-                $PhpCsFixer->getIndent(),
-                $PhpCsFixer->getLineEnding()
-            ),
+            new DrupolFixer\BlankLineBeforeEndOfClass($indent, $lineEnding),
+            new DrupolFixer\ControlStructureCurlyBracketsElseFixer($indent, $lineEnding),
             new DrupolFixer\InlineCommentSpacerFixer(),
+            new DrupolFixer\NewlineAfterLastCommaInArrayFixer($indent, $lineEnding),
+            new DrupolFixer\TryCatchBlock($indent, $lineEnding),
         ];
     }
 }

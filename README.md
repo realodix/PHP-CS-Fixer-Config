@@ -72,6 +72,8 @@ Factory::fromRuleSet(new RuleSet\Blank, $yourRules);
   - `Drupal/blank_line_before_end_of_class`
   - `Drupal/control_structure_braces_else`
   - `Drupal/inline_comment_spacer`
+  - `Drupal/new_line_on_multiline_array`
+  - `Drupal/try_catch_block`
 
 ### Configuration with header
 
