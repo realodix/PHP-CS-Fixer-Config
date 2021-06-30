@@ -22,9 +22,9 @@ class FactoryTest extends TestCase
 
         $config = Factory::fromRuleSet($ruleSet);
 
-        self::assertTrue($config->getUsingCache());
-        self::assertTrue($config->getRiskyAllowed());
-        self::assertSame($rules, $config->getRules());
+        $this->assertTrue($config->getUsingCache());
+        $this->assertTrue($config->getRiskyAllowed());
+        $this->assertSame($rules, $config->getRules());
     }
 
     /**
@@ -42,7 +42,7 @@ class FactoryTest extends TestCase
 
         $config = Factory::fromRuleSet($ruleSet, $overrideRules);
 
-        self::assertEquals(
+        $this->assertEquals(
             array_merge($rules, $overrideRules),
             $config->getRules()
         );
@@ -55,9 +55,59 @@ class FactoryTest extends TestCase
     {
         $config = Factory::fromRuleSet(new RuleSet\Blank('a'));
 
-        self::assertArrayHasKey(
+        $this->assertArrayHasKey(
             'header_comment',
             $config->getRules()
+        );
+    }
+
+    /**
+     * @covers ::fromRuleSet
+     */
+    public function testInstanceOf(): void
+    {
+        $this->assertInstanceOf(
+            \PhpCsFixer\ConfigInterface::class,
+            Factory::fromRuleSet(new RuleSet\RealodixPlus())
+        );
+
+        $this->assertInstanceOf(
+            \PhpCsFixer\ConfigInterface::class,
+            Factory::fromRuleSet(new RuleSet\CodeIgniterRisky())
+        );
+
+        $this->assertInstanceOf(
+            \PhpCsFixer\ConfigInterface::class,
+            Factory::fromRuleSet(new RuleSet\ComposerRisky())
+        );
+        $this->assertInstanceOf(
+            \PhpCsFixer\ConfigInterface::class,
+            Factory::fromRuleSet(new RuleSet\Drupal())
+        );
+
+        $this->assertInstanceOf(
+            \PhpCsFixer\ConfigInterface::class,
+            Factory::fromRuleSet(new RuleSet\LaravelRisky())
+        );
+
+        $this->assertInstanceOf(
+            \PhpCsFixer\ConfigInterface::class,
+            Factory::fromRuleSet(new RuleSet\PhpStorm())
+        );
+
+        $this->assertInstanceOf(
+            \PhpCsFixer\ConfigInterface::class,
+            Factory::fromRuleSet(new RuleSet\PHPUnitRisky())
+        );
+
+        $this->assertInstanceOf(
+            \PhpCsFixer\ConfigInterface::class,
+            Factory::fromRuleSet(new RuleSet\SymfonyRisky())
+        );
+
+        $this->assertInstanceOf(
+            \PhpCsFixer\ConfigInterface::class,
+            Factory::fromRuleSet(new RuleSet\YiiRisky())
         );
     }
 }
