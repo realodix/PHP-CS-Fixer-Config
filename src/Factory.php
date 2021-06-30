@@ -3,7 +3,7 @@
 namespace Realodix\CsConfig;
 
 use drupol\PhpCsFixerConfigsDrupal\Fixer as DrupolFixer;
-use PhpCsFixer\Config;
+use PhpCsFixer\ConfigInterface;
 use Realodix\CsConfig\RuleSet\RuleSetInterface;
 
 class Factory
@@ -16,9 +16,9 @@ class Factory
      *
      * @throws \RuntimeException
      *
-     * @return \PhpCsFixer\Config
+     * @return \PhpCsFixer\ConfigInterface
      */
-    public static function fromRuleSet(RuleSetInterface $ruleSet, array $overrideRules = []): Config
+    public static function fromRuleSet(RuleSetInterface $ruleSet, array $overrideRules = []): ConfigInterface
     {
         // Meant to be used in vendor/ to get to the root directory
         $dir = \dirname(__DIR__, 4);
