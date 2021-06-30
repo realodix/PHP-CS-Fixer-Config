@@ -102,11 +102,6 @@ class FactoryTest extends TestCase
 
         $this->assertInstanceOf(
             \PhpCsFixer\ConfigInterface::class,
-            Factory::fromRuleSet(new RuleSet\SymfonyRisky())
-        );
-
-        $this->assertInstanceOf(
-            \PhpCsFixer\ConfigInterface::class,
             Factory::fromRuleSet(new RuleSet\YiiRisky())
         );
     }
