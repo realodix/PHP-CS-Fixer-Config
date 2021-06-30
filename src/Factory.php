@@ -50,6 +50,7 @@ class Factory
                 $PhpCsFixer->getIndent(),
                 $PhpCsFixer->getLineEnding()
             ),
+            new DrupolFixer\InlineCommentSpacerFixer(),
         ];
     }
 }
