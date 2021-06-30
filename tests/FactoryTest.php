@@ -40,7 +40,7 @@ class FactoryTest extends TestCase
             'foo' => false,
         ];
 
-        $config = Factory::fromRuleSet($ruleSet,$overrideRules);
+        $config = Factory::fromRuleSet($ruleSet, $overrideRules);
 
         self::assertEquals(
             array_merge($rules, $overrideRules),
