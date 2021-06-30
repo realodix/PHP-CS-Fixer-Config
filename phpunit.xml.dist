@@ -7,7 +7,10 @@
             <directory suffix="Test.php">./tests</directory>
         </testsuite>
     </testsuites>
-    <php>
-        <ini name="memory_limit" value="2048M" />
-    </php>
+
+    <coverage>
+        <include>
+            <directory suffix=".php">src</directory>
+        </include>
+    </coverage>
 </phpunit>

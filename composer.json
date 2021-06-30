@@ -11,14 +11,14 @@
         }
     ],
     "require": {
-        "php": "^7.2 || ^8.0",
+        "php": "^7.4 || ^8.0",
         "drupol/phpcsfixer-configs-drupal": "^2.0",
         "friendsofphp/php-cs-fixer": "^3.0",
         "kubawerlos/php-cs-fixer-custom-fixers": "^2.5"
     },
     "require-dev": {
         "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
-        "phpunit/phpunit": "^8.5.8|^9.3.3"
+        "phpunit/phpunit": "^9.4"
     },
     "config": {
         "optimize-autoloader": true,
