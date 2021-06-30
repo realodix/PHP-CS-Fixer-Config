@@ -42,8 +42,6 @@ class Factory
 
         return [
             new CustomFixer\PhpStorm\BracesOneLineFixer,
-            new CustomFixer\Symplify\BlankLineAfterStrictTypesFixer,
-            new CustomFixer\Symplify\ParamReturnAndVarTagMalformsFixer,
             new DrupolFixer\BlankLineBeforeEndOfClass(
                 $PhpCsFixer->getIndent(),
                 $PhpCsFixer->getLineEnding()

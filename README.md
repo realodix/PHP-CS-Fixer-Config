@@ -72,9 +72,6 @@ Factory::fromRuleSet(new RuleSet\Blank, $yourRules);
   - `Drupal/blank_line_before_end_of_class`
   - `Drupal/control_structure_braces_else`
   - `Drupal/inline_comment_spacer`
-- [symplify/coding-standard](https://github.com/symplify/coding-standard/blob/main/docs/rules_overview.md)
-  - `Symplify/blank_line_after_strict_types`
-  - `Symplify/param_return_and_var_tag_malforms`
 
 ### Configuration with header
 
