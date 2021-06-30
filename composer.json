@@ -17,7 +17,6 @@
         "kubawerlos/php-cs-fixer-custom-fixers": "^2.5"
     },
     "require-dev": {
-        "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
         "phpunit/phpunit": "^9.4"
     },
     "config": {
