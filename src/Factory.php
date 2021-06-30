@@ -33,7 +33,7 @@ class Factory
                 ->registerCustomFixers(self::customFixers())
                 ->setFinder($finder)
                 ->setRiskyAllowed(true)
-                ->setRules(array_merge($ruleSet->rules(), $overrideRules ?? []));
+                ->setRules(array_merge($ruleSet->rules(), $overrideRules));
     }
 
     private static function customFixers(): array
