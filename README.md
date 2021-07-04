@@ -65,6 +65,7 @@ Factory::fromRuleSet(new RuleSet\Blank, $yourRules);
 
 **Built-in custom fixers**
 - [kubawerlos/php-cs-fixer-custom-fixers](https://github.com/kubawerlos/php-cs-fixer-custom-fixers)
+- [pedrotroller/php-cs-custom-fixer](https://github.com/PedroTroller/PhpCSFixer-Custom-Fixers)
 - `PhpStorm/braces_one_line`
 - [drupol/phpcsfixer-configs-drupal](https://github.com/drupol/phpcsfixer-configs-drupal/tree/master/src/Fixer)
   - `Drupal/blank_line_before_end_of_class`

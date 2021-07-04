@@ -30,6 +30,7 @@ class Factory
 
         return (new \PhpCsFixer\Config($ruleSet->name()))
                 ->registerCustomFixers(new \PhpCsFixerCustomFixers\Fixers)
+                ->registerCustomFixers(new \PedroTroller\CS\Fixer\Fixers())
                 ->registerCustomFixers(self::customFixers())
                 ->setFinder($finder)
                 ->setRiskyAllowed(true)
