@@ -64,16 +64,16 @@ Factory::fromRuleSet(new RuleSet\Blank, $yourRules);
 ```
 
 **Built-in custom fixers**
+- `PhpStorm/braces_one_line`
 - [kubawerlos/php-cs-fixer-custom-fixers](https://github.com/kubawerlos/php-cs-fixer-custom-fixers)
 - [pedrotroller/php-cs-custom-fixer](https://github.com/PedroTroller/PhpCSFixer-Custom-Fixers)
-- `PhpStorm/braces_one_line`
+- [Slamdunk/php-cs-fixer-extensions](https://github.com/Slamdunk/php-cs-fixer-extensions)
 - [drupol/phpcsfixer-configs-drupal](https://github.com/drupol/phpcsfixer-configs-drupal/tree/master/src/Fixer)
   - `Drupal/blank_line_before_end_of_class`
   - `Drupal/control_structure_braces_else`
   - `Drupal/inline_comment_spacer`
   - `Drupal/new_line_on_multiline_array`
   - `Drupal/try_catch_block`
-- [Slamdunk/php-cs-fixer-extensions](https://github.com/Slamdunk/php-cs-fixer-extensions)
 
 ### Configuration with header
 
