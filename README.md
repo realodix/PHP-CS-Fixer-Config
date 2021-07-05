@@ -73,6 +73,7 @@ Factory::fromRuleSet(new RuleSet\Blank, $yourRules);
   - `Drupal/inline_comment_spacer`
   - `Drupal/new_line_on_multiline_array`
   - `Drupal/try_catch_block`
+- [Slamdunk/php-cs-fixer-extensions](https://github.com/Slamdunk/php-cs-fixer-extensions)
 
 ### Configuration with header
 
