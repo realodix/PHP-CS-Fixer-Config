@@ -50,4 +50,6 @@ jobs:
       - name: Execute tests
         run: ./vendor/bin/phpunit
       - name: Execute PHP CS Fixer
+        env:
+          PHP_CS_FIXER_IGNORE_ENV: true
         run: ./vendor/bin/php-cs-fixer fix
