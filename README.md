@@ -1,6 +1,6 @@
 # php-cs-fixer-config
 
-![PHPVersion](https://img.shields.io/badge/PHP-^7.2|^8-777BB4.svg?style=flat-square)
+![PHPVersion](https://img.shields.io/badge/PHP-^7.1|^8-777BB4.svg?style=flat-square)
 ![Build Status](https://github.com/realodix/PHP-CS-Fixer-Config/actions/workflows/ci.yml/badge.svg)
 [![GitHub license](https://img.shields.io/github/license/realodix/PHP-CS-Fixer-Config.svg?style=flat-square)](/LICENSE)
 
