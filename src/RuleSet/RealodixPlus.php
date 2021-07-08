@@ -2,8 +2,6 @@
 
 namespace Realodix\CsConfig\RuleSet;
 
-use PhpCsFixerCustomFixers\Fixer;
-
 final class RealodixPlus extends AbstractRuleSet
 {
     protected $name = 'Realodix Coding Standards (strict)';
@@ -29,19 +27,6 @@ final class RealodixPlus extends AbstractRuleSet
                     'expectedException', 'expectedExceptionCode', 'expectedExceptionMessage', 'expectedExceptionMessageRegExp',
                 ],
             ],
-
-            Fixer\CommentSurroundedBySpacesFixer::name()            => true,
-            Fixer\MultilineCommentOpeningClosingAloneFixer::name()  => true,
-            Fixer\NoDoctrineMigrationsGeneratedCommentFixer::name() => true,
-            Fixer\NoLeadingSlashInGlobalNamespaceFixer::name()      => true,
-            Fixer\NoPhpStormGeneratedCommentFixer::name()           => true,
-            Fixer\NoUselessCommentFixer::name()                     => true,
-            Fixer\NoUselessDoctrineRepositoryCommentFixer::name()   => true,
-            Fixer\PhpdocNoIncorrectVarAnnotationFixer::name()       => true,
-            Fixer\PhpdocNoSuperfluousParamFixer::name()             => true,
-            Fixer\PhpdocSelfAccessorFixer::name()                   => true,
-            Fixer\SingleSpaceAfterStatementFixer::name()            => true,
-            Fixer\SingleSpaceBeforeStatementFixer::name()           => true,
         ];
 
         return array_merge($baseRules, $rules);

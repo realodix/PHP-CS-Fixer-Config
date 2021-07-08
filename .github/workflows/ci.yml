@@ -8,8 +8,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
-        php-version: ['7.2', '7.3', '7.4', '8.0']
+        php-version: ['7.1', '7.2', '7.3', '7.4', '8.0']
         include:
           - php-version: '8.1'
             flags: "--ignore-platform-req=php"
@@ -48,3 +49,7 @@ jobs:
               composer update --prefer-dist --no-interaction --no-progress ${{ matrix.flags }}
       - name: Execute tests
         run: ./vendor/bin/phpunit
+      - name: Execute PHP CS Fixer
+        env:
+          PHP_CS_FIXER_IGNORE_ENV: true
+        run: ./vendor/bin/php-cs-fixer fix
