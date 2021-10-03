@@ -14,7 +14,7 @@
         "php": "^7.4 || ^8.0",
         "drupol/phpcsfixer-configs-drupal": "^2.0",
         "friendsofphp/php-cs-fixer": "^3.0",
-        "kubawerlos/php-cs-fixer-custom-fixers": "^2.5",
+        "kubawerlos/php-cs-fixer-custom-fixers": "^3.0",
         "matt-allan/laravel-code-style": "dev-main",
         "pedrotroller/php-cs-custom-fixer": "^2.25",
         "slam/php-cs-fixer-extensions": "^3.0"
