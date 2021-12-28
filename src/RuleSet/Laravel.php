@@ -8,7 +8,7 @@ final class Laravel extends AbstractRuleSet
 
     /**
      * Based on
-     * - https://github.com/matt-allan/laravel-code-style/blob/b224862/src/Config.php (main)
+     * - https://github.com/matt-allan/laravel-code-style/blob/b3a16b9f20/src/Config.php (main)
      * - https://gist.github.com/laravel-shift/cab527923ed2a109dda047b97d53c200#gistcomment-3755709
      */
     public function getRules(): array
@@ -24,11 +24,9 @@ final class Laravel extends AbstractRuleSet
                     '='  => 'single_space',
                 ],
             ],
-            'braces' => [
-                'allow_single_line_anonymous_class_with_empty_body' => true,
-            ],
+            'braces'                  => false,
             'cast_spaces'             => true,
-            'class_definition'        => true,
+            'class_definition'        => false,
             'clean_namespace'         => true,
             'concat_space'            => ['spacing' => 'none'],
             'constant_case'           => ['case' => 'lower'],
@@ -42,6 +40,7 @@ final class Laravel extends AbstractRuleSet
             'include'                 => true,
             'increment_style'         => ['style' => 'post'],
             'indentation_type'        => true,
+            'integer_literal_case'    => true,
             'lambda_not_used_import'  => true,
             'line_ending'             => true,
             'list_syntax'             => ['syntax' => 'short'],
@@ -49,7 +48,7 @@ final class Laravel extends AbstractRuleSet
             'lowercase_keywords'      => true,
             'magic_constant_casing'   => true,
             'magic_method_casing'     => true,
-            'method_argument_space'   => true,
+            'method_argument_space'   => ['on_multiline' => 'ignore'],
             'native_function_casing'  => true,
             'no_alternative_syntax'   => true,
             'no_binary_string'        => true,
@@ -57,7 +56,7 @@ final class Laravel extends AbstractRuleSet
             'no_empty_phpdoc'         => true,
             'no_empty_statement'      => true,
             'no_extra_blank_lines'    => [
-                'tokens' => ['throw', 'use', 'use_trait', 'extra'],
+                'tokens' => ['throw', 'use', 'extra'],
             ],
             'no_leading_import_slash'  => true,
             'no_mixed_echo_print'      => ['use' => 'echo'],
@@ -90,6 +89,7 @@ final class Laravel extends AbstractRuleSet
             'ternary_operator_spaces'  => true,
             'trim_array_spaces'        => true,
             'unary_operator_spaces'    => true,
+            'types_spaces'             => ['space' => 'none'],
             'visibility_required'      => ['elements' => ['method', 'property']],
 
             'blank_line_after_namespace'         => true,
@@ -122,6 +122,7 @@ final class Laravel extends AbstractRuleSet
             'native_function_type_declaration_casing'     => true,
             'no_multiline_whitespace_around_double_arrow' => true,
             'no_singleline_whitespace_before_semicolons'  => true,
+            'no_space_around_double_colon'                => true,
             'no_trailing_comma_in_singleline_array'       => true,
             'no_whitespace_before_comma_in_array'         => true,
             'not_operator_with_successor_space'           => true,
