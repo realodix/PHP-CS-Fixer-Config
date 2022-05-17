@@ -1,6 +1,6 @@
 # php-cs-fixer-config
 
-![PHPVersion](https://img.shields.io/badge/PHP-^7.1|^8-777BB4.svg?style=flat-square)
+![PHPVersion](https://img.shields.io/badge/PHP-^7.2|^8-777BB4.svg?style=flat-square)
 ![Build Status](https://github.com/realodix/PHP-CS-Fixer-Config/actions/workflows/ci.yml/badge.svg)
 [![GitHub license](https://img.shields.io/github/license/realodix/PHP-CS-Fixer-Config.svg?style=flat-square)](/LICENSE)
 
@@ -72,6 +72,9 @@ Factory::fromRuleSet(new RuleSet\Blank, $yourRules);
   - `Drupal/blank_line_before_end_of_class`
   - `Drupal/control_structure_braces_else`
   - `Drupal/inline_comment_spacer`
+- [symplify/coding-standard](https://github.com/symplify/coding-standard/blob/main/docs/rules_overview.md)
+  - `Symplify/blank_line_after_strict_types`
+  - `Symplify/param_return_and_var_tag_malforms`
 
 ### Configuration with header
 
