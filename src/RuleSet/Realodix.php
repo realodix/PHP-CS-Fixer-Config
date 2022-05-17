@@ -2,8 +2,6 @@
 
 namespace Realodix\CsConfig\RuleSet;
 
-use PhpCsFixerCustomFixers\Fixer;
-
 final class Realodix extends AbstractRuleSet
 {
     protected $name = 'Realodix Coding Standards';
@@ -11,6 +9,15 @@ final class Realodix extends AbstractRuleSet
     public function getRules(): array
     {
         $baseRules = (new Laravel())->getRules();
+
+        $methodArgumentSpace = true;
+        if (version_compare(PHP_VERSION, '7.3.0', '>')) {
+            $methodArgumentSpace = [
+                // PHP80Migration
+                // Diff https://github.com/matt-allan/laravel-code-style/blob/b224862/src/Config.php#L70
+                'after_heredoc' => true,
+            ];
+        }
 
         $rules = [
             /*
@@ -20,11 +27,7 @@ final class Realodix extends AbstractRuleSet
             'phpdoc_summary'          => false,
             'ternary_operator_spaces' => false,
             'unary_operator_spaces'   => false,
-            'method_argument_space'   => [
-                // PHP80Migration
-                // Diff https://github.com/matt-allan/laravel-code-style/blob/b224862/src/Config.php#L70
-                'after_heredoc' => true,
-            ],
+            'method_argument_space'   => $methodArgumentSpace,
 
             /*
              * Addition
@@ -49,12 +52,6 @@ final class Realodix extends AbstractRuleSet
                     // 'return',
                 ],
             ],
-            Fixer\NoDuplicatedArrayKeyFixer::name() => true,
-            Fixer\NoDuplicatedImportsFixer::name()  => true,
-            Fixer\NoUselessParenthesisFixer::name() => true,
-            Fixer\PhpdocParamOrderFixer::name()     => true,
-            Fixer\PhpdocParamTypeFixer::name()      => true,
-            Fixer\PhpdocTypesTrimFixer::name()      => true,
         ];
 
         return array_merge($baseRules, $rules);

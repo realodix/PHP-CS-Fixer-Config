@@ -29,7 +29,6 @@ class Factory
                   ->in($dir);
 
         return (new \PhpCsFixer\Config($ruleSet->name()))
-                ->registerCustomFixers(new \PhpCsFixerCustomFixers\Fixers)
                 ->registerCustomFixers(self::customFixers())
                 ->setFinder($finder)
                 ->setRiskyAllowed(true)
@@ -42,8 +41,6 @@ class Factory
 
         return [
             new CustomFixer\PhpStorm\BracesOneLineFixer,
-            new CustomFixer\Symplify\BlankLineAfterStrictTypesFixer,
-            new CustomFixer\Symplify\ParamReturnAndVarTagMalformsFixer,
             new DrupolFixer\BlankLineBeforeEndOfClass(
                 $PhpCsFixer->getIndent(),
                 $PhpCsFixer->getLineEnding()
