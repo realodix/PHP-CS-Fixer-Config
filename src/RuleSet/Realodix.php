@@ -20,7 +20,11 @@ final class Realodix extends AbstractRuleSet
             'phpdoc_summary'          => false,
             'ternary_operator_spaces' => false,
             'unary_operator_spaces'   => false,
-            'method_argument_space'   => ['after_heredoc' => true],
+            'method_argument_space'   => [
+                // PHP80Migration
+                // Diff https://github.com/matt-allan/laravel-code-style/blob/b224862/src/Config.php#L70
+                'after_heredoc' => true
+            ],
 
             /*
              * Addition
