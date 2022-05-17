@@ -12,14 +12,6 @@ final class Realodix extends AbstractRuleSet
     {
         $baseRules = (new Laravel())->getRules();
 
-        $afterHeredoc = true;
-        if (version_compare(PHP_VERSION, '7.3.0', '<')) {
-            // PHP80Migration
-            // Diff https://github.com/matt-allan/laravel-code-style/blob/b224862/src/Config.php#L70
-            // https://github.com/FriendsOfPHP/PHP-CS-Fixer/blob/master/src/RuleSet/Sets/PHP73MigrationSet.php
-            $afterHeredoc = false;
-        }
-
         $rules = [
             /*
              * Modify
@@ -28,7 +20,7 @@ final class Realodix extends AbstractRuleSet
             'phpdoc_summary'          => false,
             'ternary_operator_spaces' => false,
             'unary_operator_spaces'   => false,
-            'method_argument_space'   => ['after_heredoc' => $afterHeredoc],
+            'method_argument_space'   => ['after_heredoc' => true],
 
             /*
              * Addition
