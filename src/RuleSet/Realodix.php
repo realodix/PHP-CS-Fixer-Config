@@ -12,11 +12,11 @@ final class Realodix extends AbstractRuleSet
     {
         $baseRules = (new Laravel())->getRules();
 
+        // PHP80Migration
+        // Diff https://github.com/matt-allan/laravel-code-style/blob/b224862/src/Config.php#L70
+        // https://github.com/FriendsOfPHP/PHP-CS-Fixer/blob/master/src/RuleSet/Sets/PHP73MigrationSet.php
         $afterHeredoc = true;
         if (version_compare(PHP_VERSION, '7.3.0', '<')) {
-            // PHP80Migration
-            // Diff https://github.com/matt-allan/laravel-code-style/blob/b224862/src/Config.php#L70
-            // https://github.com/FriendsOfPHP/PHP-CS-Fixer/blob/master/src/RuleSet/Sets/PHP73MigrationSet.php
             $afterHeredoc = false;
         }
 
