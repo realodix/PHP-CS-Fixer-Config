@@ -47,8 +47,8 @@ Very easy, just use `Blank` rule set, then add your rules.
 
 ```php
 $yourRules = [
-    `your_rule_1` = true,
-    `your_rule_2` = true,
+    'your_rule_1' = true,
+    'your_rule_2' = true,
 ];
 
 Factory::fromRuleSet(new RuleSet\Blank, $yourRules);
