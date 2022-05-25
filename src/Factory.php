@@ -44,17 +44,20 @@ class Factory
 
         return [
             new CustomFixer\PhpStorm\BracesOneLineFixer,
-            new DrupolFixer\BlankLineBeforeEndOfClass($indent, $lineEnding),
-            new DrupolFixer\ControlStructureCurlyBracketsElseFixer($indent, $lineEnding),
-            new DrupolFixer\InlineCommentSpacerFixer(),
-            new DrupolFixer\NewlineAfterLastCommaInArrayFixer($indent, $lineEnding),
-            new DrupolFixer\TryCatchBlock($indent, $lineEnding),
+            new \Jubeki\LaravelCodeStyle\Fixers\LaravelPhpdocAlignmentFixer,
+            new \Jubeki\LaravelCodeStyle\Fixers\LaravelPhpdocOrderFixer,
+            new \Jubeki\LaravelCodeStyle\Fixers\LaravelPhpdocSeparationFixer,
             new \SlamCsFixer\FinalAbstractPublicFixer(),
             new \SlamCsFixer\FinalInternalClassFixer(),
             new \SlamCsFixer\FunctionReferenceSpaceFixer(),
             new \SlamCsFixer\InlineCommentSpacerFixer(),
             new \SlamCsFixer\PhpFileOnlyProxyFixer(new \PhpCsFixer\Fixer\Basic\BracesFixer()),
             new \SlamCsFixer\Utf8Fixer(),
+            new DrupolFixer\BlankLineBeforeEndOfClass($indent, $lineEnding),
+            new DrupolFixer\ControlStructureCurlyBracketsElseFixer($indent, $lineEnding),
+            new DrupolFixer\InlineCommentSpacerFixer(),
+            new DrupolFixer\NewlineAfterLastCommaInArrayFixer($indent, $lineEnding),
+            new DrupolFixer\TryCatchBlock($indent, $lineEnding),
         ];
     }
 }

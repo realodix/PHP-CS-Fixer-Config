@@ -2,7 +2,7 @@
 
 namespace Realodix\CsConfig\RuleSet;
 
-use MattAllan\LaravelCodeStyle\Config as MattAllanLCS;
+use Jubeki\LaravelCodeStyle\Config as LaravelCS;
 
 final class LaravelRisky extends AbstractRuleSet
 {
@@ -12,7 +12,7 @@ final class LaravelRisky extends AbstractRuleSet
     {
         return array_merge(
             (new Laravel())->getRules(),
-            MattAllanLCS::RULE_DEFINITIONS['@Laravel:risky']
+            LaravelCS::RULE_DEFINITIONS['@Laravel:risky']
         );
     }
 }
