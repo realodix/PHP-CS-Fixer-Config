@@ -78,11 +78,6 @@ class FactoryTest extends TestCase
 
         $this->assertInstanceOf(
             \PhpCsFixer\ConfigInterface::class,
-            Factory::fromRuleSet(new RuleSet\Drupal())
-        );
-
-        $this->assertInstanceOf(
-            \PhpCsFixer\ConfigInterface::class,
             Factory::fromRuleSet(new RuleSet\LaravelRisky())
         );
 
