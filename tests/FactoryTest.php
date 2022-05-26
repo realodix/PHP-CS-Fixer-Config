@@ -83,11 +83,6 @@ class FactoryTest extends TestCase
 
         $this->assertInstanceOf(
             \PhpCsFixer\ConfigInterface::class,
-            Factory::fromRuleSet(new RuleSet\PhpStorm())
-        );
-
-        $this->assertInstanceOf(
-            \PhpCsFixer\ConfigInterface::class,
             Factory::fromRuleSet(new RuleSet\PHPUnitRisky())
         );
     }

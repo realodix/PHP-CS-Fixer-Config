@@ -23,7 +23,6 @@ Pick one of the rule sets:
 * [`Realodix`](src/RuleSet/Realodix.php), [`RealodixPlus`](src/RuleSet/RealodixPlus.php)
 * [`Laravel`](src/RuleSet/Laravel.php), [`LaravelRisky`](src/RuleSet/LaravelRisky.php)
 * [`CodeIgniter`](src/RuleSet/CodeIgniter.php), [`CodeIgniterRisky`](src/RuleSet/CodeIgniterRisky.php)
-* [`PhpStorm`](src/RuleSet/PhpStorm.php)
 * [`PHPUnit`](src/RuleSet/PHPUnit.php), [`PHPUnitRisky`](src/RuleSet/PHPUnitRisky.php)
 
 Create a configuration file `.php-cs-fixer.php` in the root of your project:
