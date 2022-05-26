@@ -25,7 +25,6 @@ Pick one of the rule sets:
 * [`CodeIgniter`](src/RuleSet/CodeIgniter.php), [`CodeIgniterRisky`](src/RuleSet/CodeIgniterRisky.php)
 * [`PhpStorm`](src/RuleSet/PhpStorm.php)
 * [`PHPUnit`](src/RuleSet/PHPUnit.php), [`PHPUnitRisky`](src/RuleSet/PHPUnitRisky.php)
-* [`Yii`](src/RuleSet/Yii.php), [`YiiRisky`](src/RuleSet/YiiRisky.php)
 
 Create a configuration file `.php-cs-fixer.php` in the root of your project:
 
