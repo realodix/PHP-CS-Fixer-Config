@@ -1,3 +1,7 @@
+# :exclamation: Abandoned!
+
+This package is abandoned, you should avoid using it. Use [`realodix/cs-config`](https://github.com/realodix/cs-config) instead.
+
 # php-cs-fixer-config
 
 ![PHPVersion](https://img.shields.io/badge/PHP-^7.4|^8-777BB4.svg?style=flat-square)
