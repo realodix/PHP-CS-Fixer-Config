@@ -1,6 +1,6 @@
 # :exclamation: Abandoned!
 
-This package is abandoned, you should avoid using it. Use [`realodix/cs-config`](https://github.com/realodix/cs-config) instead.
+This package is abandoned, you should avoid using it. Use [`realodix/relax`](https://github.com/realodix/relax) instead.
 
 # php-cs-fixer-config
 
